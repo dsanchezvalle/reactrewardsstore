@@ -33,6 +33,10 @@
   position: absolute;
   bottom:22%;
   left:4.68%;
+  font-weight: 700;
+  color: var(--light-font-color);
+  font-size: 0.875rem;
+  transition: all 0.5s ease;
 }
 
 @media screen and (min-width: 600px){
@@ -48,6 +52,7 @@
     .Header__BannerText{
       bottom:22.49%;
       left:5.8%;
+      font-size: 1.65rem;
     }  
 }
 
@@ -64,6 +69,7 @@
     .Header__BannerText{
       bottom:22.98%;
       left:6.92%;
+      font-size: 2.43rem;
     }  
 
   }
@@ -81,6 +87,7 @@
     .Header__BannerText{
       bottom:23.47%;
       left:8.04%;
+      font-size: 3.21rem;
     }  
   }
 
@@ -97,5 +104,6 @@
     .Header__BannerText{
       bottom:23.96%;
       left:9.17%;
+      font-size: 4rem;
     }
   }
