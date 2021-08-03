@@ -5,13 +5,35 @@
     background-color: lightblue;
     width: 100%;
     height: 3rem;
-    transition: height 0.5s ease;
     padding:.875rem 1rem;
+    transition: height 0.5s ease;
 }
 
 .Header__Logo{
     width: 1.25rem;
-  } 
+    transition: width 0.5s ease;
+}
+
+.Header__BannerImage{
+    display: flex;
+    position: relative;
+    background: url('../../assets/images/header-banner.png');
+    background-size: 100% 100%;
+    height: 33.33vw;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+}
+
+.Banner-Mask {
+    clip-path: polygon(0 0, 100% 0, 100% 85.35%, 0 85.35%);
+    transition: clip-path .4s linear;
+}
+
+.Header__BannerText{
+  position: absolute;
+  bottom:22%;
+  left:4.68%;
+}
 
 @media screen and (min-width: 600px){
     .Header {
@@ -21,9 +43,13 @@
 
     .Header__Logo{
       width: 1.75rem;
-    } 
-
-  }
+    }
+    
+    .Header__BannerText{
+      bottom:22.49%;
+      left:5.8%;
+    }  
+}
 
   @media screen and (min-width: 800px){
     .Header{
@@ -34,6 +60,11 @@
     .Header__Logo{
       width: 2rem;
     }
+
+    .Header__BannerText{
+      bottom:22.98%;
+      left:6.92%;
+    }  
 
   }
 
@@ -46,6 +77,11 @@
     .Header__Logo{
       width: 2.25rem;
     }
+
+    .Header__BannerText{
+      bottom:23.47%;
+      left:8.04%;
+    }  
   }
 
   @media screen and (min-width: 1200px){
@@ -56,5 +92,10 @@
 
     .Header__Logo{
       width: 2.42rem;
+    }
+
+    .Header__BannerText{
+      bottom:23.96%;
+      left:9.17%;
     }
   }
