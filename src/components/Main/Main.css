@@ -1,0 +1,7 @@
+.Main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--main-bkgd-color);
+    padding: 0 8.25rem 4.62rem
+}
