@@ -1,3 +1,7 @@
 .TopBar{
-    
+  display: flex;
+  border-bottom: 1px solid var(--border-bar-color);  
+  height: 4.62rem;
+  align-items: center;
+  width: 100%;
 }

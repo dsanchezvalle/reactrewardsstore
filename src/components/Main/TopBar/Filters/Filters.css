@@ -1,0 +1,8 @@
+.FiltersContainer{
+    display: flex;
+    color: var(--medium-font-color);
+    font-size: 1.5rem;
+    border-left: 1px solid var(--border-bar-color);
+    padding-left: 1.5rem;;
+    gap:1.5rem;    
+}

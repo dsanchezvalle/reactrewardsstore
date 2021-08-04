@@ -4,7 +4,7 @@ import React from "react";
 const Results = () => {
     return(
         <>
-        <section>This is the Results Section</section>
+        <section>Results Section</section>
         </>
     );
 }

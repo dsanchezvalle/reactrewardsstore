@@ -1,0 +1,5 @@
+.PaginationArrowsContainer{
+    margin-left: auto;
+    display: flex;
+    gap:.75rem;
+}
