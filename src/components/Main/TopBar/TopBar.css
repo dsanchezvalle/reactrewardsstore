@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   font-size: .75rem;
+  transition: all 0.5 ease;
 }
 
 @media screen and (min-width: 600px){
