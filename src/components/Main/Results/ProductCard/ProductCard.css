@@ -1,0 +1,48 @@
+.ProductCard{
+    background-color: rgba(211, 211, 211, 0.3);
+    height: 8.5rem;
+    width: 8.5rem;    
+}
+
+@media screen and (min-width: 480px){
+    .ProductCard{
+        height: 9rem;
+        width: 9rem;    
+    }
+}
+
+
+@media screen and (min-width: 600px){
+    .ProductCard{
+        height: 10.69rem;
+        width: 10.69rem;    
+    }
+}
+
+@media screen and (min-width: 800px){
+    .ProductCard{
+        height: 12.88rem;
+        width: 12.88rem;    
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .ProductCard{
+        height: 15.07rem;
+        width: 15.07rem;    
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .ProductCard{
+        height: 17.25rem;
+        width: 17.25rem;    
+    }
+} 
+
+@media screen and (min-width: 1400px){
+    .ProductCard{
+        height: 17.25rem;
+        width: 17.25rem;  
+    }
+}
