@@ -11,7 +11,40 @@
 
 .FilterPrice, .FilterCategory{
     width: 4.8rem;
-} 
+    font-size: inherit;
+    padding-left: 0.2rem;
+}
+
+/*Start custom select*/
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    background: url('../../../../assets/images/arrow-down-sm.svg');
+    background-size: var(--filter-icon-bkgd-size-sm);
+    padding-left: 1.25rem;
+    background-repeat: no-repeat;
+    background-color: rgb(10, 212, 250);
+    background-position-x: 95%;
+    background-position-y: center;
+    border: none;
+    border-radius: 4px;
+    color: var(--light-font-color)
+  }
+  
+  /* CAUTION: IE hackery ahead */
+  select::-ms-expand { 
+      display: none; /* remove default arrow on ie10 and ie11 */
+  }
+  
+  /* target Internet Explorer 9 to undo the custom arrow */
+  @media screen and (min-width:0\0) {
+      select {
+          background:none\9;
+          padding: 5px\9;
+      } 
+  }
+/*End Select*/
 
 @media screen and (min-width: 600px){
     .FiltersContainer{
@@ -31,8 +64,12 @@
     } 
 
     .FilterPrice, .FilterCategory{
-        width: 7.37rem;
+        width: 7.37rem; 
     }
+
+    /* select{
+        background: url('../../../../assets/images/arrow-down-lg.svg');
+    } */
   }
   
   @media screen and (min-width: 1000px){
