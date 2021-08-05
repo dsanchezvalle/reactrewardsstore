@@ -1,0 +1,31 @@
+.Main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--main-bkgd-color);
+    padding: 0 1rem 0.5rem
+}
+
+@media screen and (min-width: 600px){
+    .Main{
+        padding: 0 2.81rem 1.37rem
+    }       
+}
+
+@media screen and (min-width: 800px){
+    .Main{
+        padding: 0 4.62rem 2.25rem
+    }   
+}
+
+@media screen and (min-width: 1000px){
+    .Main{
+        padding: 0 6.45rem 3.13rem
+    } 
+}
+
+@media screen and (min-width: 1200px){
+    .Main{
+        padding: 0 8.25rem 4rem
+    }    
+}

@@ -1,0 +1,36 @@
+.TopBar{
+  display: flex;
+  border-bottom: 1px solid var(--border-bar-color);
+  align-items: center;
+  width: 100%;
+  font-size: .75rem;
+  transition: all 0.5 ease;
+}
+
+@media screen and (min-width: 600px){
+  .TopBar{
+    font-size: .94rem;
+    height: 2.44rem;
+  }       
+}
+
+@media screen and (min-width: 800px){
+  .TopBar{
+    font-size: 1.13rem;
+    height: 3.17rem;
+  } 
+}
+
+@media screen and (min-width: 1000px){
+  .TopBar{
+    font-size: 1.32rem;
+    height: 3.89rem;    
+  } 
+}
+
+@media screen and (min-width: 1200px){
+  .TopBar{
+    font-size: 1.5rem;
+    height: 4.62rem;
+  }    
+}

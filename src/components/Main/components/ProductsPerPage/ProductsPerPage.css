@@ -1,0 +1,32 @@
+.ProductsPerPage{
+    font-size: inherit;
+    color: var(--dark-font-color);
+    margin-right: 0.38rem;
+    margin-bottom: 0.35rem;
+    width: 20%;
+    text-align: center;    
+}
+
+@media screen and (min-width: 600px){
+    .ProductsPerPage{
+        margin-right: 0.66rem;
+    }       
+  }
+  
+  @media screen and (min-width: 800px){
+    .ProductsPerPage{
+        margin-right: 0.94rem;
+    } 
+  }
+  
+  @media screen and (min-width: 1000px){
+    .ProductsPerPage{
+        margin-right: 1.22rem;
+    }  
+  }
+  
+  @media screen and (min-width: 1200px){
+    .ProductsPerPage{
+        margin-right: 1.5rem;
+    }     
+  }
