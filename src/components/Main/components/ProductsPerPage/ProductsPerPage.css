@@ -2,6 +2,8 @@
     font-size: inherit;
     color: var(--dark-font-color);
     margin-right: 0.38rem;
+    width: 20%;
+    text-align: center;
 }
 
 @media screen and (min-width: 600px){
