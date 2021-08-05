@@ -1,19 +1,27 @@
 //Dependencies
-import React from "react";
+import React, { useState, useContext } from "react";
 //Styles
 import './Results.css'
 //Components
 import ProductCard from "./ProductCard/ProductCard";
+//Context
+import { AppContext } from "../../../contexts/AppContext";
 
 const Results = () => {
-    let products = [];
-    for(let i= 0; i<=3; i++){
-        products.push(<ProductCard/>);
-    }
+    const {filteredProducts} = useContext(AppContext);
+    
     return(
         <>
         <section className="ResultsGrid">
-            {products}
+            {filteredProducts.map(
+                product => 
+                <ProductCard
+                key={product.id}
+                name={product.name}
+                category={product.category} 
+                imagePath={product.img.hdUrl}
+                />
+            )}
         </section>
         </>
     );
