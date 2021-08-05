@@ -1,10 +1,29 @@
 //Dependencies
 import React from "react";
+//Styles
+import './Results.css'
 
 const Results = () => {
     return(
         <>
-        <section>Results Section</section>
+        <section className="ResultsGrid">
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+            <div className="ProductCard">Product</div>
+        </section>
         </>
     );
 }
