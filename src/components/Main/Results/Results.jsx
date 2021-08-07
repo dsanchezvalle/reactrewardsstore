@@ -20,6 +20,7 @@ const Results = () => {
                 name={product.name}
                 category={product.category} 
                 imagePath={product.img.hdUrl}
+                cost={product.cost}
                 />
             )}
         </section>
