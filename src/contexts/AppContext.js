@@ -1,7 +1,5 @@
 //Dependencies
 import { createContext, useState } from 'react'
-//TestData
-import {products} from '../utils/data'
 
 //Context creation
 export const AppContext = createContext();
@@ -9,7 +7,7 @@ export const AppContext = createContext();
 //AppProvider definition
 export default function AppProvider({children}){
     //States
-    const [filteredProducts, setFilteredProducts] = useState(products)
+    const [filteredProducts, setFilteredProducts] = useState([])
     
     return(
         <AppContext.Provider value={{
