@@ -1,47 +1,127 @@
 .ProductCard{
-    background-color: rgba(211, 211, 211, 0.3);
-    height: 8.5rem;
-    width: 8.5rem;    
+    background-color: rgb(255,255,255);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0.375rem;
+    box-shadow: .8px .9px 3px grey;
+    transition:  box-shadow .3s ease-out;
 }
 
+.ProductCard:hover{
+    box-shadow: 1px 8px 20px grey;
+    transition:  box-shadow .3s ease-in;
+}
+
+.ProductCard__Image{    
+    width: 100%;
+    border-radius: 3px;
+    height: auto;
+}
+
+.ProductCard__Info{
+    border-top: 1px solid rgba(217, 217, 217, .4);
+    margin: 0 8.7% 0 8.7%;
+    padding: 0.375rem;
+}
+
+.ProductCard__Name{
+    color: var(--dark-font-color);
+    font-size: 0.75rem;
+}
+
+.ProductCard__Category{
+    color: var(--medium-font-color);
+    font-size: 0.625rem;
+}
+
+/* Media Queries */
 @media screen and (min-width: 480px){
     .ProductCard{
-        height: 9rem;
-        width: 9rem;    
+        padding: 0.45rem;    
+    } 
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 0.825rem;
+    }
+    
+    .ProductCard__Category{
+        color: var(--medium-font-color);
+        font-size: 0.7rem;
     }
 }
 
 @media screen and (min-width: 600px){
     .ProductCard{
-        height: 10.69rem;
-        width: 10.69rem;    
+        padding: 0.53rem;    
+    } 
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 0.9rem;
+    }
+    
+    .ProductCard__Category{
+        color: var(--medium-font-color);
+        font-size: 0.775rem;
     }
 }
 
 @media screen and (min-width: 800px){
     .ProductCard{
-        height: 12.88rem;
-        width: 12.88rem;    
+        padding: 0.61rem;    
+    } 
+
+    .ProductCard__Info{
+        border-top: 1px solid rgba(217, 217, 217, .5);
+    }
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 0.975rem;
+    }
+    
+    .ProductCard__Category{
+        color: var(--medium-font-color);
+        font-size: 0.85rem;
     }
 }
 
 @media screen and (min-width: 1000px){
     .ProductCard{
-        height: 15.07rem;
-        width: 15.07rem;    
+        padding: 0.69rem;    
+    } 
+
+    .ProductCard__Info{
+        border-top: 1px solid rgba(217, 217, 217, 1);
+    }
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 1.05rem;
+    }
+    
+    .ProductCard__Category{
+        color: var(--medium-font-color);
+        font-size: 0.93rem;
     }
 }
 
 @media screen and (min-width: 1200px){
     .ProductCard{
-        height: 17.25rem;
-        width: 17.25rem;    
+        padding: 0.75rem;    
+    } 
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 1.12rem;
+    }
+    
+    .ProductCard__Category{
+        color: var(--medium-font-color);
+        font-size: 1rem;
     }
 } 
-
-@media screen and (min-width: 1400px){
-    .ProductCard{
-        height: 17.25rem;
-        width: 17.25rem;  
-    }
-}
