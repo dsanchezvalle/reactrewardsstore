@@ -11,10 +11,15 @@
     transition:  box-shadow .3s ease-out;
 }
 
-.ProductCard__Icon{
+.ProductCard__Icon, .ProductCard__PointsNeeded{
     position: absolute;
     top: 5%;
     right: 5%;
+}
+
+.ProductCard__Icon{
+    width: 1.31rem;
+    height: auto;
 }
 
 .ProductCard__Coin{
@@ -68,6 +73,10 @@
         padding: 0.45rem;    
     } 
 
+    .ProductCard__Icon{
+        width: 1.58rem;
+    }
+
     .ProductCard__PointsNeeded{
         font-size: 0.67rem;
         padding: .35rem .5rem;
@@ -91,7 +100,11 @@
 @media screen and (min-width: 600px){
     .ProductCard{
         padding: 0.53rem;    
-    } 
+    }
+    
+    .ProductCard__Icon{
+        width: 1.84rem;
+    }
 
     .ProductCard__PointsNeeded{
         font-size: 0.72rem;
@@ -116,7 +129,11 @@
 @media screen and (min-width: 800px){
     .ProductCard{
         padding: 0.61rem;    
-    } 
+    }
+    
+    .ProductCard__Icon{
+        width: 2.10rem;
+    }
 
     .ProductCard__PointsNeeded{
         font-size: 0.77rem;
@@ -147,6 +164,10 @@
         padding: 0.69rem;    
     } 
 
+    .ProductCard__Icon{
+        width: 2.36rem;
+    }
+
     .ProductCard__PointsNeeded{
         font-size: 0.82rem;
         padding: .65rem .86rem;
@@ -175,6 +196,10 @@
     .ProductCard{
         padding: 0.75rem;    
     } 
+
+    .ProductCard__Icon{
+        width: 2.63rem;
+    }
 
     .ProductCard__PointsNeeded{
         font-size: 0.87rem;
