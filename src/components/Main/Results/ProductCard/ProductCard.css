@@ -45,6 +45,20 @@
     transition:  box-shadow .3s ease-in;
 }
 
+.ProductCard.RedeemableProduct:hover::after{
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background: linear-gradient(180deg, rgba(10, 212, 250, 0.86) 0%, rgba(37, 187, 241, 0.86) 100%);
+}
+
+.ProductCard.RedeemableProduct:hover .ProductCard__Icon{
+    z-index: 1;
+}
+
 .ProductCard__Image{    
     width: 100%;
     border-radius: 3px;
@@ -60,6 +74,7 @@
 .ProductCard__Name{
     color: var(--dark-font-color);
     font-size: 0.75rem;
+    font-weight: 400;
 }
 
 .ProductCard__Category{

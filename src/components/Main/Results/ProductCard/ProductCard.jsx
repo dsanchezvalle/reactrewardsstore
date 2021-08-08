@@ -20,7 +20,7 @@ const ProductCard = ({name, category, imagePath, cost}) => {
 
     return(
         <>
-            <article className="ProductCard">
+            <article className={`ProductCard ${userCanRedeem(userPoints, cost)?'RedeemableProduct':''}`}>
                 {userCanRedeem(userPoints,cost)?(
                     <BuyIcon className="ProductCard__Icon"/>
                 ):(
