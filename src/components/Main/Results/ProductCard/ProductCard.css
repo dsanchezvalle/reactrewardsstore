@@ -17,16 +17,22 @@
     right: 5%;
 }
 
+.ProductCard__Coin{
+    width: 0.69rem;
+    height: auto;
+}
+
 .ProductCard__PointsNeeded{
     background: rgb(97, 97, 97, .8);
     mix-blend-mode: normal;
     border-radius: 100px;
     color: var(--light-font-color);
-    padding: .75rem 1rem;
+    padding: .25rem .38rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap:0.375rem;
+    font-size: 0.62rem;
 }
 
 .ProductCard:hover{
@@ -62,6 +68,15 @@
         padding: 0.45rem;    
     } 
 
+    .ProductCard__PointsNeeded{
+        font-size: 0.67rem;
+        padding: .35rem .5rem;
+    }
+
+    .ProductCard__Coin{
+        width: 0.8rem;
+    }
+
     .ProductCard__Name{
         color: var(--dark-font-color);
         font-size: 0.825rem;
@@ -78,6 +93,15 @@
         padding: 0.53rem;    
     } 
 
+    .ProductCard__PointsNeeded{
+        font-size: 0.72rem;
+        padding: .45rem .62rem;
+    }
+
+    .ProductCard__Coin{
+        width: 0.91rem;
+    }
+
     .ProductCard__Name{
         color: var(--dark-font-color);
         font-size: 0.9rem;
@@ -93,6 +117,15 @@
     .ProductCard{
         padding: 0.61rem;    
     } 
+
+    .ProductCard__PointsNeeded{
+        font-size: 0.77rem;
+        padding: .55rem .74rem;
+    }
+
+    .ProductCard__Coin{
+        width: 1.02rem;
+    }
 
     .ProductCard__Info{
         border-top: 1px solid rgba(217, 217, 217, .5);
@@ -114,6 +147,15 @@
         padding: 0.69rem;    
     } 
 
+    .ProductCard__PointsNeeded{
+        font-size: 0.82rem;
+        padding: .65rem .86rem;
+    }
+
+    .ProductCard__Coin{
+        width: 1.13rem;
+    }
+
     .ProductCard__Info{
         border-top: 1px solid rgba(217, 217, 217, 1);
     }
@@ -133,6 +175,15 @@
     .ProductCard{
         padding: 0.75rem;    
     } 
+
+    .ProductCard__PointsNeeded{
+        font-size: 0.87rem;
+        padding: .75rem 1rem;
+    }
+
+    .ProductCard__Coin{
+        width: 1.25rem;
+    }
 
     .ProductCard__Name{
         color: var(--dark-font-color);

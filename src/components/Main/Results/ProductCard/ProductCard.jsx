@@ -15,7 +15,7 @@ const ProductCard = ({name, category, imagePath, cost}) => {
     }
 
     function pointsNeeded(points, productCost){
-        return cost - points;
+        return productCost - points;
     }
 
     return(
@@ -24,7 +24,7 @@ const ProductCard = ({name, category, imagePath, cost}) => {
                 {userCanRedeem(userPoints,cost)?(
                     <BuyIcon className="ProductCard__Icon"/>
                 ):(
-                    <div className="ProductCard__Icon ProductCard__PointsNeeded">{`You need ${pointsNeeded(userPoints,cost)}`}<Coin /></div>
+                    <div className="ProductCard__Icon ProductCard__PointsNeeded">{`You need ${pointsNeeded(userPoints,cost)}`}<Coin className="ProductCard__Coin" /></div>
                 )}
                 <img className="ProductCard__Image" src={imagePath} alt={name} />
                 <section className="ProductCard__Info">
