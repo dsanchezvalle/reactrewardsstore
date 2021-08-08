@@ -4,7 +4,7 @@ import React from 'react'
 import './ProductCard.css'
 //Icons
 import { ReactComponent as BuyIcon } from "../../../../assets/images/buy.svg";
-import { ReactComponent as BuyIconHover } from "../../../../assets/images/buy-hover.svg";
+import { ReactComponent as BuyIconHover } from "../../../../assets/images/buy-white.svg";
 import { ReactComponent as Coin } from "../../../../assets/images/coin.svg";
 
 const ProductCard = ({name, category, imagePath, cost}) => {
@@ -30,6 +30,13 @@ const ProductCard = ({name, category, imagePath, cost}) => {
                 <section className="ProductCard__Info">
                     <p className="ProductCard__Category">{category}</p>
                     <h3 className="ProductCard__Name">{name}</h3>
+                    <section className="ProductCard__RedeemInfo">
+                        <BuyIconHover className="ProductCard__IconHover"/>
+                        <Coin />
+                        <p>{cost}</p>
+                        <button className="TestBtn">Redeem Now</button>    
+                    </section>
+                    
                 </section>
             </article>
         </>

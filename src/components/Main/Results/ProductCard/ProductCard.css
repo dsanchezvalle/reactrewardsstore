@@ -40,23 +40,39 @@
     font-size: 0.62rem;
 }
 
+.ProductCard__RedeemBtn{
+    display: none;
+}
+
 .ProductCard:hover{
     box-shadow: 1px 8px 20px grey;
     transition:  box-shadow .3s ease-in;
 }
 
-.ProductCard.RedeemableProduct:hover::after{
+.ProductCard.RedeemableProduct:hover .ProductCard__IconHover{
     position: absolute;
-    content:"";
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-    background: linear-gradient(180deg, rgba(10, 212, 250, 0.86) 0%, rgba(37, 187, 241, 0.86) 100%);
+    top: 5%;
+    right: 5%;
+    display: block;
+    z-index: 2;
+} 
+
+.ProductCard__RedeemInfo{
+    display: none;
 }
 
-.ProductCard.RedeemableProduct:hover .ProductCard__Icon{
-    z-index: 1;
+.ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(10, 212, 250, 0.86) 0%, rgba(37, 187, 241, 0.86) 100%);
+    z-index: 2;
 }
 
 .ProductCard__Image{    
