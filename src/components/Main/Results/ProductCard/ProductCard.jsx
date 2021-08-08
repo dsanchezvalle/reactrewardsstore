@@ -32,9 +32,11 @@ const ProductCard = ({name, category, imagePath, cost}) => {
                     <h3 className="ProductCard__Name">{name}</h3>
                     <section className="ProductCard__RedeemInfo">
                         <BuyIconHover className="ProductCard__IconHover"/>
-                        <Coin />
-                        <p>{cost}</p>
-                        <button className="TestBtn">Redeem Now</button>    
+                        <div className="ProductCard__RedeemCost">
+                            <p>{cost}</p>
+                            <Coin className="ProductCard__RedeemCoin"/>
+                        </div>
+                        <button className="ProductCard__RedeemBtn">Redeem Now</button>    
                     </section>
                     
                 </section>

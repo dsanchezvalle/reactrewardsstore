@@ -17,7 +17,7 @@
     right: 5%;
 }
 
-.ProductCard__Icon{
+.ProductCard__Icon, .ProductCard__IconHover{
     width: 1.31rem;
     height: auto;
 }
@@ -40,10 +40,6 @@
     font-size: 0.62rem;
 }
 
-.ProductCard__RedeemBtn{
-    display: none;
-}
-
 .ProductCard:hover{
     box-shadow: 1px 8px 20px grey;
     transition:  box-shadow .3s ease-in;
@@ -64,6 +60,7 @@
 .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
     display: flex;
     flex-direction: column;
+    gap: 0.31rem;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -73,6 +70,34 @@
     width: 100%;
     background: linear-gradient(180deg, rgba(10, 212, 250, 0.86) 0%, rgba(37, 187, 241, 0.86) 100%);
     z-index: 2;
+}
+
+.ProductCard__RedeemCost{
+    display: flex;
+    gap: 0.38rem;
+    color: var(--light-font-color);
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.ProductCard__RedeemBtn{
+    border: none;
+    color: var(--dark-font-color);
+    background-color: var(--light-font-color);
+    width: 82.61%; 
+    border-radius: 2.63rem;
+    font-size: 0.75rem;
+    padding: 0.19rem 0;   
+}
+
+.ProductCard__RedeemBtn:active{
+    transform: scale(0.97);
+}
+
+.ProductCard__RedeemCoin{
+    width: 0.75rem;
+    height: auto;
 }
 
 .ProductCard__Image{    
@@ -104,7 +129,7 @@
         padding: 0.45rem;    
     } 
 
-    .ProductCard__Icon{
+    .ProductCard__Icon, .ProductCard__IconHover{
         width: 1.58rem;
     }
 
@@ -126,6 +151,23 @@
         color: var(--medium-font-color);
         font-size: 0.7rem;
     }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.4rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 1.45rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 0.83rem;
+        padding: 0.30rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 0.93rem;
+    }
 }
 
 @media screen and (min-width: 600px){
@@ -133,7 +175,7 @@
         padding: 0.53rem;    
     }
     
-    .ProductCard__Icon{
+    .ProductCard__Icon, .ProductCard__IconHover{
         width: 1.84rem;
     }
 
@@ -155,6 +197,23 @@
         color: var(--medium-font-color);
         font-size: 0.775rem;
     }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.49rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 1.65rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 0.90rem;
+        padding: 0.41rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.1rem;
+    }
 }
 
 @media screen and (min-width: 800px){
@@ -162,7 +221,7 @@
         padding: 0.61rem;    
     }
     
-    .ProductCard__Icon{
+    .ProductCard__Icon, .ProductCard__IconHover{
         width: 2.10rem;
     }
 
@@ -188,6 +247,23 @@
         color: var(--medium-font-color);
         font-size: 0.85rem;
     }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.58rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 1.85rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 0.98rem;
+        padding: 0.53rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.28rem;
+    }
 }
 
 @media screen and (min-width: 1000px){
@@ -195,7 +271,7 @@
         padding: 0.69rem;    
     } 
 
-    .ProductCard__Icon{
+    .ProductCard__Icon, .ProductCard__IconHover{
         width: 2.36rem;
     }
 
@@ -221,6 +297,23 @@
         color: var(--medium-font-color);
         font-size: 0.93rem;
     }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.66rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 2.05rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 1.05rem;
+        padding: 0.64rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.45rem;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -228,7 +321,7 @@
         padding: 0.75rem;    
     } 
 
-    .ProductCard__Icon{
+    .ProductCard__Icon, .ProductCard__IconHover{
         width: 2.63rem;
     }
 
@@ -249,5 +342,22 @@
     .ProductCard__Category{
         color: var(--medium-font-color);
         font-size: 1rem;
+    }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.75rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 2.25rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 1.13rem;
+        padding: 0.75rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.63rem;
     }
 } 
