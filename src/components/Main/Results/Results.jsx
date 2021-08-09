@@ -8,8 +8,9 @@ import ProductCard from "./ProductCard/ProductCard";
 import { AppContext } from "../../../contexts/AppContext";
 
 const Results = () => {
+    //Get filteredProducts and errorMessage from AppContext
     const {filteredProducts, errorMessage} = useContext(AppContext);
-    
+
     return(
         <>        
             { errorMessage.length === 0 ?(

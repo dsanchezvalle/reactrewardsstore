@@ -1,14 +1,19 @@
 //Dependencies
-import React from 'react'
+import React, { useContext } from 'react'
 //Styles
 import './ProductCard.css'
 //Icons
 import { ReactComponent as BuyIcon } from "../../../../assets/images/buy.svg";
 import { ReactComponent as BuyIconHover } from "../../../../assets/images/buy-white.svg";
 import { ReactComponent as Coin } from "../../../../assets/images/coin.svg";
+//Context
+import { AppContext } from '../../../../contexts/AppContext'
 
 const ProductCard = ({name, category, imagePath, cost}) => {
-    let userPoints = 500;
+    //Get userInfo from AppContext
+    const { userInfo } = useContext(AppContext);
+    
+    let userPoints = userInfo.points;
     //Check if current user can redeem a specific product 
     function userCanRedeem(points, productCost){
         return points>=productCost;
