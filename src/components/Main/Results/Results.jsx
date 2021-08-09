@@ -1,5 +1,5 @@
 //Dependencies
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 //Styles
 import './Results.css'
 //Components
