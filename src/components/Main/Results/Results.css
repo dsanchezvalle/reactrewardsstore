@@ -6,6 +6,16 @@
   justify-items: center; 
 }
 
+.ResultsError{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.1rem 0 1.48rem;
+    color: var(--dark-font-color);
+    font-size: .75rem;
+    text-align: center;
+}
+
 @media screen and (min-width: 480px){
     .ResultsGrid{
         grid-template-columns: 1fr 1fr 1fr;
@@ -17,12 +27,20 @@
         margin: 1.48rem 0 2.05rem;
         gap: 1.125rem;
     }
+
+    .ResultsError{
+        font-size: .94rem;
+    }
 }
 
 @media screen and (min-width: 800px){
     .ResultsGrid{
         margin: 1.86rem 0 2.62rem;
         gap: 1.25rem;
+    }
+
+    .ResultsError{
+        font-size: 1.13rem;
     }
 }
 
@@ -31,12 +49,20 @@
         margin: 2.24rem 0 3.19rem;
         gap: 1.375rem;
     }
+
+    .ResultsError{
+        font-size: 1.32rem;
+    }
 }
 
 @media screen and (min-width: 1200px){
     .ResultsGrid{
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1.42rem;
+    }
+
+    .ResultsError{
+        font-size: 1.5rem;
     }
 }
 

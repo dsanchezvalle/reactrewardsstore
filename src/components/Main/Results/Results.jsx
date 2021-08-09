@@ -8,22 +8,30 @@ import ProductCard from "./ProductCard/ProductCard";
 import { AppContext } from "../../../contexts/AppContext";
 
 const Results = () => {
-    const {filteredProducts} = useContext(AppContext);
-    
+    const {filteredProducts, errorMessage} = useContext(AppContext);
+    console.log(errorMessage.length !== 0);
     return(
         <>
-        <section className="ResultsGrid">
-            {filteredProducts.map(
-                product => 
-                <ProductCard
-                key={product.id+product.name}
-                name={product.name}
-                category={product.category} 
-                imagePath={product.img.hdUrl}
-                cost={product.cost}
-                />
-            )}
-        </section>
+        
+            { errorMessage.length === 0 ?(
+                <section className="ResultsGrid">
+                    {filteredProducts.map(
+                        product => 
+                        <ProductCard
+                        key={product.id+product.name}
+                        name={product.name}
+                        category={product.category} 
+                        imagePath={product.img.hdUrl}
+                        cost={product.cost}
+                        />
+                    )}
+                </section>
+            ):(
+                <section className='ResultsError'>
+                    <p>{errorMessage}</p>
+                </ section>
+            )
+            }
         </>
     );
 }
