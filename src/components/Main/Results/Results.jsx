@@ -9,10 +9,9 @@ import { AppContext } from "../../../contexts/AppContext";
 
 const Results = () => {
     const {filteredProducts, errorMessage} = useContext(AppContext);
-    console.log(errorMessage.length !== 0);
+    
     return(
-        <>
-        
+        <>        
             { errorMessage.length === 0 ?(
                 <section className="ResultsGrid">
                     {filteredProducts.map(
