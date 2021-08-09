@@ -1,0 +1,92 @@
+.UserInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .63rem;
+    color: var(--dark-font-color);
+    font-size: .75rem;
+}
+
+.UserInfo__PointsWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-bkgd-color);
+    padding: .31rem;
+    border-radius: 1rem;
+    gap: .16rem;
+    transition: all .5s ease;
+}
+
+.UserInfo__Coin{
+    width: .63rem;
+    height: auto;
+}
+
+@media screen and (min-width: 600px){
+    .UserInfo{
+        font-size: .94rem;
+        gap: .89rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .42rem;
+        border-radius: 1.13rem;
+        gap: .21rem;
+    }
+
+    .UserInfo__Coin{
+        width: .84rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .UserInfo{
+        font-size: 1.13rem;
+        gap: 1.16rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .53rem;
+        border-radius: 1.25rem;
+        gap: .27rem;
+    }
+    
+    .UserInfo__Coin{
+        width: 1.06rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .UserInfo{
+        font-size: 1.31rem;
+        gap: 1.42rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .64rem;
+        border-radius: 1.38rem;
+        gap: .32rem;
+    }
+
+    .UserInfo__Coin{
+        width: 1.28rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .UserInfo{
+        font-size: 1.5rem;
+        gap: 1.69rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .75rem;
+        border-radius: 1.5rem;
+        gap: .38rem;
+    }
+
+    .UserInfo__Coin{
+        width: 1.5rem;
+    }
+}
