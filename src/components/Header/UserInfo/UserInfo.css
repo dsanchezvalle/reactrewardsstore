@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--secondary-bkgd-color);
-    padding: .31rem;
+    padding: .31rem .41rem;
     border-radius: 1rem;
     gap: .16rem;
     transition: all .5s ease;
@@ -30,7 +30,7 @@
     }
 
     .UserInfo__PointsWrapper{
-        padding: .42rem;
+        padding: .42rem .52rem;
         border-radius: 1.13rem;
         gap: .21rem;
     }
@@ -47,7 +47,7 @@
     }
 
     .UserInfo__PointsWrapper{
-        padding: .53rem;
+        padding: .53rem .63rem;
         border-radius: 1.25rem;
         gap: .27rem;
     }
@@ -64,7 +64,7 @@
     }
 
     .UserInfo__PointsWrapper{
-        padding: .64rem;
+        padding: .64rem .74rem;
         border-radius: 1.38rem;
         gap: .32rem;
     }
@@ -81,7 +81,7 @@
     }
 
     .UserInfo__PointsWrapper{
-        padding: .75rem;
+        padding: .75rem .85rem;
         border-radius: 1.5rem;
         gap: .38rem;
     }
