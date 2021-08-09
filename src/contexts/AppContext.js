@@ -8,11 +8,14 @@ export const AppContext = createContext();
 export default function AppProvider({children}){
     //States
     const [filteredProducts, setFilteredProducts] = useState([])
+    const [errorMessage, setErrorMessage] = useState('');
     
     return(
         <AppContext.Provider value={{
             filteredProducts,
-            setFilteredProducts   
+            setFilteredProducts,
+            errorMessage,
+            setErrorMessage  
         }}>
             {children}
         </AppContext.Provider>    
