@@ -1,5 +1,5 @@
 //Dependencies
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useState } from 'react'
 
 //Context creation
 export const AppContext = createContext();
