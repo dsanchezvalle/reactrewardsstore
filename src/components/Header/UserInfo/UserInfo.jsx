@@ -6,6 +6,7 @@ import './UserInfo.css'
 import { AppContext } from '../../../contexts/AppContext';
 //Icons
 import { ReactComponent as Coin} from '../../../assets/images/coin.svg'
+import { ReactComponent as DropdownArrow} from '../../../assets/images/arrow-down-lg.svg'
 
 const UserInfo = () => {
     const{ userInfo, setUserInfo, setErrorMessage } = useContext(AppContext);
@@ -36,12 +37,25 @@ const UserInfo = () => {
         }
     }, [userInfo, setUserInfo, setErrorMessage]);
 
+
+
     return(
         <section className="UserInfo">
-            <p className="UserInfo__Name">{userInfo.name}</p>
             <div className="UserInfo__PointsWrapper">
                 {userInfo.points} 
                 <Coin className="UserInfo__Coin" />
+            </div>
+            <div className="User__InfoMenu">
+                <p className="UserInfo__Name">{userInfo.name}</p>
+                <input type="checkbox" className="UserInfo__CollapsibleCheck" id="UserInfo__CollapsibleCheck" />
+                <label className="UserInfo__ArrowWrapper" htmlFor="UserInfo__CollapsibleCheck">
+                    <DropdownArrow className="UserInfo__Arrow"/>    
+                </label>
+                <ul className="UserInfo__DropdownWrapper">
+                    <li className="UserInfo__DropdownOption" id="MorePoints">Get more points</li>
+                    <li className="UserInfo__DropdownOption">See your Redeem History</li>
+                </ul>
+            
             </div>
         </section>
     );

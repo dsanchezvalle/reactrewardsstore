@@ -5,6 +5,7 @@
     gap: .63rem;
     color: var(--dark-font-color);
     font-size: .75rem;
+    position: relative;
 }
 
 .UserInfo__PointsWrapper{
@@ -23,6 +24,65 @@
     height: auto;
 }
 
+.User__InfoMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserInfo__Arrow path{
+    fill: var(--dark-font-color) !important;
+}
+
+.UserInfo__Arrow{
+    width: .94rem;
+    height: auto;
+    padding-top: 3%;    
+}
+
+#UserInfo__CollapsibleCheck{
+    opacity: 0;
+    display: none;
+}
+
+.UserInfo__DropdownWrapper{
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    top: 115%;
+    left: 110vw;
+    transform: translateX(120%);
+    margin: 0;
+    background-color: white;
+    padding-top: 3%;
+    border-radius: 0 0 3px 3px;
+    transition: transform .4s linear;
+}
+
+.UserInfo__DropdownOption{
+    width: 100%;
+    padding: 3% 10%;
+}
+
+.UserInfo__DropdownOption:hover{
+    color: white;
+    background-color: rgb(10, 212, 250);
+}
+
+.UserInfo__DropdownOption:last-child{
+    border-radius: 0 0 3px 3px;
+  }
+
+.UserInfo__CollapsibleCheck:checked ~ .UserInfo__DropdownWrapper{
+    transform: translateX(0);
+    top: 115%;
+    left: 0;
+}
+
+.UserInfo__CollapsibleCheck:checked + .UserInfo__ArrowWrapper{
+    transform: rotate(-90deg) translateY(15%);
+}
+
 @media screen and (min-width: 600px){
     .UserInfo{
         font-size: .94rem;
@@ -37,6 +97,10 @@
 
     .UserInfo__Coin{
         width: .84rem;
+    }
+
+    .UserInfo__Arrow{
+        width: 1.11rem;
     }
 }
 
@@ -55,6 +119,10 @@
     .UserInfo__Coin{
         width: 1.06rem;
     }
+
+    .UserInfo__Arrow{
+        width: 1.28rem;
+    }
 }
 
 @media screen and (min-width: 1000px){
@@ -72,6 +140,10 @@
     .UserInfo__Coin{
         width: 1.28rem;
     }
+
+    .UserInfo__Arrow{
+        width: 1.45rem;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -88,5 +160,9 @@
 
     .UserInfo__Coin{
         width: 1.5rem;
+    }
+
+    .UserInfo__Arrow{
+        width: 1.63rem;
     }
 }
