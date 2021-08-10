@@ -52,7 +52,18 @@ const UserInfo = () => {
                     <DropdownArrow className="UserInfo__Arrow"/>    
                 </label>
                 <ul className="UserInfo__DropdownWrapper">
-                    <li className="UserInfo__DropdownOption" id="MorePoints">Get more points</li>
+                    <li className="UserInfo__DropdownOption" id="MorePoints">
+                        <input type="checkbox" id="ChildrenDropdown__CollapsibleCheck" className="ChildrenDropdown__CollapsibleCheck" />
+                        <label htmlFor="ChildrenDropdown__CollapsibleCheck" className="ChildrenDropdown__GetMorePoints">
+                            <p>Get More points</p>
+                            <DropdownArrow className="ChildrenDropdown__Arrow"/>
+                        </label>
+                        <ul className="ChildrenDropdown__OptionWrapper">
+                            <li className="ChildrenDropdown__Option">1000</li>
+                            <li className="ChildrenDropdown__Option">5000</li>
+                            <li className="ChildrenDropdown__Option">7500</li>
+                        </ul>
+                    </li>
                     <li className="UserInfo__DropdownOption">See your Redeem History</li>
                 </ul>
             

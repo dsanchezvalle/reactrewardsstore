@@ -30,14 +30,18 @@
     align-items: center;
 }
 
-.UserInfo__Arrow path{
+.UserInfo__Arrow path, .ChildrenDropdown__Arrow path{
     fill: var(--dark-font-color) !important;
 }
 
-.UserInfo__Arrow{
+.UserInfo__Arrow, .ChildrenDropdown__Arrow{
     width: .94rem;
     height: auto;
     padding-top: 3%;    
+}
+
+.ChildrenDropdown__Arrow{
+    padding-left: 3%;
 }
 
 #UserInfo__CollapsibleCheck{
@@ -62,11 +66,29 @@
 .UserInfo__DropdownOption{
     width: 100%;
     padding: 3% 10%;
+    cursor: pointer;
 }
 
-.UserInfo__DropdownOption:hover{
-    color: white;
-    background-color: rgb(10, 212, 250);
+.ChildrenDropdown__GetMorePoints{
+    margin-left: -12%;
+    margin-right: -12%;
+    padding-left: 13%;
+}
+
+.ChildrenDropdown__GetMorePoints:active, .UserInfo__DropdownOption:last-of-type:active{
+    animation-name: flash-animation;
+    animation-duration: 0.7s;
+}
+
+@keyframes flash-animation {  
+    from { 
+        background: rgb(10, 212, 250); 
+        color:white;
+    }
+    to   { 
+        background: default; 
+        color: default;
+    }
 }
 
 .UserInfo__DropdownOption:last-child{
@@ -79,9 +101,62 @@
     left: 0;
 }
 
+.UserInfo__ArrowWrapper{
+    transform: translateY(15%) translateX(10%);
+    transition: all 0.25s;
+}
+
 .UserInfo__CollapsibleCheck:checked + .UserInfo__ArrowWrapper{
     transform: rotate(-90deg) translateY(15%);
 }
+
+.MorePoints{
+    position: relative;
+}
+
+.ChildrenDropdown__CollapsibleCheck{
+    opacity: 0;
+    display: none;
+}
+
+.ChildrenDropdown__GetMorePoints{
+    cursor: pointer;
+    display: flex;
+}
+
+.ChildrenDropdown__OptionWrapper{
+    list-style: none;
+    width: 85%;
+    height: 0;
+    display: none;
+    transition: all 0.3s ease-in;
+}
+
+.ChildrenDropdown__Option{
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.ChildrenDropdown__Option:hover{
+    background: rgb(10, 212, 250); 
+    color:white;
+}
+
+.ChildrenDropdown__CollapsibleCheck:checked ~ .ChildrenDropdown__OptionWrapper{
+    height: auto;
+    display: block;
+}
+
+.ChildrenDropdown__Arrow{
+  transition: all 0.2s;
+  transform: rotateX(0);
+}
+
+.ChildrenDropdown__CollapsibleCheck:checked + .ChildrenDropdown__GetMorePoints .ChildrenDropdown__Arrow{
+    transform: rotateX(180deg) translateY(-15%);
+}
+
+
 
 @media screen and (min-width: 600px){
     .UserInfo{
@@ -99,7 +174,7 @@
         width: .84rem;
     }
 
-    .UserInfo__Arrow{
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
         width: 1.11rem;
     }
 }
@@ -120,7 +195,7 @@
         width: 1.06rem;
     }
 
-    .UserInfo__Arrow{
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
         width: 1.28rem;
     }
 }
@@ -141,7 +216,7 @@
         width: 1.28rem;
     }
 
-    .UserInfo__Arrow{
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
         width: 1.45rem;
     }
 }
@@ -162,7 +237,7 @@
         width: 1.5rem;
     }
 
-    .UserInfo__Arrow{
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
         width: 1.63rem;
     }
 }
