@@ -1,0 +1,243 @@
+.UserInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .63rem;
+    color: var(--dark-font-color);
+    font-size: .75rem;
+    position: relative;
+}
+
+.UserInfo__PointsWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-bkgd-color);
+    padding: .31rem .41rem;
+    border-radius: 1rem;
+    gap: .16rem;
+    transition: all .5s ease;
+}
+
+.UserInfo__Coin{
+    width: .63rem;
+    height: auto;
+}
+
+.User__InfoMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserInfo__Arrow path, .ChildrenDropdown__Arrow path{
+    fill: var(--dark-font-color) !important;
+}
+
+.UserInfo__Arrow, .ChildrenDropdown__Arrow{
+    width: .94rem;
+    height: auto;
+    padding-top: 3%;    
+}
+
+.ChildrenDropdown__Arrow{
+    padding-left: 3%;
+}
+
+#UserInfo__CollapsibleCheck{
+    opacity: 0;
+    display: none;
+}
+
+.UserInfo__DropdownWrapper{
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    top: 115%;
+    left: 110vw;
+    transform: translateX(120%);
+    margin: 0;
+    background-color: white;
+    padding-top: 3%;
+    border-radius: 0 0 3px 3px;
+    transition: transform .4s linear;
+}
+
+.UserInfo__DropdownOption{
+    width: 100%;
+    padding: 3% 10%;
+    cursor: pointer;
+}
+
+.ChildrenDropdown__GetMorePoints{
+    margin-left: -12%;
+    margin-right: -12%;
+    padding-left: 13%;
+}
+
+.ChildrenDropdown__GetMorePoints:active, .UserInfo__DropdownOption:last-of-type:active{
+    animation-name: flash-animation;
+    animation-duration: 0.7s;
+}
+
+@keyframes flash-animation {  
+    from { 
+        background: rgb(10, 212, 250); 
+        color:white;
+    }
+    to   { 
+        background: default; 
+        color: default;
+    }
+}
+
+.UserInfo__DropdownOption:last-child{
+    border-radius: 0 0 3px 3px;
+  }
+
+.UserInfo__CollapsibleCheck:checked ~ .UserInfo__DropdownWrapper{
+    transform: translateX(0);
+    top: 115%;
+    left: 0;
+}
+
+.UserInfo__ArrowWrapper{
+    transform: translateY(15%) translateX(10%);
+    transition: all 0.25s;
+}
+
+.UserInfo__CollapsibleCheck:checked + .UserInfo__ArrowWrapper{
+    transform: rotate(-90deg) translateY(15%);
+}
+
+.MorePoints{
+    position: relative;
+}
+
+.ChildrenDropdown__CollapsibleCheck{
+    opacity: 0;
+    display: none;
+}
+
+.ChildrenDropdown__GetMorePoints{
+    cursor: pointer;
+    display: flex;
+}
+
+.ChildrenDropdown__OptionWrapper{
+    list-style: none;
+    width: 85%;
+    height: 0;
+    display: none;
+    transition: all 0.3s ease-in;
+}
+
+.ChildrenDropdown__Option{
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.ChildrenDropdown__Option:hover{
+    background: rgb(10, 212, 250); 
+    color:white;
+}
+
+.ChildrenDropdown__CollapsibleCheck:checked ~ .ChildrenDropdown__OptionWrapper{
+    height: auto;
+    display: block;
+}
+
+.ChildrenDropdown__Arrow{
+  transition: all 0.2s;
+  transform: rotateX(0);
+}
+
+.ChildrenDropdown__CollapsibleCheck:checked + .ChildrenDropdown__GetMorePoints .ChildrenDropdown__Arrow{
+    transform: rotateX(180deg) translateY(-15%);
+}
+
+
+
+@media screen and (min-width: 600px){
+    .UserInfo{
+        font-size: .94rem;
+        gap: .89rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .42rem .52rem;
+        border-radius: 1.13rem;
+        gap: .21rem;
+    }
+
+    .UserInfo__Coin{
+        width: .84rem;
+    }
+
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+        width: 1.11rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .UserInfo{
+        font-size: 1.13rem;
+        gap: 1.16rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .53rem .63rem;
+        border-radius: 1.25rem;
+        gap: .27rem;
+    }
+    
+    .UserInfo__Coin{
+        width: 1.06rem;
+    }
+
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+        width: 1.28rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .UserInfo{
+        font-size: 1.31rem;
+        gap: 1.42rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .64rem .74rem;
+        border-radius: 1.38rem;
+        gap: .32rem;
+    }
+
+    .UserInfo__Coin{
+        width: 1.28rem;
+    }
+
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+        width: 1.45rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .UserInfo{
+        font-size: 1.5rem;
+        gap: 1.69rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .75rem .85rem;
+        border-radius: 1.5rem;
+        gap: .38rem;
+    }
+
+    .UserInfo__Coin{
+        width: 1.5rem;
+    }
+
+    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+        width: 1.63rem;
+    }
+}

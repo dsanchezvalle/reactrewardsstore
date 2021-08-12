@@ -1,5 +1,5 @@
 //Dependencies
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 //Styles
 import './Results.css'
 //Components
@@ -8,22 +8,31 @@ import ProductCard from "./ProductCard/ProductCard";
 import { AppContext } from "../../../contexts/AppContext";
 
 const Results = () => {
-    const {filteredProducts} = useContext(AppContext);
+    //Get filteredProducts and errorMessage from AppContext
+    const {filteredProducts, errorMessage, redeemHistory} = useContext(AppContext);
     
     return(
-        <>
-        <section className="ResultsGrid">
-            {filteredProducts.map(
-                product => 
-                <ProductCard
-                key={product.id+product.name}
-                name={product.name}
-                category={product.category} 
-                imagePath={product.img.hdUrl}
-                cost={product.cost}
-                />
-            )}
-        </section>
+        <>        
+            { errorMessage.length === 0 ?(
+                <section className="ResultsGrid">
+                    {filteredProducts.map(
+                        product => 
+                        <ProductCard
+                        key={product._id+product.name}
+                        productId={product._id}
+                        name={product.name}
+                        category={product.category} 
+                        imagePath={product.img.hdUrl}
+                        cost={product.cost}
+                        />
+                    )}
+                </section>
+            ):(
+                <section className='ResultsError'>
+                    <p>{errorMessage}</p>
+                </ section>
+            )
+            }
         </>
     );
 }

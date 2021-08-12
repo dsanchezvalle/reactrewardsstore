@@ -8,11 +8,20 @@ export const AppContext = createContext();
 export default function AppProvider({children}){
     //States
     const [filteredProducts, setFilteredProducts] = useState([])
-    
+    const [errorMessage, setErrorMessage] = useState('');
+    const [userInfo, setUserInfo] = useState({});
+    const [redeemHistory, setRedeemHistory] = useState([]);
+
     return(
         <AppContext.Provider value={{
             filteredProducts,
-            setFilteredProducts   
+            setFilteredProducts,
+            errorMessage,
+            setErrorMessage,
+            userInfo,
+            setUserInfo,
+            redeemHistory,
+            setRedeemHistory  
         }}>
             {children}
         </AppContext.Provider>    
