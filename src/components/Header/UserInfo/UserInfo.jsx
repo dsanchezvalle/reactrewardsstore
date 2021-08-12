@@ -11,7 +11,7 @@ import { ReactComponent as DropdownArrow} from '../../../assets/images/arrow-dow
 import { getPointsOptions } from '../../../utils/constants';
 
 const UserInfo = () => {
-    const{ userInfo, setUserInfo, setErrorMessage } = useContext(AppContext);
+    const{ userInfo, setUserInfo, setErrorMessage, redeemHistory, setRedeemHistory } = useContext(AppContext);
 
     useEffect(()=>{
         if(Object.keys(userInfo).length === 0){
@@ -38,6 +38,7 @@ const UserInfo = () => {
         }
     }, [userInfo, setUserInfo, setErrorMessage]);
 
+    //It handles the points request validating value exists in the three given options
     function handleGetPointsClick(e) {
         let requestedPoints = e.target.value;
         
@@ -55,7 +56,6 @@ const UserInfo = () => {
                     body: JSON.stringify(newBody)
                 });
                 const response = await fetchedData.json();
-                console.log(response);
                 }
                     catch(err){
                     setErrorMessage('Whoops! We got an error requesting your points. Please, try again.')
@@ -63,6 +63,31 @@ const UserInfo = () => {
             }
             getPoints();
         }
+    }
+
+    //It handles the redeem history request
+    function handleGetRedeemHistoryClick(){
+        
+        async function getRedeemHistory(){
+            try{
+                const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/history',
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTExNDkwNGQ5ZmMzODAwMjFmNjM4NDMiLCJpYXQiOjE2Mjg1MjI3NTZ9.9RRbOr2MKD1bfRKrqBzfeTf6NqH153GOgb0Wu0pDNQk'
+                        },
+                        method: 'GET'
+                    }
+                    );
+                const response = await fetchedData.json();
+                setRedeemHistory(response);
+            }
+            catch(err){
+                setErrorMessage('Whoops! We got an error requesting your redeem history. Please, try again.');
+            }
+        }
+        getRedeemHistory();
     }
 
     return(
@@ -97,7 +122,7 @@ const UserInfo = () => {
                             )}
                         </ul>
                     </li>
-                    <li className="UserInfo__DropdownOption">See your Redeem History</li>
+                    <li className="UserInfo__DropdownOption" onClick={handleGetRedeemHistoryClick}>See your Redeem History</li>
                 </ul>
             
             </div>

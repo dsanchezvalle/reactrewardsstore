@@ -9,8 +9,8 @@ import { AppContext } from "../../../contexts/AppContext";
 
 const Results = () => {
     //Get filteredProducts and errorMessage from AppContext
-    const {filteredProducts, errorMessage} = useContext(AppContext);
-
+    const {filteredProducts, errorMessage, redeemHistory} = useContext(AppContext);
+    
     return(
         <>        
             { errorMessage.length === 0 ?(
