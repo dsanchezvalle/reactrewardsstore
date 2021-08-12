@@ -65,31 +65,6 @@ const UserInfo = () => {
         }
     }
 
-    //It handles the redeem history request
-    function handleGetRedeemHistoryClick(){
-        
-        async function getRedeemHistory(){
-            try{
-                const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/history',
-                    {
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json',
-                            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTExNDkwNGQ5ZmMzODAwMjFmNjM4NDMiLCJpYXQiOjE2Mjg1MjI3NTZ9.9RRbOr2MKD1bfRKrqBzfeTf6NqH153GOgb0Wu0pDNQk'
-                        },
-                        method: 'GET'
-                    }
-                    );
-                const response = await fetchedData.json();
-                setRedeemHistory(response);
-            }
-            catch(err){
-                setErrorMessage('Whoops! We got an error requesting your redeem history. Please, try again.');
-            }
-        }
-        getRedeemHistory();
-    }
-
     return(
         <section className="UserInfo">
             <div className="UserInfo__PointsWrapper">
@@ -122,7 +97,6 @@ const UserInfo = () => {
                             )}
                         </ul>
                     </li>
-                    <li className="UserInfo__DropdownOption" onClick={handleGetRedeemHistoryClick}>See your Redeem History</li>
                 </ul>
             
             </div>
