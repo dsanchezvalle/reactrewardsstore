@@ -11,6 +11,7 @@ export default function AppProvider({children}){
     const [errorMessage, setErrorMessage] = useState('');
     const [userInfo, setUserInfo] = useState({});
     const [redeemHistory, setRedeemHistory] = useState([]);
+    const [showFilters, setShowFilters] = useState(true);
 
     return(
         <AppContext.Provider value={{
@@ -21,7 +22,9 @@ export default function AppProvider({children}){
             userInfo,
             setUserInfo,
             redeemHistory,
-            setRedeemHistory  
+            setRedeemHistory,
+            showFilters,
+            setShowFilters  
         }}>
             {children}
         </AppContext.Provider>    

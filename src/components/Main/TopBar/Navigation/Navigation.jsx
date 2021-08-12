@@ -6,11 +6,12 @@ import { AppContext } from '../../../../contexts/AppContext';
 import './Navigation.css'
 
 const Navigation = () => {
-    const {setRedeemHistory, setErrorMessage} = useContext(AppContext);
+    const {setRedeemHistory, setErrorMessage, setShowFilters} = useContext(AppContext);
     //It handles the redeem history request
     function handleGetRedeemHistoryClick(){
         
         async function getRedeemHistory(){
+            setShowFilters(false);
             try{
                 const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/history',
                     {
@@ -37,7 +38,7 @@ const Navigation = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Store </Link>
+                    <Link to="/" onClick={()=>setShowFilters(true)}>Store</Link>
                 </li>
                 <li>
                     <Link to="/history" onClick={handleGetRedeemHistoryClick}>Redeem History</Link>
