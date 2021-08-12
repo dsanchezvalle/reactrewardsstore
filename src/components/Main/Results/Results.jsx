@@ -18,7 +18,8 @@ const Results = () => {
                     {filteredProducts.map(
                         product => 
                         <ProductCard
-                        key={product.id+product.name}
+                        key={product._id+product.name}
+                        productId={product._id}
                         name={product.name}
                         category={product.category} 
                         imagePath={product.img.hdUrl}
