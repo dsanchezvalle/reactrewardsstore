@@ -6,10 +6,12 @@ import './TopBar.css'
 import ProductsPerPage from '../components/ProductsPerPage/ProductsPerPage'
 import Filters from "./Filters/Filters";
 import PaginationArrows from "../components/PaginationArrows/PaginationArrows";
+import Navigation from "./Navigation/Navigation";
 
 const TopBar = () => {
     return(
         <>
+        <Navigation />
         <section className="TopBar">
             <ProductsPerPage />
             <Filters />

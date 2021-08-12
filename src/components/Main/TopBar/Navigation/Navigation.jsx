@@ -5,8 +5,6 @@ import { AppContext } from '../../../../contexts/AppContext';
 //Styles
 import './Navigation.css'
 
-
-
 const Navigation = () => {
     const {setRedeemHistory, setErrorMessage} = useContext(AppContext);
     //It handles the redeem history request
