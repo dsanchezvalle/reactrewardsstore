@@ -10,9 +10,9 @@ const ResultsGrid = ({productList}) => {
         <>
             <section className="ResultsGrid">
                 {productList.map(
-                    product => 
+                    (product, index) => 
                     <ProductCard
-                    key={product._id+product.name}
+                    key={index+product._id+product.name}
                     productId={product._id}
                     name={product.name}
                     category={product.category} 
