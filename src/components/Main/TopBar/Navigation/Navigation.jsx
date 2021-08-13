@@ -1,6 +1,6 @@
 //Dependencies
 import React, { useContext } from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AppContext } from '../../../../contexts/AppContext';
 //Styles
 import './Navigation.css'
@@ -35,14 +35,10 @@ const Navigation = () => {
 
     return(
         <>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/" onClick={()=>setShowFilters(true)}>Store</Link>
-                </li>
-                <li>
-                    <Link to="/history" onClick={handleGetRedeemHistoryClick}>Redeem History</Link>
-                </li>
+        <nav className="Navigation">
+            <ul className="Navigation__List">
+                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/" onClick={()=>setShowFilters(true)}>Store</NavLink>
+                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/history" onClick={handleGetRedeemHistoryClick}>Redeem History</NavLink>
             </ul>
         </nav>
         </>
