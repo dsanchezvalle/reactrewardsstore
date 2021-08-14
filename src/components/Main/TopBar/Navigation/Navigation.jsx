@@ -6,13 +6,14 @@ import { AppContext } from '../../../../contexts/AppContext';
 import './Navigation.css'
 
 const Navigation = () => {
-    const {setRedeemHistory, setErrorMessage, setShowFilters} = useContext(AppContext);
+    const {setRedeemHistory, setErrorMessage, setShowFilters, setIsLoading} = useContext(AppContext);
     //It handles the redeem history request
     function handleGetRedeemHistoryClick(){
         
         async function getRedeemHistory(){
             setShowFilters(false);
             try{
+                setIsLoading(true);
                 const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/history',
                     {
                         headers: {
@@ -24,6 +25,7 @@ const Navigation = () => {
                     }
                     );
                 const response = await fetchedData.json();
+                setIsLoading(false);
                 setRedeemHistory(response);
             }
             catch(err){
