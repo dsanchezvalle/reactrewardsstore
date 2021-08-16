@@ -20,15 +20,6 @@
     cursor: pointer;
 }
 
-.UserInfo__ArrowBackground{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondary-bkgd-color);
-    padding: .31rem .41rem;
-    border-radius: 1rem;
-}
-
 .UserInfo__Coin{
     width: .63rem;
     height: auto;
@@ -48,10 +39,6 @@
     width: .94rem;
     height: auto;
     padding-top: 3%;    
-}
-
-.ChildrenDropdown__Arrow{
-    padding-left: 3%;
 }
 
 #UserInfo__CollapsibleCheck{
@@ -76,12 +63,6 @@
 .UserInfo__DropdownOption{
     width: 100%;
     padding: 3% 10%;
-}
-
-.ChildrenDropdown__GetMorePoints{
-    margin-left: -12%;
-    margin-right: -12%;
-    padding-left: 13%;
 }
 
 .UserInfo__DropdownOption:last-child{
@@ -145,7 +126,7 @@
         width: .84rem;
     }
 
-    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+    .UserInfo__Arrow{
         width: 1.11rem;
     }
 
@@ -172,7 +153,7 @@
         width: 1.06rem;
     }
 
-    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+    .UserInfo__Arrow{
         width: 1.28rem;
     }
 
@@ -199,7 +180,7 @@
         width: 1.28rem;
     }
 
-    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+    .UserInfo__Arrow{
         width: 1.45rem;
     }
 
@@ -226,7 +207,7 @@
         width: 1.5rem;
     }
 
-    .UserInfo__Arrow, .ChildrenDropdown__Arrow{
+    .UserInfo__Arrow{
         width: 1.63rem;
     }
 
