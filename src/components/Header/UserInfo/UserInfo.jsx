@@ -1,5 +1,6 @@
 //Dependencies 
 import React, {useContext, useEffect} from 'react'
+import Swal from 'sweetalert2'
 //Styles
 import './UserInfo.css'
 //Context
@@ -64,9 +65,26 @@ const UserInfo = () => {
                     body: JSON.stringify(newBody)
                 });
                 const response = await fetchedData.json();
+                if(response.message === 'Points Updated'){
+                    Swal.fire({
+                        title: `Enjoy your points!`,
+                        text: `You have redeemed ${pointsToRedeem} sucessfully. Now you have ${response['New Points']} points`,
+                        icon: 'success',                            
+                        customClass: {
+                            confirmButton: 'PopUpBtn'
+                        }
+                    });
+                }
                 }
                     catch(err){
-                    setErrorMessage('Whoops! We got an error requesting your points. Please, try again.')
+                    Swal.fire({
+                        title: `Whoops!`,
+                        text: "We got an error requesting your points. Please, try again.",
+                        icon: 'error',                            
+                        customClass: {
+                            confirmButton: 'PopUpBtn'
+                        }
+                    });
                 }
             }
             getPoints();
