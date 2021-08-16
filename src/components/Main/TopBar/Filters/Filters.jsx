@@ -4,9 +4,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../../../contexts/AppContext';
 //Styles 
 import './Filters.css'
+//Constants
 import { initialFilters, filterPriceOptions } from '../../../../utils/constants';
 
 const Filters = () => {
+    //States and Context
     const {setFilteredProducts, setErrorMessage} = useContext(AppContext);
     const [productList, setProductList] = useState([]);
     const [filterList, setFilterList] = useState(initialFilters);
@@ -41,6 +43,21 @@ const Filters = () => {
             setFilterCategoryOptions(categoryList);
         }
 
+        //It gets categories from the fetched productList and creates an object out of it
+        function getCategoryOptions(){
+            //Get categories from fetched productList
+            let categoryArray = productList.map((product) => product.category);
+            let uniqueCategories = categoryArray.filter((value, index, self) => self.indexOf(value) === index);
+            //Create object with category options
+            let categoryOptions = uniqueCategories.map((category, index)=>{
+                return {
+                    value: index+1,
+                    text: category
+                }
+            });
+            return [{value: 0, text: 'All Categories'}, ...categoryOptions];
+        }
+
         //2. Apply filters to productList to produce filteredList
         const initialProductList = [...productList];    
         let newFilteredProducts = filterProducts(initialProductList, filterList, getCategoryOptions);
@@ -55,7 +72,7 @@ const Filters = () => {
         let filteredProductList = [];
         let filteredProductList2 = [];
         let categories = getCategoryOptions();
-        
+
         //SORTING products by price
         if(filters[0].value === 0){
             filteredProductList = products;
@@ -81,21 +98,6 @@ const Filters = () => {
         
     }
 
-    //It gets categories from the fetched productList and creates an object out of it
-    function getCategoryOptions(){
-        //Get categories from fetched productList
-        let categoryArray = productList.map((product) => product.category);
-        let uniqueCategories = categoryArray.filter((value, index, self) => self.indexOf(value) === index);
-        //Create object with category options
-        let categoryOptions = uniqueCategories.map((category, index)=>{
-            return {
-                value: index+1,
-                text: category
-            }
-        });
-        return [{value: 0, text: 'All Categories'}, ...categoryOptions];
-    }
-
     //It handles the change on filters
     function handleFilter(e){
         let newFilterList = filterList.map(filter => {
@@ -118,7 +120,7 @@ const Filters = () => {
                 {filterPriceOptions.map((filterItem) => <option key={`k-${filterItem.text}`} value={filterItem.value}>{filterItem.text}</option>)}                
             </select>
             <select className="FilterCategory" name="FilterCategory" id="FilterCategory" onChange={handleFilter}>
-            {filterCategoryOptions.map((filterItem) => <option key={`k-${filterItem.text}`} value={filterItem.value}>{filterItem.text}</option>)}                
+                {filterCategoryOptions.map((filterItem) => <option key={`k-${filterItem.text}`} value={filterItem.value}>{filterItem.text}</option>)}                
             </select>
         </article>
         </>
