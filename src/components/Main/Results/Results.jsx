@@ -11,8 +11,11 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
 
 const Results = () => {
     //Get filteredProducts and errorMessage from AppContext
-    const {filteredProducts, errorMessage, redeemHistory, isLoading} = useContext(AppContext);
-    
+    const {filteredProducts, errorMessage, redeemHistory, isLoading, getCurrentPageProducts, getCurrentPageRedeemed} = useContext(AppContext);
+
+    let currentPageProducts = getCurrentPageProducts();
+    let currentPageRedeemed = getCurrentPageRedeemed();
+
     return(
         <>
         <Switch>
@@ -22,7 +25,7 @@ const Results = () => {
                 {redeemHistory.length === 0 && <p>You have not redeemed products yet.</p>}
                 {(redeemHistory.length !== 0 && errorMessage.length === 0 && !isLoading) ? 
                     (
-                        <ResultsGrid productList={redeemHistory} />                                
+                        <ResultsGrid productList={currentPageRedeemed} />                                
                     ):(
                         <section className='ResultsError'>
                             <p>{errorMessage}</p>
@@ -34,7 +37,7 @@ const Results = () => {
 
             <Route path="/">
                 { errorMessage.length === 0 ?(
-                    <ResultsGrid productList={filteredProducts} /> 
+                    <ResultsGrid productList={currentPageProducts} /> 
                 ):(
                     <section className='ResultsError'>
                         <p>{errorMessage}</p>
