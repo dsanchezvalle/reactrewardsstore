@@ -80,10 +80,10 @@ const Filters = () => {
         <article className="FiltersContainer">
             <p className="FilterLabel">Sort by:</p>
             <select className="FilterPrice" name="FilterPrice" id="FilterPrice" value={filterList[0].value} onChange={handleFilter} >
-                {filterPriceOptions.map((filterItem) => <option value={filterItem.value}>{filterItem.text}</option>)}                
+                {filterPriceOptions.map((filterItem) => <option key={`k-${filterItem.text}`} value={filterItem.value}>{filterItem.text}</option>)}                
             </select>
             <select className="FilterCategory" name="FilterCategory" id="FilterCategory" onChange={handleFilter}>
-            {filterCategoryOptions.map((filterItem) => <option value={filterItem.value}>{filterItem.text}</option>)}                
+            {filterCategoryOptions.map((filterItem) => <option key={`k-${filterItem.text}`} value={filterItem.value}>{filterItem.text}</option>)}                
             </select>
         </article>
         </>
