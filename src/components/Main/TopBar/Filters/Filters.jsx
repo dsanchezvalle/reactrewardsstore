@@ -4,10 +4,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../../../contexts/AppContext';
 //Styles 
 import './Filters.css'
+import { initialFilters, filterPriceOptions } from '../../../../utils/constants';
 
 const Filters = () => {
     const {setFilteredProducts, setErrorMessage} = useContext(AppContext);
     const [productList, setProductList] = useState([]);
+    const [filterList, setFilterList] = useState(initialFilters);
+    const [filterCategoryOptions, setFilterCategoryOptions] = useState([]);
     
     //1. Fetch productList from API and set it.
     useEffect(()=>{
@@ -33,27 +36,54 @@ const Filters = () => {
         }
         getProducts();
     }
+    else{
+        function getCategoryOptions(){
+            //Get categories from fetched productList
+            let categoryArray = productList.map((product) => product.category);
+            let uniqueCategories = categoryArray.filter((value, index, self) => self.indexOf(value) === index);
+            //Create object with category options
+            let categoryOptions = uniqueCategories.map((category, index)=>{
+                return {
+                    value: index+1,
+                    text: category
+                }
+            });
+            return [{value: 0, text: 'All Categories'}, ...categoryOptions];
+        }
+        setFilterCategoryOptions(getCategoryOptions());
+    }
         //setProductList(products);
     //2. Apply filters to productList to produce filteredList
+        
         const newFilteredProducts = productList; //This will be filtered
     //3. Set filteredList (context)
         setFilteredProducts(newFilteredProducts);
     }    
-    ,[productList, setErrorMessage, setFilteredProducts]);    
+    ,[productList, setErrorMessage, setFilteredProducts, setFilterCategoryOptions]);
+    
+    //It handles the change on filters
+    function handleFilter(e){
+        let newFilterList = filterList.map(filter => {
+            return filter.filterId === e.target.id ?
+            {
+                filterId: e.target.id, 
+                value: e.target.value
+            }
+            :
+            filter; 
+        } );
+        setFilterList(newFilterList);
+    }
 
     return(
         <>
         <article className="FiltersContainer">
             <p className="FilterLabel">Sort by:</p>
-            <select className="FilterPrice" name="filter1" id="filter1" /* value={0} */>
-                <option value={0}>Price</option>
-                <option value={1}>Lowest $</option>
-                <option value={2}>Highest $</option>
+            <select className="FilterPrice" name="FilterPrice" id="FilterPrice" value={filterList[0].value} onChange={handleFilter} >
+                {filterPriceOptions.map((filterItem) => <option value={filterItem.value}>{filterItem.text}</option>)}                
             </select>
-            <select className="FilterCategory" name="FilterCategory" id="filter2" /* value={0} */>
-                <option value={0}>Category</option>
-                <option value={1}>Category 1</option>
-                <option value={2}>Category 2</option>
+            <select className="FilterCategory" name="FilterCategory" id="FilterCategory" onChange={handleFilter}>
+            {filterCategoryOptions.map((filterItem) => <option value={filterItem.value}>{filterItem.text}</option>)}                
             </select>
         </article>
         </>
