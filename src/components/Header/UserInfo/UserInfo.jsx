@@ -1,5 +1,6 @@
 //Dependencies 
 import React, {useContext, useEffect} from 'react'
+import Swal from 'sweetalert2'
 //Styles
 import './UserInfo.css'
 //Context
@@ -11,7 +12,7 @@ import { ReactComponent as DropdownArrow} from '../../../assets/images/arrow-dow
 import { getPointsOptions } from '../../../utils/constants';
 
 const UserInfo = () => {
-    const{ userInfo, setUserInfo, setErrorMessage, redeemHistory, setRedeemHistory } = useContext(AppContext);
+    const{ userInfo, setUserInfo, setErrorMessage } = useContext(AppContext);
 
     useEffect(()=>{
         if(Object.keys(userInfo).length === 0){
@@ -38,9 +39,16 @@ const UserInfo = () => {
         }
     }, [userInfo, setUserInfo, setErrorMessage]);
 
+    //It handles click on the Points Wrapper
+    function handlePointsWrapperClick() {
+        let menu = document.getElementById('UserInfo__CollapsibleCheck');
+        menu.checked = !menu.checked;
+    }
+
     //It handles the points request validating value exists in the three given options
-    function handleGetPointsClick(e) {
-        let requestedPoints = e.target.value;
+    function handleGetPointsClick(pointsToRedeem) {
+        let requestedPoints = pointsToRedeem;
+        let menu = document.getElementById('UserInfo__CollapsibleCheck');
         
         if(getPointsOptions.includes(requestedPoints)){
             async function getPoints(){
@@ -56,75 +64,72 @@ const UserInfo = () => {
                     body: JSON.stringify(newBody)
                 });
                 const response = await fetchedData.json();
+                if(response.message === 'Points Updated'){
+                    Swal.fire({
+                        title: `Enjoy your points!`,
+                        text: `You have redeemed ${pointsToRedeem} points sucessfully. Now you have ${response['New Points']} points`,
+                        icon: 'success',                            
+                        customClass: {
+                            confirmButton: 'PopUpBtn'
+                        }
+                    });
+                    menu.checked = false;
+                }
                 }
                     catch(err){
-                    setErrorMessage('Whoops! We got an error requesting your points. Please, try again.')
+                    Swal.fire({
+                        title: `Whoops!`,
+                        text: "We got an error requesting your points. Please, try again.",
+                        icon: 'error',                            
+                        customClass: {
+                            confirmButton: 'PopUpBtn'
+                        }
+                    });
+                    menu.checked = false;
                 }
             }
             getPoints();
         }
-    }
-
-    //It handles the redeem history request
-    function handleGetRedeemHistoryClick(){
-        
-        async function getRedeemHistory(){
-            try{
-                const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/history',
-                    {
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json',
-                            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTExNDkwNGQ5ZmMzODAwMjFmNjM4NDMiLCJpYXQiOjE2Mjg1MjI3NTZ9.9RRbOr2MKD1bfRKrqBzfeTf6NqH153GOgb0Wu0pDNQk'
-                        },
-                        method: 'GET'
-                    }
-                    );
-                const response = await fetchedData.json();
-                setRedeemHistory(response);
-            }
-            catch(err){
-                setErrorMessage('Whoops! We got an error requesting your redeem history. Please, try again.');
-            }
+        else{
+            Swal.fire({
+                title: `Whoops!`,
+                text: "You can not request that amount of points. Please, try again.",
+                icon: 'error',                            
+                customClass: {
+                    confirmButton: 'PopUpBtn'
+                }
+            });    
         }
-        getRedeemHistory();
     }
 
     return(
         <section className="UserInfo">
-            <div className="UserInfo__PointsWrapper">
-                {userInfo.points} 
-                <Coin className="UserInfo__Coin" />
-            </div>
+            <p className="UserInfo__Name">{userInfo.name}</p>
             <div className="User__InfoMenu">
-                <p className="UserInfo__Name">{userInfo.name}</p>
-                <input type="checkbox" className="UserInfo__CollapsibleCheck" id="UserInfo__CollapsibleCheck" />
-                <label className="UserInfo__ArrowWrapper" htmlFor="UserInfo__CollapsibleCheck">
-                    <DropdownArrow className="UserInfo__Arrow"/>    
-                </label>
-                <ul className="UserInfo__DropdownWrapper">
-                    <li className="UserInfo__DropdownOption" id="MorePoints">
-                        <input type="checkbox" id="ChildrenDropdown__CollapsibleCheck" className="ChildrenDropdown__CollapsibleCheck" />
-                        <label htmlFor="ChildrenDropdown__CollapsibleCheck" className="ChildrenDropdown__GetMorePoints">
-                            <p>Get More points</p>
-                            <DropdownArrow className="ChildrenDropdown__Arrow"/>
-                        </label>
-                        <ul className="ChildrenDropdown__OptionWrapper">
-                            {getPointsOptions.map((optionItem)=>
-                                <li 
-                                key={`k-${optionItem}`} 
-                                className="ChildrenDropdown__Option"
-                                value={optionItem}
-                                onClick={handleGetPointsClick}
-                                >
-                                    {optionItem}
-                                </li>    
-                            )}
-                        </ul>
-                    </li>
-                    <li className="UserInfo__DropdownOption" onClick={handleGetRedeemHistoryClick}>See your Redeem History</li>
-                </ul>
-            
+                <div className="UserInfo__PointsWrapper" onClick={handlePointsWrapperClick}>
+                    {userInfo.points} 
+                    <Coin className="UserInfo__Coin" />
+                    <input type="checkbox" className="UserInfo__CollapsibleCheck" id="UserInfo__CollapsibleCheck" />
+                    <label className="UserInfo__ArrowWrapper" htmlFor="UserInfo__CollapsibleCheck">
+                        <DropdownArrow className="UserInfo__Arrow"/>    
+                    </label>
+                    <ul className="UserInfo__DropdownWrapper">
+                        <li className="UserInfo__DropdownOption" id="MorePoints">
+                            <p>Get more points...</p>
+                            <ul className="MorePoints__OptionWrapper">
+                                {getPointsOptions.map((optionItem)=>
+                                    <li 
+                                    key={`k-${optionItem}`} 
+                                    value={optionItem}
+                                    onClick={() => handleGetPointsClick(optionItem)}
+                                    >
+                                    <div className="MorePoints__Option">{optionItem}<Coin className="UserInfo__Coin" /></div>                                    
+                                    </li>    
+                                )}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     );

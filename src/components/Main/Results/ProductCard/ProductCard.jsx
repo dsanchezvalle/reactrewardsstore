@@ -1,5 +1,6 @@
 //Dependencies
 import React, { useContext } from 'react'
+import Swal from 'sweetalert2'
 //Styles
 import './ProductCard.css'
 //Icons
@@ -11,7 +12,7 @@ import { AppContext } from '../../../../contexts/AppContext'
 
 const ProductCard = ({productId, name, category, imagePath, cost}) => {
     //Get userInfo from AppContext
-    const { userInfo, setErrorMessage } = useContext(AppContext);
+    const { userInfo } = useContext(AppContext);
     
     let userPoints = userInfo.points;
     //Check if current user can redeem a specific product 
@@ -23,7 +24,7 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
         return productCost - points;
     }
 
-    function handleRedeemProductClick(clickedProductId){
+    function handleRedeemProductClick(clickedProductId, name){
         let newBody = {productId: clickedProductId}
         if(userPoints>=cost){
             async function redeemProduct(){
@@ -38,16 +39,39 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
                         body: JSON.stringify(newBody)
                     });
                     const response = await fetchedData.json();
+                    if(response.message === "You've redeem the product successfully"){
+                        Swal.fire({
+                            title: `It's yours!`,
+                            text: `You have redeemed ${name} sucessfully`,
+                            icon: 'success',                            
+                            customClass: {
+                                confirmButton: 'PopUpBtn'
+                            }
+                        });
+                    }
                 }
                 catch(err){
-                    setErrorMessage('Whoops! We got an error while redeeming the product. Please, try again.');
+                    Swal.fire({
+                        title: `Whoops!`,
+                        text: "We got an error while redeeming the product. Please, try again.",
+                        icon: 'error',                            
+                        customClass: {
+                            confirmButton: 'PopUpBtn'
+                        }
+                    });
                 }
             }
             redeemProduct();
         }
         else{
-            console.log('You do not have enough points to redeem this product. Try requesting more points.');
-            setErrorMessage('You do not have enough points to redeem this product. Try requesting more points.');
+            Swal.fire({
+                title: `Whoops!`,
+                text: "You don't have enough points to redeem this product. Try requesting more points.",
+                icon: 'error',                            
+                customClass: {
+                    confirmButton: 'PopUpBtn'
+                }
+            });
         }
     }
 
@@ -69,7 +93,7 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
                             <p>{cost}</p>
                             <Coin className="ProductCard__RedeemCoin"/>
                         </div>
-                        <button className="ProductCard__RedeemBtn" onClick={()=> handleRedeemProductClick(productId)}>Redeem Now</button>    
+                        <button className="ProductCard__RedeemBtn" onClick={()=> handleRedeemProductClick(productId, name)}>Redeem Now</button>    
                     </section>
                     
                 </section>

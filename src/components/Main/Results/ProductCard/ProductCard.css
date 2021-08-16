@@ -123,6 +123,14 @@
     font-size: 0.625rem;
 }
 
+/* Modal styles */
+.PopUpBtn{
+    background-color: #0AD4FA !important;
+    color: var(--light-font-color) !important;
+    border-radius: 1.5rem !important;
+    font-weight: 600 !important;
+}
+
 /* Media Queries */
 @media screen and (min-width: 480px){
     .ProductCard{

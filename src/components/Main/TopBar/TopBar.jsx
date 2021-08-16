@@ -1,18 +1,24 @@
 //Dependencies
-import React from "react";
+import React, { useContext } from "react";
 //Styles
 import './TopBar.css'
 //Components
 import ProductsPerPage from '../components/ProductsPerPage/ProductsPerPage'
 import Filters from "./Filters/Filters";
 import PaginationArrows from "../components/PaginationArrows/PaginationArrows";
+import Navigation from "./Navigation/Navigation";
+//Context
+import { AppContext } from "../../../contexts/AppContext";
 
 const TopBar = () => {
+    const {showFilters} = useContext (AppContext);
+
     return(
         <>
+        <Navigation />
         <section className="TopBar">
             <ProductsPerPage />
-            <Filters />
+            {showFilters && <Filters />}
             <PaginationArrows />
         </section>
         </>
