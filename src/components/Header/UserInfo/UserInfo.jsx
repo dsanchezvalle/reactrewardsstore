@@ -11,7 +11,7 @@ import { ReactComponent as DropdownArrow} from '../../../assets/images/arrow-dow
 import { getPointsOptions } from '../../../utils/constants';
 
 const UserInfo = () => {
-    const{ userInfo, setUserInfo, setErrorMessage, redeemHistory, setRedeemHistory } = useContext(AppContext);
+    const{ userInfo, setUserInfo, setErrorMessage } = useContext(AppContext);
 
     useEffect(()=>{
         if(Object.keys(userInfo).length === 0){
@@ -38,9 +38,17 @@ const UserInfo = () => {
         }
     }, [userInfo, setUserInfo, setErrorMessage]);
 
+    //It handles click on the Points Wrapper
+    function handlePointsWrapperClick() {
+        let menu = document.getElementById('UserInfo__CollapsibleCheck');
+        menu.checked = !menu.checked;
+    }
+
     //It handles the points request validating value exists in the three given options
-    function handleGetPointsClick(e) {
-        let requestedPoints = e.target.value;
+    function handleGetPointsClick(pointsToRedeem) {
+        let requestedPoints = pointsToRedeem;
+        let menu = document.getElementById('UserInfo__CollapsibleCheck');
+        menu.checked = false;
         
         if(getPointsOptions.includes(requestedPoints)){
             async function getPoints(){
@@ -67,38 +75,32 @@ const UserInfo = () => {
 
     return(
         <section className="UserInfo">
-            <div className="UserInfo__PointsWrapper">
-                {userInfo.points} 
-                <Coin className="UserInfo__Coin" />
-            </div>
+            <p className="UserInfo__Name">{userInfo.name}</p>
             <div className="User__InfoMenu">
-                <p className="UserInfo__Name">{userInfo.name}</p>
-                <input type="checkbox" className="UserInfo__CollapsibleCheck" id="UserInfo__CollapsibleCheck" />
-                <label className="UserInfo__ArrowWrapper" htmlFor="UserInfo__CollapsibleCheck">
-                    <DropdownArrow className="UserInfo__Arrow"/>    
-                </label>
-                <ul className="UserInfo__DropdownWrapper">
-                    <li className="UserInfo__DropdownOption" id="MorePoints">
-                        <input type="checkbox" id="ChildrenDropdown__CollapsibleCheck" className="ChildrenDropdown__CollapsibleCheck" />
-                        <label htmlFor="ChildrenDropdown__CollapsibleCheck" className="ChildrenDropdown__GetMorePoints">
-                            <p>Get More points</p>
-                            <DropdownArrow className="ChildrenDropdown__Arrow"/>
-                        </label>
-                        <ul className="ChildrenDropdown__OptionWrapper">
-                            {getPointsOptions.map((optionItem)=>
-                                <li 
-                                key={`k-${optionItem}`} 
-                                className="ChildrenDropdown__Option"
-                                value={optionItem}
-                                onClick={handleGetPointsClick}
-                                >
-                                    {optionItem}
-                                </li>    
-                            )}
-                        </ul>
-                    </li>
-                </ul>
-            
+                <div className="UserInfo__PointsWrapper" onClick={handlePointsWrapperClick}>
+                    {userInfo.points} 
+                    <Coin className="UserInfo__Coin" />
+                    <input type="checkbox" className="UserInfo__CollapsibleCheck" id="UserInfo__CollapsibleCheck" />
+                    <label className="UserInfo__ArrowWrapper" htmlFor="UserInfo__CollapsibleCheck">
+                        <DropdownArrow className="UserInfo__Arrow"/>    
+                    </label>
+                    <ul className="UserInfo__DropdownWrapper">
+                        <li className="UserInfo__DropdownOption" id="MorePoints">
+                            <p>Get more points...</p>
+                            <ul className="MorePoints__OptionWrapper">
+                                {getPointsOptions.map((optionItem)=>
+                                    <li 
+                                    key={`k-${optionItem}`} 
+                                    value={optionItem}
+                                    onClick={() => handleGetPointsClick(optionItem)}
+                                    >
+                                    <div className="MorePoints__Option">{optionItem}<Coin className="UserInfo__Coin" /></div>                                    
+                                    </li>    
+                                )}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     );
