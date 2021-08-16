@@ -1,5 +1,7 @@
 //Dependencies
 import { createContext, useState } from 'react'
+//Hooks
+import usePagination from '../hooks/usePagination';
 
 //Context creation
 export const AppContext = createContext();
@@ -13,7 +15,23 @@ export default function AppProvider({children}){
     const [redeemHistory, setRedeemHistory] = useState([]);
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-
+    const [
+        nextProductsPage, 
+        prevProductsPage, 
+        jumpProductsPage, 
+        getCurrentPageProducts, 
+        currentProductsPage, 
+        maxProductsPage
+    ] = usePagination(filteredProducts,16);
+    const [
+        nextRedeemedPage, 
+        prevRedeemedPage, 
+        jumpRedeemedPage, 
+        getCurrentPageRedeemed, 
+        currentRedeemedPage, 
+        maxRedeemedPage
+    ] = usePagination(redeemHistory,16);
+    
     return(
         <AppContext.Provider value={{
             filteredProducts,
@@ -27,7 +45,17 @@ export default function AppProvider({children}){
             showFilters,
             setShowFilters,
             isLoading,
-            setIsLoading  
+            setIsLoading,
+            nextProductsPage, 
+            prevProductsPage,
+            getCurrentPageProducts, 
+            currentProductsPage, 
+            maxProductsPage,
+            nextRedeemedPage, 
+            prevRedeemedPage, 
+            getCurrentPageRedeemed, 
+            currentRedeemedPage, 
+            maxRedeemedPage            
         }}>
             {children}
         </AppContext.Provider>    
