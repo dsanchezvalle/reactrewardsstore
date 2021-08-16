@@ -49,7 +49,6 @@ const UserInfo = () => {
     function handleGetPointsClick(pointsToRedeem) {
         let requestedPoints = pointsToRedeem;
         let menu = document.getElementById('UserInfo__CollapsibleCheck');
-        menu.checked = false;
         
         if(getPointsOptions.includes(requestedPoints)){
             async function getPoints(){
@@ -68,12 +67,13 @@ const UserInfo = () => {
                 if(response.message === 'Points Updated'){
                     Swal.fire({
                         title: `Enjoy your points!`,
-                        text: `You have redeemed ${pointsToRedeem} sucessfully. Now you have ${response['New Points']} points`,
+                        text: `You have redeemed ${pointsToRedeem} points sucessfully. Now you have ${response['New Points']} points`,
                         icon: 'success',                            
                         customClass: {
                             confirmButton: 'PopUpBtn'
                         }
                     });
+                    menu.checked = false;
                 }
                 }
                     catch(err){
@@ -85,9 +85,20 @@ const UserInfo = () => {
                             confirmButton: 'PopUpBtn'
                         }
                     });
+                    menu.checked = false;
                 }
             }
             getPoints();
+        }
+        else{
+            Swal.fire({
+                title: `Whoops!`,
+                text: "You can not request that amount of points. Please, try again.",
+                icon: 'error',                            
+                customClass: {
+                    confirmButton: 'PopUpBtn'
+                }
+            });    
         }
     }
 
