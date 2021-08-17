@@ -9,7 +9,7 @@ import { initialFilters, filterPriceOptions } from '../../../../utils/constants'
 
 const Filters = () => {
     //States and Context
-    const {setFilteredProducts, setErrorMessage} = useContext(AppContext);
+    const {setFilteredProducts, setErrorMessage, setProductsCurrentPage } = useContext(AppContext);
     const [productList, setProductList] = useState([]);
     const [filterList, setFilterList] = useState(initialFilters);
     const [filterCategoryOptions, setFilterCategoryOptions] = useState([]);
@@ -110,6 +110,7 @@ const Filters = () => {
             filter; 
         } );
         setFilterList(newFilterList);
+        setProductsCurrentPage(1); 
     }
 
     return(
