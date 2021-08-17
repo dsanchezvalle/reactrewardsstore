@@ -23,7 +23,8 @@ export default function AppProvider({children}){
         jumpProductsPage, 
         getCurrentPageProducts, 
         currentProductsPage, 
-        maxProductsPage
+        maxProductsPage,
+        setProductsCurrentPage
     ] = usePagination(filteredProducts,16);
     const [
         nextRedeemedPage, 
@@ -31,7 +32,8 @@ export default function AppProvider({children}){
         jumpRedeemedPage, 
         getCurrentPageRedeemed, 
         currentRedeemedPage, 
-        maxRedeemedPage
+        maxRedeemedPage,
+        setRedeemedCurrentPage
     ] = usePagination(redeemHistory,16);
     
     let totalProducts = filteredProducts.length;
@@ -64,7 +66,9 @@ export default function AppProvider({children}){
             productsPerPage,
             redeemedPerPage,
             totalProducts,
-            totalRedeemed            
+            totalRedeemed,
+            setProductsCurrentPage,
+            setRedeemedCurrentPage            
         }}>
             {children}
         </AppContext.Provider>    
