@@ -1,5 +1,7 @@
 //Dependencies
 import { createContext, useState } from 'react'
+//Hooks
+import usePagination from '../hooks/usePagination';
 
 //Context creation
 export const AppContext = createContext();
@@ -13,6 +15,29 @@ export default function AppProvider({children}){
     const [redeemHistory, setRedeemHistory] = useState([]);
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
+    const [productsPerPage, setProductsPerPage] = useState(16);
+    const [redeemedPerPage, setRedeemedPerPage] = useState(16);
+    const [
+        nextProductsPage, 
+        prevProductsPage, 
+        jumpProductsPage, 
+        getCurrentPageProducts, 
+        currentProductsPage, 
+        maxProductsPage,
+        setProductsCurrentPage
+    ] = usePagination(filteredProducts,16);
+    const [
+        nextRedeemedPage, 
+        prevRedeemedPage, 
+        jumpRedeemedPage, 
+        getCurrentPageRedeemed, 
+        currentRedeemedPage, 
+        maxRedeemedPage,
+        setRedeemedCurrentPage
+    ] = usePagination(redeemHistory,16);
+    
+    let totalProducts = filteredProducts.length;
+    let totalRedeemed = redeemHistory.length;
 
     return(
         <AppContext.Provider value={{
@@ -27,7 +52,23 @@ export default function AppProvider({children}){
             showFilters,
             setShowFilters,
             isLoading,
-            setIsLoading  
+            setIsLoading,
+            nextProductsPage, 
+            prevProductsPage,
+            getCurrentPageProducts, 
+            currentProductsPage, 
+            maxProductsPage,
+            nextRedeemedPage, 
+            prevRedeemedPage, 
+            getCurrentPageRedeemed, 
+            currentRedeemedPage, 
+            maxRedeemedPage,
+            productsPerPage,
+            redeemedPerPage,
+            totalProducts,
+            totalRedeemed,
+            setProductsCurrentPage,
+            setRedeemedCurrentPage            
         }}>
             {children}
         </AppContext.Provider>    
