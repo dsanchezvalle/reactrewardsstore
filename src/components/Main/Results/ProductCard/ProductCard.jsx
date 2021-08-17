@@ -26,6 +26,8 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
 
     function handleRedeemProductClick(clickedProductId, name){
         let newBody = {productId: clickedProductId}
+        let menu = document.getElementById('UserInfo__CollapsibleCheck');
+        menu.checked = false;
         if(userPoints>=cost){
             async function redeemProduct(){
                 try{
