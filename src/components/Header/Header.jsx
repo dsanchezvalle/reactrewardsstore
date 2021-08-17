@@ -6,8 +6,11 @@ import './Header.css'
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 //Components
 import UserInfo from "./UserInfo/UserInfo";
+import useFetchUserInfo from "../../hooks/useFecthUserInfo";
 
 const Header = () => {
+
+    useFetchUserInfo();
 
     return(
         <>
