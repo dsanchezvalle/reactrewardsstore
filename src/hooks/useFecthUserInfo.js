@@ -8,7 +8,7 @@ const useFetchUserInfo = () => {
     const { userInfo, setUserInfo, setErrorMessage, updateUserInfo, setUpdateUserInfo } = useContext(AppContext);
 
     useEffect(()=>{
-        console.log('antes de traer', userInfo, updateUserInfo);
+        
         if(Object.keys(userInfo).length === 0 || updateUserInfo){ 
             async function getUserInfo(){
                 try{
@@ -30,6 +30,7 @@ const useFetchUserInfo = () => {
                 }
             }
             getUserInfo();
+            setUpdateUserInfo(false);
         }
         
     }, [userInfo, setUserInfo, setErrorMessage, updateUserInfo, setUpdateUserInfo]);

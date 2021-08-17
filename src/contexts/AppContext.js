@@ -16,12 +16,12 @@ export default function AppProvider({children}){
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [updateUserInfo, setUpdateUserInfo] = useState(false);
-    const [productsPerPage, setProductsPerPage] = useState(16);
-    const [redeemedPerPage, setRedeemedPerPage] = useState(16);
+    const [productsPerPage, /*  setProductsPerPage */] = useState(16);
+    const [redeemedPerPage, /* setRedeemedPerPage */] = useState(16);
     const [
         nextProductsPage, 
         prevProductsPage, 
-        jumpProductsPage, 
+        /* jumpProductsPage */, 
         getCurrentPageProducts, 
         currentProductsPage, 
         maxProductsPage,
@@ -30,7 +30,7 @@ export default function AppProvider({children}){
     const [
         nextRedeemedPage, 
         prevRedeemedPage, 
-        jumpRedeemedPage, 
+        /* jumpRedeemedPage */, 
         getCurrentPageRedeemed, 
         currentRedeemedPage, 
         maxRedeemedPage,

@@ -11,7 +11,7 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
 
 const Results = () => {
     //Get filteredProducts and errorMessage from AppContext
-    const {filteredProducts, errorMessage, redeemHistory, isLoading, getCurrentPageProducts, getCurrentPageRedeemed} = useContext(AppContext);
+    const {errorMessage, redeemHistory, isLoading, getCurrentPageProducts, getCurrentPageRedeemed} = useContext(AppContext);
 
     let currentPageProducts = getCurrentPageProducts();
     let currentPageRedeemed = getCurrentPageRedeemed();
