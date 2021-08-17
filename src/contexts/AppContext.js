@@ -15,12 +15,13 @@ export default function AppProvider({children}){
     const [redeemHistory, setRedeemHistory] = useState([]);
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-    const [productsPerPage, setProductsPerPage] = useState(16);
-    const [redeemedPerPage, setRedeemedPerPage] = useState(16);
+    const [updateUserInfo, setUpdateUserInfo] = useState(false);
+    const [productsPerPage, /*  setProductsPerPage */] = useState(16);
+    const [redeemedPerPage, /* setRedeemedPerPage */] = useState(16);
     const [
         nextProductsPage, 
         prevProductsPage, 
-        jumpProductsPage, 
+        /* jumpProductsPage */, 
         getCurrentPageProducts, 
         currentProductsPage, 
         maxProductsPage,
@@ -29,7 +30,7 @@ export default function AppProvider({children}){
     const [
         nextRedeemedPage, 
         prevRedeemedPage, 
-        jumpRedeemedPage, 
+        /* jumpRedeemedPage */, 
         getCurrentPageRedeemed, 
         currentRedeemedPage, 
         maxRedeemedPage,
@@ -68,7 +69,9 @@ export default function AppProvider({children}){
             totalProducts,
             totalRedeemed,
             setProductsCurrentPage,
-            setRedeemedCurrentPage            
+            setRedeemedCurrentPage,
+            updateUserInfo, 
+            setUpdateUserInfo            
         }}>
             {children}
         </AppContext.Provider>    

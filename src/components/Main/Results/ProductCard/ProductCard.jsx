@@ -12,7 +12,7 @@ import { AppContext } from '../../../../contexts/AppContext'
 
 const ProductCard = ({productId, name, category, imagePath, cost}) => {
     //Get userInfo from AppContext
-    const { userInfo } = useContext(AppContext);
+    const { userInfo, setUpdateUserInfo } = useContext(AppContext);
     
     let userPoints = userInfo.points;
     //Check if current user can redeem a specific product 
@@ -26,6 +26,8 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
 
     function handleRedeemProductClick(clickedProductId, name){
         let newBody = {productId: clickedProductId}
+        let menu = document.getElementById('UserInfo__CollapsibleCheck');
+        menu.checked = false;
         if(userPoints>=cost){
             async function redeemProduct(){
                 try{
@@ -73,6 +75,7 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
                 }
             });
         }
+        setUpdateUserInfo(true);
     }
 
     return(
