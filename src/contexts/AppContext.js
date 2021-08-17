@@ -15,6 +15,8 @@ export default function AppProvider({children}){
     const [redeemHistory, setRedeemHistory] = useState([]);
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
+    const [productsPerPage, setProductsPerPage] = useState(16);
+    const [redeemedPerPage, setRedeemedPerPage] = useState(16);
     const [
         nextProductsPage, 
         prevProductsPage, 
@@ -32,6 +34,9 @@ export default function AppProvider({children}){
         maxRedeemedPage
     ] = usePagination(redeemHistory,16);
     
+    let totalProducts = filteredProducts.length;
+    let totalRedeemed = redeemHistory.length;
+
     return(
         <AppContext.Provider value={{
             filteredProducts,
@@ -55,7 +60,11 @@ export default function AppProvider({children}){
             prevRedeemedPage, 
             getCurrentPageRedeemed, 
             currentRedeemedPage, 
-            maxRedeemedPage            
+            maxRedeemedPage,
+            productsPerPage,
+            redeemedPerPage,
+            totalProducts,
+            totalRedeemed            
         }}>
             {children}
         </AppContext.Provider>    
