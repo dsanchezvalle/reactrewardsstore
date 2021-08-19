@@ -22,10 +22,9 @@ const Results = () => {
             <Route path="/history">
                 <>
                 {isLoading && <LoadingSpinner />}
-                {redeemHistory.length === 0 && <p>You have not redeemed products yet.</p>}
                 {(redeemHistory.length !== 0 && errorMessage.length === 0 && !isLoading) ? 
                     (
-                        <ResultsGrid productList={currentPageRedeemed} />                                
+                        <ResultsGrid productList={currentPageRedeemed} redeemed={true} />                                
                     ):(
                         <section className='ResultsError'>
                             <p>{errorMessage}</p>
@@ -37,7 +36,7 @@ const Results = () => {
 
             <Route path="/">
                 { errorMessage.length === 0 ?(
-                    <ResultsGrid productList={currentPageProducts} /> 
+                    <ResultsGrid productList={currentPageProducts} redeemed={false}/> 
                 ):(
                     <section className='ResultsError'>
                         <p>{errorMessage}</p>
