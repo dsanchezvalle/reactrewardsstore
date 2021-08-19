@@ -47,7 +47,7 @@ const ProductsPerPage = () => {
 
     return (
         <>
-            <p className="ProductsPerPage">{startItemInBatch} - {endItemInBatch} of {totalItems} products</p>
+            <p className="ProductsPerPage">{startItemInBatch} - {endItemInBatch} of {totalItems} prod<span>uct</span>s</p>
         </>
     );
 }

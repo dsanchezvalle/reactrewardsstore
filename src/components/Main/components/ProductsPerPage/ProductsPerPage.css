@@ -4,7 +4,19 @@
     margin-right: 0.38rem;
     margin-bottom: 0.35rem;
     width: 20%;
-    text-align: center;    
+    text-align: center;
+    padding-left:.4rem;
+    padding-right: .4rem;    
+}
+
+.ProductsPerPage span{
+  display: none;
+}
+
+@media screen and (min-width: 370px){
+  .ProductsPerPage span{
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 600px){
