@@ -10,11 +10,21 @@ import { ReactComponent as Coin } from "../../../../assets/images/coin.svg";
 //Context
 import { AppContext } from '../../../../contexts/AppContext'
 
-const ProductCard = ({productId, name, category, imagePath, cost}) => {
+const ProductCard = ({productId, name, category, imagePath, cost, redeemed, createDate }) => {
     //Get userInfo from AppContext
     const { userInfo, setUpdateUserInfo } = useContext(AppContext);
     
     let userPoints = userInfo.points;
+    //Define productCard class according to its type
+    let productCardClass = 'ProductCard ';
+    if(redeemed){
+        productCardClass += 'RedeemedProduct mask' 
+    }
+    else {
+        if (userCanRedeem(userPoints, cost)){
+            productCardClass += 'RedeemableProduct'
+        }
+    }
     //Check if current user can redeem a specific product 
     function userCanRedeem(points, productCost){
         return points>=productCost;
@@ -78,9 +88,17 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
         setUpdateUserInfo(true);
     }
 
+    //It formats the redemption date to present in Redeem History section
+    function getRedemptionDate(dateString){
+        let options = { year: 'numeric', month: 'short', day: 'numeric' };
+        let date = new Date(dateString);
+        let stringDate = date.toLocaleDateString('en-US', options);
+        return stringDate;
+    }
+
     return(
         <>
-            <article className={`ProductCard ${userCanRedeem(userPoints, cost)?'RedeemableProduct':''}`}>
+            <article className={productCardClass}>
                 {userCanRedeem(userPoints,cost)?(
                     <BuyIcon className="ProductCard__Icon"/>
                 ):(
@@ -97,9 +115,14 @@ const ProductCard = ({productId, name, category, imagePath, cost}) => {
                             <Coin className="ProductCard__RedeemCoin"/>
                         </div>
                         <button className="ProductCard__RedeemBtn" onClick={()=> handleRedeemProductClick(productId, name)}>Redeem Now</button>    
-                    </section>
-                    
+                    </section> 
                 </section>
+                {redeemed&&
+                <section className="ProductCard__RedeemedProductInfo">
+                  <div className="ProductCard__RedeemedDateWrapper"><p className="ProductCard__RedeemedOn">Redeemed on:</p> <p className="ProductCard__RedeemedDate">{getRedemptionDate(createDate)||''}</p></div>
+                  <div className="ProductCard__RedeemedPrice">{cost}<Coin className="ProductCard__Coin" /></div>
+                </section>
+                }  
             </article>
         </>
     );

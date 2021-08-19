@@ -4,47 +4,80 @@
     gap: 1rem;
     margin: 1.1rem 0 1.48rem;
     justify-items: center; 
-  }
+}
+
+.ResultsGrid.RedeemHistory{
+    display: flex;
+    flex-direction: column;
+    grid-gap:0;
+    gap: .25rem;
+}
     
-  @media screen and (min-width: 480px){
-      .ResultsGrid{
-          grid-template-columns: 1fr 1fr 1fr;
-      }
-  }
-  
-  @media screen and (min-width: 600px){
-      .ResultsGrid{
-          margin: 1.48rem 0 2.05rem;
-          gap: 1.125rem;
-      }
-  }
-  
-  @media screen and (min-width: 800px){
-      .ResultsGrid{
-          margin: 1.86rem 0 2.62rem;
-          gap: 1.25rem;
-      }
-  }
-  
-  @media screen and (min-width: 1000px){
-      .ResultsGrid{
-          margin: 2.24rem 0 3.19rem;
-          gap: 1.375rem;
-      }
-  }
-  
-  @media screen and (min-width: 1200px){
-      .ResultsGrid{
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 1.42rem;
-      }
-  }
-  
-  @media screen and (min-width: 1400px){
-      .ResultsGrid{
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          margin: 2.63rem 0 3.75rem;
-          gap: 1.5rem;
-      }
-  }
+@media screen and (min-width: 480px){
+    .ResultsGrid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .ResultsGrid.RedeemHistory{
+        gap: .4rem;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .ResultsGrid{
+        margin: 1.48rem 0 2.05rem;
+        gap: 1.125rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .ResultsGrid{
+        margin: 1.86rem 0 2.62rem;
+        gap: 1.25rem;
+    }
+
+    .ResultsGrid.RedeemHistory{
+        gap: .55rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .ResultsGrid{
+        margin: 2.24rem 0 3.19rem;
+        gap: 1.375rem;
+    }
+
+    .ResultsGrid.RedeemHistory{
+        gap: .7rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .ResultsGrid{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.42rem;
+    }
+
+    .ResultsGrid.RedeemHistory{
+        gap: .85rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .ResultsGrid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 2.63rem 0 3.75rem;
+        gap: 1.5rem;
+    }
+
+    .ResultsGrid.RedeemHistory{
+        gap: 1rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
   

@@ -5,10 +5,10 @@ import './ResultsGrid.css'
 //Components
 import ProductCard from '../ProductCard/ProductCard';
 
-const ResultsGrid = ({productList}) => {
+const ResultsGrid = ({ productList, redeemed }) => {
     return(
         <>
-            <section className="ResultsGrid">
+            <section className={`ResultsGrid ${redeemed&&'RedeemHistory'}`}>
                 {productList.map(
                     (product, index) => 
                     <ProductCard
@@ -18,6 +18,8 @@ const ResultsGrid = ({productList}) => {
                     category={product.category} 
                     imagePath={product.img.hdUrl}
                     cost={product.cost}
+                    redeemed = {redeemed}
+                    createDate = {product.createDate}
                     />
                 )}
             </section>
