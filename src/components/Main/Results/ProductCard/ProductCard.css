@@ -27,7 +27,7 @@
     height: auto;
 }
 
-.ProductCard__PointsNeeded{
+.ProductCard__PointsNeeded, .ProductCard__RedeemedPrice{
     background: rgb(97, 97, 97, .8);
     mix-blend-mode: normal;
     border-radius: 100px;
@@ -131,6 +131,81 @@
     font-weight: 600 !important;
 }
 
+/* Redeem History Styles */
+.ProductCard.RedeemedProduct{
+    flex-direction: row;
+    padding: .75rem .75rem .75rem .25rem;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Image{    
+    width: 30%;
+    border-radius: 3px;
+    height: 25%;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Info{
+    border-top: none;
+    margin-left: .5%;
+    margin-right: 0;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Icon, 
+.ProductCard.RedeemedProduct .ProductCard__IconHover,
+.ProductCard.RedeemedProduct .ProductCard__PointsNeeded
+{
+    display: none;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+    display: flex;
+    position: relative;
+    margin-top: 15%;
+}
+
+.ProductCard__RedeemedProductInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-end;
+    flex-grow: 2;
+    width: 35%;
+}
+
+.ProductCard__RedeemedOn, .ProductCard__RedeemedDate{
+    text-align: right;
+}
+
+.ProductCard__RedeemedOn{
+    color: var(--dark-font-color);
+}
+
+.ProductCard__RedeemedDate{
+    color: var(--medium-font-color);
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Category{
+    font-size: .63rem;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Name{
+    font-size: .75rem;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+    font-size: .63rem;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+    font-size: .5rem;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+    font-size: .75rem;
+}
+
+
 /* Media Queries */
 @media screen and (min-width: 480px){
     .ProductCard{
@@ -155,8 +230,7 @@
         font-size: 0.825rem;
     }
     
-    .ProductCard__Category{
-        color: var(--medium-font-color);
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
         font-size: 0.7rem;
     }
 
@@ -175,6 +249,34 @@
 
     .ProductCard__RedeemCoin{
         width: 0.93rem;
+    }
+
+    .ProductCard.RedeemedProduct{
+        padding: 1.31rem 2.25rem 1.31rem 1.44rem;
+    }
+
+    .ProductCard.RedeemedProduct .ProductCard__Category{
+        font-size: .91rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__Name{
+        font-size: 1.13rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+        font-size: .84rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+        font-size: .72rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+        font-size: 1.06rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .35rem .5rem;
     }
 }
 
@@ -201,8 +303,7 @@
         font-size: 0.9rem;
     }
     
-    .ProductCard__Category{
-        color: var(--medium-font-color);
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
         font-size: 0.775rem;
     }
 
@@ -221,6 +322,10 @@
 
     .ProductCard__RedeemCoin{
         width: 1.1rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .45rem .62rem;
     }
 }
 
@@ -251,8 +356,7 @@
         font-size: 0.975rem;
     }
     
-    .ProductCard__Category{
-        color: var(--medium-font-color);
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
         font-size: 0.85rem;
     }
 
@@ -271,6 +375,30 @@
 
     .ProductCard__RedeemCoin{
         width: 1.28rem;
+    }
+
+    .ProductCard.RedeemedProduct .ProductCard__Category{
+        font-size: 1.47rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__Name{
+        font-size: 1.88rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+        font-size: 1.28rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+        font-size: 1.16rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+        font-size: 1.69rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .55rem .74rem;
     }
 }
 
@@ -301,8 +429,7 @@
         font-size: 1.05rem;
     }
     
-    .ProductCard__Category{
-        color: var(--medium-font-color);
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
         font-size: 0.93rem;
     }
 
@@ -321,6 +448,14 @@
 
     .ProductCard__RedeemCoin{
         width: 1.45rem;
+    }
+
+    .ProductCard.RedeemedProduct{
+        padding: 2.5rem 5rem 2.5rem 2.5rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .65rem .86rem;
     }
 }
 
@@ -347,8 +482,7 @@
         font-size: 1.12rem;
     }
     
-    .ProductCard__Category{
-        color: var(--medium-font-color);
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
         font-size: 1rem;
     }
 
@@ -367,5 +501,29 @@
 
     .ProductCard__RedeemCoin{
         width: 1.63rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .75rem 1rem;
+    }
+
+    .ProductCard.RedeemedProduct .ProductCard__Category{
+        font-size: 1.75rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__Name{
+        font-size: 2.25rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+        font-size: 1.5rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+        font-size: 1.38rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+        font-size: 2rem;
     }
 } 
