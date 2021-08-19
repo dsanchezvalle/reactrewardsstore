@@ -2,6 +2,7 @@
    display: flex;
    width: 100%;
    font-size: inherit; 
+   margin-bottom: 1%;
 }
 
 .Navigation__List{
@@ -15,14 +16,14 @@
 .Navigation__Item{
     text-align: center;
     text-decoration: none;
-    background-color: var(--secondary-bkgd-color);
-    color: var(--medium-font-color);
+    color: var(--light-font-color);
+    background: rgba(89, 89, 89, 0.5);
+    mix-blend-mode: normal;
     width: 100%;
     flex-grow: 1;
     font-size: inherit;
     padding:1%;
     font-size: .75rem;
-    font-weight: 600;
 }
 
 .Navigation__Item:first-of-type{
@@ -35,6 +36,7 @@
 
 .Navigation__Item-Selected{
     background-color: rgb(10, 212, 250);
+    font-weight: 600;
     color: var(--light-font-color);
 }
 
