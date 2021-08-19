@@ -23,7 +23,7 @@ export const initialFilters = [
 export const filterPriceOptions = [
     {
         value: 0, 
-        text: 'Default'
+        text: 'Default $'
     },
     {
         value: 1,
