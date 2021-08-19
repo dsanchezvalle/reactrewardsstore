@@ -25,22 +25,26 @@ select {
     background-position-x: 101%;
     background-position-y: center;
     border: none;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     color: var(--light-font-color);
-    padding: 0 0.5rem;
-  }
+    padding: 0 2%;
+}
   
-  select::-ms-expand { 
-      display: none; /* Remove default arrow on ie10 and ie11 */
-  }
+select::-ms-expand { 
+    display: none; /* Remove default arrow on ie10 and ie11 */
+}
+
+.FilterCategory{
+    width: 41%;
+}
   
-  /* Target Internet Explorer 9 to undo the custom arrow */
-  @media screen and (min-width:0\0) {
-      select {
-          background:none\9;
-          padding: 5px\9;
-      } 
-  }
+/* Target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    } 
+}
 
 @media screen and (min-width: 600px){
     .FiltersContainer{
@@ -48,7 +52,7 @@ select {
         gap:0.66rem; 
     }     
     
-    .FilterPrice, .FilterCategory{
+    .FilterPrice {
         width: 5.81rem;
     }
   }
@@ -59,7 +63,7 @@ select {
         gap:0.94rem;
     } 
 
-    .FilterPrice, .FilterCategory{
+    .FilterPrice{
         width: 7.37rem; 
     }
 
@@ -71,7 +75,7 @@ select {
         gap:1.22rem;
     }  
 
-    .FilterPrice, .FilterCategory{
+    .FilterPrice{
         width: 8.93rem;
     }
   }
@@ -82,7 +86,7 @@ select {
         gap:1.5rem;
     }
     
-    .FilterPrice, .FilterCategory{
+    .FilterPrice{
         width: 10.5rem;
     }
   }
