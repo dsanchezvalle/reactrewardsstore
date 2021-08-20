@@ -25,8 +25,10 @@ const Navigation = () => {
                     }
                     );
                 const response = await fetchedData.json();
+                //In history the last redeemed products come first
+                const reversedResponse = response.reverse();
                 setIsLoading(false);
-                setRedeemHistory(response);
+                setRedeemHistory(reversedResponse);
             }
             catch(err){
                 setErrorMessage('Whoops! We got an error requesting your redeem history. Please, try again.');
