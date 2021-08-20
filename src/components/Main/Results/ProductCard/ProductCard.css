@@ -116,11 +116,13 @@
     color: var(--dark-font-color);
     font-size: 0.75rem;
     font-weight: 400;
+    transition: all .5s ease-out;
 }
 
 .ProductCard__Category{
     color: var(--medium-font-color);
     font-size: 0.625rem;
+    transition: all .5s ease-out;
 }
 
 /* Modal styles */
@@ -162,6 +164,7 @@
     display: flex;
     position: relative;
     margin-top: 15%;
+    transition: all .5s ease-out;
 }
 
 .ProductCard__RedeemedProductInfo{
@@ -175,6 +178,7 @@
 
 .ProductCard__RedeemedOn, .ProductCard__RedeemedDate{
     text-align: right;
+    transition: all .5s ease-out;
 }
 
 .ProductCard__RedeemedOn{
@@ -187,22 +191,27 @@
 
 .ProductCard.RedeemedProduct .ProductCard__Category{
     font-size: .63rem;
+    transition: all .5s ease-out;
 }
 
 .ProductCard.RedeemedProduct .ProductCard__Name{
     font-size: .75rem;
+    transition: all .5s ease-out;
 }
 
 .ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
     font-size: .63rem;
+    transition: all .5s ease-out;
 }
 
 .ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
     font-size: .5rem;
+    transition: all .5s ease-out;
 }
 
 .ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
     font-size: .75rem;
+    transition: all .5s ease-out;
 }
 
 
