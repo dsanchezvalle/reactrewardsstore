@@ -39,5 +39,3 @@ export const filterPriceOptions = [
 
 //Products per page
 export const itemsPerPage = 16;
-
-
