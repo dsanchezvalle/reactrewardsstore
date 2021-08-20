@@ -68,7 +68,7 @@ const Filters = () => {
         //3. Set filteredList
         setFilteredProducts(newFilteredProducts);        
     }    
-    ,[productList, setErrorMessage, setFilteredProducts, setFilterCategoryOptions, filterList]);
+    ,[productList, setErrorMessage, setFilteredProducts, setFilterCategoryOptions, setIsLoading, filterList]);
     
     //Filter products according to filters
     function filterProducts (products, filters, getCategoryOptions){
