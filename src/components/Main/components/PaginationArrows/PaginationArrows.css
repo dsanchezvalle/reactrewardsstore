@@ -8,8 +8,13 @@
 .PaginationArrowsContainer svg{
     height: 2rem;
     width: auto;
-    transition: all 0.5s ease;
+    transition: height 0.5s ease;
     display: none;
+    cursor: pointer;
+}
+
+.PaginationArrowsContainer .ActiveArrow:active{
+    transform: scale(0.95);
 }
 
 @media screen and (max-width: 399px){
@@ -36,7 +41,7 @@
 
     .PaginationArrowsContainer svg{
         height: 2rem;
-        transition: all 0.5s ease;
+        /* transition: height 0.3s ease; */
         z-index: 4;
     }
 }

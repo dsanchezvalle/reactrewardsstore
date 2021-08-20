@@ -48,9 +48,9 @@ const PaginationArrows = () => {
         let parameters = getPageParameters();
         return isLastPage(parameters) ? 
             (
-                <ArrowRightInactive onClick={()=>{storeIsActive ? nextProductsPage() : nextRedeemedPage()}} />
+                <ArrowRightInactive className="InactiveArrow" onClick={()=>{storeIsActive ? nextProductsPage() : nextRedeemedPage()}} />
             ):(
-                <ArrowRightActive onClick={()=>{storeIsActive ? nextProductsPage() : nextRedeemedPage()}} />
+                <ArrowRightActive className="ActiveArrow" onClick={()=>{storeIsActive ? nextProductsPage() : nextRedeemedPage()}} />
             )
     }
 
@@ -59,9 +59,9 @@ const PaginationArrows = () => {
         let parameters = getPageParameters();
         return isFirstPage(parameters) ? 
             (
-                <ArrowLeftInactive onClick={()=>{storeIsActive ? prevProductsPage() : prevRedeemedPage()}} />
+                <ArrowLeftInactive className="InactiveArrow" onClick={()=>{storeIsActive ? prevProductsPage() : prevRedeemedPage()}} />
             ):(
-                <ArrowLeftActive onClick={()=>{storeIsActive ? prevProductsPage() : prevRedeemedPage()}} />
+                <ArrowLeftActive className="ActiveArrow" onClick={()=>{storeIsActive ? prevProductsPage() : prevRedeemedPage()}} />
             )
     }
     
