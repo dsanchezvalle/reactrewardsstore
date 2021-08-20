@@ -18,7 +18,9 @@ export default function AppProvider({children}){
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [updateUserInfo, setUpdateUserInfo] = useState(false);
-    
+    const [currentLanguage, setCurrentLanguage] = useState('en');
+    const [languageCollection, setLanguageCollection] = useState({});
+
     //Constants
     const productsPerPage = itemsPerPage;
     const redeemedPerPage = itemsPerPage;
@@ -80,7 +82,11 @@ export default function AppProvider({children}){
             setProductsCurrentPage,
             setRedeemedCurrentPage,
             updateUserInfo, 
-            setUpdateUserInfo            
+            setUpdateUserInfo, 
+            currentLanguage,
+            setCurrentLanguage,
+            languageCollection, 
+            setLanguageCollection            
         }}>
             {children}
         </AppContext.Provider>    
