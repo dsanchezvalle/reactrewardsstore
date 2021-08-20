@@ -4,11 +4,11 @@ import { useEffect, useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 
 const useFetchUserInfo = () => {
-
+    //Context
     const { userInfo, setUserInfo, setErrorMessage, updateUserInfo, setUpdateUserInfo } = useContext(AppContext);
 
+    //Fetch userInfo
     useEffect(()=>{
-        
         if(Object.keys(userInfo).length === 0 || updateUserInfo){ 
             async function getUserInfo(){
                 try{
