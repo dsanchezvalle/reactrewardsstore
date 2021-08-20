@@ -19,13 +19,13 @@ const UserInfo = () => {
     //Custom Hook to fetch userInfo
     useFetchUserInfo();
 
-    //It handles click on the Points Wrapper
+    //Handle click on the user menu to get more points
     function handlePointsWrapperClick() {
         let menu = document.getElementById('UserInfo__CollapsibleCheck');
         menu.checked = !menu.checked;
     }
 
-    //It handles the points request validating value exists in the three given options
+    //Handle the points request validating value exists in the three given options
     function handleGetPointsClick(pointsToRedeem) {
         let requestedPoints = pointsToRedeem;
         let menu = document.getElementById('UserInfo__CollapsibleCheck');
