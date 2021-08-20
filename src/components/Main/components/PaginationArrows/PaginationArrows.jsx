@@ -12,7 +12,16 @@ import { AppContext } from '../../../../contexts/AppContext';
 
 const PaginationArrows = () => {
     //Context
-    const {showFilters, nextProductsPage, prevProductsPage, nextRedeemedPage, prevRedeemedPage, currentProductsPage, maxProductsPage, currentRedeemedPage, maxRedeemedPage } = useContext(AppContext);
+    const {
+        showFilters, 
+        nextProductsPage, 
+        prevProductsPage, 
+        nextRedeemedPage, 
+        prevRedeemedPage, 
+        currentProductsPage, 
+        maxProductsPage, 
+        currentRedeemedPage, 
+        maxRedeemedPage } = useContext(AppContext);
     
     /* If showFilters is true then the Store is active (showing available products), 
     if not the Redeem History is active. */
@@ -30,17 +39,17 @@ const PaginationArrows = () => {
 
     //It defines the page parameters depending on Store or Redeem History results are requested
     function getPageParameters(){
-    let pageParameters = [];
+        let pageParameters = [];
 
-    if(storeIsActive){
-        pageParameters[0] = currentProductsPage;
-        pageParameters[1] = maxProductsPage;
-    }
-    else{
-        pageParameters[0] = currentRedeemedPage;
-        pageParameters[1] = maxRedeemedPage;
-    }
-    return pageParameters   
+        if(storeIsActive){
+            pageParameters[0] = currentProductsPage;
+            pageParameters[1] = maxProductsPage;
+        }
+        else{
+            pageParameters[0] = currentRedeemedPage;
+            pageParameters[1] = maxRedeemedPage;
+        }
+        return pageParameters   
     }
     
     //It defines if Rigth Arrow will be active or not according to current page

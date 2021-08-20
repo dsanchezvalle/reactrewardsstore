@@ -23,14 +23,17 @@ const ProductsPerPage = () => {
     if not the Redeem History is active. */
     let storeIsActive = showFilters;
     
+    //It defines the number of the first item of the batch according the current page
     function getStartItemInBatch(currentPage, itemsPerPage){
         return currentPage === 1 ? 1 : (((currentPage - 1)*itemsPerPage)+1);
     };
     
+    //It defines the number of the last item of the batch according the current page
     function getEndItemInBatch(currentPage, itemsPerPage, maxPage, totalItems){
         return currentPage === maxPage ? totalItems : currentPage * itemsPerPage;
     };
 
+    //Defining the first and last items of each page according the section: Store or Redeem
     let startItemInBatch = storeIsActive ? (
         getStartItemInBatch(currentProductsPage, productsPerPage)
     ):(
@@ -43,6 +46,7 @@ const ProductsPerPage = () => {
         getEndItemInBatch(currentRedeemedPage, redeemedPerPage, maxRedeemedPage, totalRedeemed)
     );
     
+    //Defining the total number of products according the section: Store or Redeem
     let totalItems = storeIsActive ? (totalProducts):(totalRedeemed);
 
     return (

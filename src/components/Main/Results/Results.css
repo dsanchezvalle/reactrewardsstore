@@ -8,6 +8,7 @@
     text-align: center;
 }
 
+/* Media Queries */
 @media screen and (min-width: 600px){
     .ResultsError{
         font-size: .94rem;

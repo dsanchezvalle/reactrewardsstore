@@ -13,31 +13,41 @@ import { AppContext } from '../../../../contexts/AppContext'
 const ProductCard = ({productId, name, category, imagePath, cost, redeemed, createDate }) => {
     //Get userInfo from AppContext
     const { userInfo, setUpdateUserInfo } = useContext(AppContext);
-    
+    //Define available points
     let userPoints = userInfo.points;
-    //Define productCard class according to its type
+    
+    /* Define productCard class according to its type:
+    1. ProductCard: general product in Store
+    2. RedeemedProduct: product in Redeem History
+    3. RedeemableProduct: redeemable product in Store
+    */
     let productCardClass = 'ProductCard ';
     if(redeemed){
-        productCardClass += 'RedeemedProduct mask' 
+        productCardClass += 'RedeemedProduct' 
     }
     else {
         if (userCanRedeem(userPoints, cost)){
             productCardClass += 'RedeemableProduct'
         }
     }
+    
     //Check if current user can redeem a specific product 
     function userCanRedeem(points, productCost){
         return points>=productCost;
     }
 
+    //Define the points needed to redeem a specific product if the user doesn't have enough
     function pointsNeeded(points, productCost){
         return productCost - points;
     }
-
+    
+    //Handle the product redemption when user clicks "Redeem now" button
     function handleRedeemProductClick(clickedProductId, name){
         let newBody = {productId: clickedProductId}
+        //Hide dropdown menu if is active when redemption is taking place
         let menu = document.getElementById('UserInfo__CollapsibleCheck');
         menu.checked = false;
+        //Double validation if user has enough points to redeem the product
         if(userPoints>=cost){
             async function redeemProduct(){
                 try{
@@ -88,12 +98,11 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
         setUpdateUserInfo(true);
     }
 
-    //It formats the redemption date to present in Redeem History section
+    //Format the redemption date to show it in Redeem History Section
     function getRedemptionDate(dateString){
         let options = { year: 'numeric', month: 'short', day: 'numeric' };
         let date = new Date(dateString);
-        let stringDate = date.toLocaleDateString('en-US', options);
-        return stringDate;
+        return date.toLocaleDateString('en-US', options);
     }
 
     return(

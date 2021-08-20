@@ -9,9 +9,16 @@
 .ResultsGrid.RedeemHistory{
     display: flex;
     flex-direction: column;
-    grid-gap:0;
+    grid-gap: 0;
     gap: .25rem;
 }
+
+/* Media Queries */
+@media screen and (max-width: 399px){
+  .ResultsGrid{
+    margin: 1.1rem 0 3rem;
+  }
+} 
     
 @media screen and (min-width: 480px){
     .ResultsGrid{

@@ -14,9 +14,9 @@ import { getPointsOptions } from '../../../utils/constants';
 import useFetchUserInfo from '../../../hooks/useFecthUserInfo';
 
 const UserInfo = () => {
-    
+    //Context
     const { userInfo, setUpdateUserInfo } = useContext(AppContext);
-
+    //Custom Hook to fetch userInfo
     useFetchUserInfo();
 
     //It handles click on the Points Wrapper
@@ -34,27 +34,28 @@ const UserInfo = () => {
             async function getPoints(){
                 let newBody = {amount: requestedPoints}
                 try{
-                const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/points',{
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTExNDkwNGQ5ZmMzODAwMjFmNjM4NDMiLCJpYXQiOjE2Mjg1MjI3NTZ9.9RRbOr2MKD1bfRKrqBzfeTf6NqH153GOgb0Wu0pDNQk'
-                    },
-                    method: 'POST',
-                    body: JSON.stringify(newBody)
-                });
-                const response = await fetchedData.json();
-                if(response.message === 'Points Updated'){
-                    Swal.fire({
-                        title: `Enjoy your points!`,
-                        text: `You have redeemed ${pointsToRedeem} points sucessfully. Now you have ${response['New Points']} points`,
-                        icon: 'success',                            
-                        customClass: {
-                            confirmButton: 'PopUpBtn'
-                        }
+                    const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/points',{
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTExNDkwNGQ5ZmMzODAwMjFmNjM4NDMiLCJpYXQiOjE2Mjg1MjI3NTZ9.9RRbOr2MKD1bfRKrqBzfeTf6NqH153GOgb0Wu0pDNQk'
+                        },
+                        method: 'POST',
+                        body: JSON.stringify(newBody)
                     });
-                    menu.checked = false;
-                }
+                    const response = await fetchedData.json();
+                    //Modal to confirm points have been updated or not
+                    if(response.message === 'Points Updated'){
+                        Swal.fire({
+                            title: `Enjoy your points!`,
+                            text: `You have redeemed ${pointsToRedeem} points sucessfully. Now you have ${response['New Points']} points`,
+                            icon: 'success',                            
+                            customClass: {
+                                confirmButton: 'PopUpBtn'
+                            }
+                        });
+                        menu.checked = false;
+                    }
                 }
                     catch(err){
                     Swal.fire({
@@ -65,6 +66,7 @@ const UserInfo = () => {
                             confirmButton: 'PopUpBtn'
                         }
                     });
+                    //Hide dropdown menu
                     menu.checked = false;
                 }
             }

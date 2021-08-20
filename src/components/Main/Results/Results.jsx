@@ -10,9 +10,9 @@ import ResultsGrid from "./ResultsGrid/ResultsGrid";
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
 
 const Results = () => {
-    //Get filteredProducts and errorMessage from AppContext
+    //Context
     const {errorMessage, redeemHistory, isLoading, getCurrentPageProducts, getCurrentPageRedeemed} = useContext(AppContext);
-
+    //Get product batches according to current page and active section (Store/Redeem History)
     let currentPageProducts = getCurrentPageProducts();
     let currentPageRedeemed = getCurrentPageRedeemed();
 

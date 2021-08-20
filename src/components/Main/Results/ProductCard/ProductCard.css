@@ -57,6 +57,7 @@
     display: none;
 }
 
+/* Style for a Redeemable Product Card */
 .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
     display: flex;
     flex-direction: column;
@@ -133,7 +134,7 @@
     font-weight: 600 !important;
 }
 
-/* Redeem History Styles */
+/* Style for a Products in Redeem History */
 .ProductCard.RedeemedProduct{
     flex-direction: row;
     padding: .75rem .75rem .75rem .25rem;

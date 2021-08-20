@@ -3,9 +3,10 @@
     flex-direction: column;
     width: 100%;
     background-color: var(--main-bkgd-color);
-    padding: 0 1rem 0.5rem
+    padding: 0 1rem .5rem
 }
 
+/* Media Queries */
 @media screen and (min-width: 600px){
     .Main{
         padding: 0 2.81rem 1.37rem

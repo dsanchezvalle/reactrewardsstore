@@ -11,11 +11,9 @@ import './Main.css'
 import { AppContext } from "../../contexts/AppContext";
 
 const Main = () => {
-    const {test} = useContext(AppContext);
     return(
         <>
         <main className="Main">
-            {test}
             <TopBar />
             <Results />
             <Footer />

@@ -11,6 +11,7 @@ import Navigation from "./Navigation/Navigation";
 import { AppContext } from "../../../contexts/AppContext";
 
 const TopBar = () => {
+    //If Redeem History is active filters won't be shown
     const {showFilters} = useContext (AppContext);
 
     return(

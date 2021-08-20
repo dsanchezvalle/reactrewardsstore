@@ -7,9 +7,9 @@ import './Navigation.css'
 
 const Navigation = () => {
     const {setRedeemHistory, setErrorMessage, setShowFilters, setIsLoading} = useContext(AppContext);
-    //It handles the redeem history request
+    //Handle the redeem history request
     function handleGetRedeemHistoryClick(){
-        
+        //Fetch Redeem History from API
         async function getRedeemHistory(){
             setShowFilters(false);
             try{
@@ -25,7 +25,7 @@ const Navigation = () => {
                     }
                     );
                 const response = await fetchedData.json();
-                //In history the last redeemed products come first
+                //Reverse the response given to display last redeemed products first
                 const reversedResponse = response.reverse();
                 setIsLoading(false);
                 setRedeemHistory(reversedResponse);

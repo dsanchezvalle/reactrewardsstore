@@ -1,11 +1,11 @@
 .ProductsPerPage{
     font-size: inherit;
     color: var(--dark-font-color);
-    margin-right: 0.38rem;
-    margin-bottom: 0.35rem;
+    margin-right: .38rem;
+    margin-bottom: .35rem;
     width: 20%;
     text-align: center;
-    padding-left:.4rem;
+    padding-left: .4rem;
     padding-right: .1rem;    
 }
 
@@ -16,7 +16,7 @@
 @media screen and (max-width: 399px){
   .ProductsPerPage{
     position: fixed;
-    bottom:0;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
@@ -26,32 +26,33 @@
   }
 }
 
-@media screen and (min-width: 370px){
+/* Media queries */
+@media screen and (min-width: 410px){
   .ProductsPerPage span{
     display: inline;
   }
 }
 
 @media screen and (min-width: 600px){
-    .ProductsPerPage{
-        margin-right: 0.66rem;
-    }       
-  }
+  .ProductsPerPage{
+      margin-right: .66rem;
+  }       
+}
   
-  @media screen and (min-width: 800px){
-    .ProductsPerPage{
-        margin-right: 0.94rem;
-    } 
-  }
-  
-  @media screen and (min-width: 1000px){
-    .ProductsPerPage{
-        margin-right: 1.22rem;
-    }  
-  }
-  
-  @media screen and (min-width: 1200px){
-    .ProductsPerPage{
-        margin-right: 1.5rem;
-    }     
-  }
+@media screen and (min-width: 800px){
+  .ProductsPerPage{
+      margin-right: .94rem;
+  } 
+}
+
+@media screen and (min-width: 1000px){
+  .ProductsPerPage{
+      margin-right: 1.22rem;
+  }  
+}
+
+@media screen and (min-width: 1200px){
+  .ProductsPerPage{
+      margin-right: 1.5rem;
+  }     
+}

@@ -6,10 +6,11 @@ import './Header.css'
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 //Components
 import UserInfo from "./UserInfo/UserInfo";
+//Hooks
 import useFetchUserInfo from "../../hooks/useFecthUserInfo";
 
 const Header = () => {
-
+    //Custom Hook to fetch userInfo
     useFetchUserInfo();
 
     return(

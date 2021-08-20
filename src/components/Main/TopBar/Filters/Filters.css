@@ -3,23 +3,15 @@
     color: var(--medium-font-color);
     font-size: inherit;
     border-left: 1px solid var(--border-bar-color);
-    padding-left: 0.38rem;;
-    gap:0.38rem;
-    transition: all 0.5s ease;
+    padding-left: .38rem;;
+    gap: .38rem;
+    transition: all .5s ease;
     align-items: flex-end;
-    margin-bottom: 0.35rem;
+    margin-bottom: .35rem;
     width: 80%;
 }
 
-.FilterCategory{
-    width: 40%;
-}
-
-.FilterPrice{
-    width: 40%;
-} 
-
-select {
+.FilterCategory, .FilterPrice {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; 
@@ -30,9 +22,10 @@ select {
     background-position-x: 101%;
     background-position-y: center;
     border: none;
-    border-radius: 0.75rem;
+    border-radius: .75rem;
     color: var(--light-font-color);
     padding: 1.5% 2%;
+    width: 40%;
     font-size: inherit;
 }
   
@@ -40,6 +33,7 @@ select::-ms-expand {
     display: none; /* Remove default arrow on ie10 and ie11 */
 }
 
+/* Media Queries */
 @media screen and (max-width: 399px){
     .FiltersContainer{
         padding: .5rem 0;
@@ -47,11 +41,8 @@ select::-ms-expand {
         width: 100%;
     }
 
-    select {
-        padding: 1.5% 2%;
-    }
-    
     .FilterCategory, .FilterPrice{
+        padding: 1.5% 2%;
         width: 41%;
         max-width: 12rem;
     }
@@ -59,7 +50,7 @@ select::-ms-expand {
 
 /* Target Internet Explorer 9 to undo the custom arrow */
 @media screen and (min-width:0\0) {
-    select {
+    .FilterCategory, .FilterPrice{
         background:none\9;
         padding: 5px\9;
     } 
@@ -67,8 +58,8 @@ select::-ms-expand {
 
 @media screen and (min-width: 600px){
     .FiltersContainer{
-        padding-left: 0.66rem;
-        gap:0.66rem; 
+        padding-left: .66rem;
+        gap: .66rem; 
     }     
     
     .FilterPrice {
@@ -79,22 +70,22 @@ select::-ms-expand {
         max-width: 13rem;
     }
 
-    select{
+    .FilterCategory, .FilterPrice{
         padding: 1% 2%;
     }
   }
   
   @media screen and (min-width: 800px){
     .FiltersContainer{
-        padding-left: 0.94rem;;
-        gap:0.94rem;
+        padding-left: .94rem;;
+        gap: .94rem;
     } 
 
     .FilterPrice{
         width: 8.37rem; 
     }
 
-    select{
+    .FilterCategory, .FilterPrice{
         padding: .8% 2%;
     }
   }
@@ -110,7 +101,7 @@ select::-ms-expand {
         width: 10rem;
     }
 
-    select{
+    .FilterCategory, .FilterPrice{
         padding: .2% 2%;
     }
   }
@@ -118,14 +109,14 @@ select::-ms-expand {
   @media screen and (min-width: 1200px){
     .FiltersContainer{
         padding-left: 1.5rem;;
-        gap:1.5rem;
+        gap: 1.5rem;
     }
     
     .FilterPrice{
         width: 10.5rem;
     }
 
-    select{
+    .FilterCategory, .FilterPrice{
         padding: 0 2%;
     }
   }

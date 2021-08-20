@@ -45,12 +45,13 @@ const Filters = () => {
             setFilterCategoryOptions(categoryList);
         }
 
-        //It gets categories from the fetched productList and creates an object out of it
+        //Get categories from the fetched productList and creates an object out of it
         function getCategoryOptions(){
             //Get categories from fetched productList
             let categoryArray = productList.map((product) => product.category);
+            //Get unique ocurrences of the categoryArray
             let uniqueCategories = categoryArray.filter((value, index, self) => self.indexOf(value) === index);
-            //Create object with category options
+            //Create object with category options to populate CategoryFilter
             let categoryOptions = uniqueCategories.map((category, index)=>{
                 return {
                     value: index+1,
@@ -64,12 +65,12 @@ const Filters = () => {
         const initialProductList = [...productList];    
         let newFilteredProducts = filterProducts(initialProductList, filterList, getCategoryOptions);
     
-        //3. Set filteredList (context)
+        //3. Set filteredList
         setFilteredProducts(newFilteredProducts);        
     }    
     ,[productList, setErrorMessage, setFilteredProducts, setFilterCategoryOptions, filterList]);
     
-    //It filters products according to filters
+    //Filter products according to filters
     function filterProducts (products, filters, getCategoryOptions){
         let filteredProductList = [];
         let filteredProductList2 = [];
@@ -85,7 +86,7 @@ const Filters = () => {
             //Verify selection 1:lowest to highest 2:highest to lowest
             filteredProductList = filters[0].value === 1 ? (sortedProducts):(sortedProducts.reverse()); 
         }
-        //return filteredProductList;
+        
         //FILTERING products by category
         let selectedCategory = categories[filters[1].value].text;
 
@@ -100,7 +101,7 @@ const Filters = () => {
         
     }
 
-    //It handles the change on filters
+    //Handle the change on each filter
     function handleFilter(e){
         let newFilterList = filterList.map(filter => {
             return filter.filterId === e.target.id ?
