@@ -35,6 +35,8 @@ const Results = () => {
             </Route>
 
             <Route path="/">
+                <>
+                {isLoading && <LoadingSpinner />}
                 { errorMessage.length === 0 ?(
                     <ResultsGrid productList={currentPageProducts} redeemed={false}/> 
                 ):(
@@ -43,6 +45,7 @@ const Results = () => {
                     </ section>
                 )
                 }
+                </>
             </Route>
         </Switch> 
         </>

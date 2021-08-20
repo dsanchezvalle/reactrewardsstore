@@ -9,7 +9,7 @@ import { initialFilters, filterPriceOptions } from '../../../../utils/constants'
 
 const Filters = () => {
     //States and Context
-    const {setFilteredProducts, setErrorMessage, setProductsCurrentPage } = useContext(AppContext);
+    const {setFilteredProducts, setErrorMessage, setProductsCurrentPage, setIsLoading } = useContext(AppContext);
     const [productList, setProductList] = useState([]);
     const [filterList, setFilterList] = useState(initialFilters);
     const [filterCategoryOptions, setFilterCategoryOptions] = useState([]);
@@ -18,7 +18,8 @@ const Filters = () => {
     useEffect(()=>{
         if (productList.length === 0){
             async function getProducts(){
-                try{                
+                try{ 
+                    setIsLoading(true);               
                     const fetchedData = 
                     await fetch("https://coding-challenge-api.aerolab.co/products", 
                     {
@@ -30,6 +31,7 @@ const Filters = () => {
                         method: 'GET'
                     });
                     const itemList = await fetchedData.json();
+                    setIsLoading(false);
                     setProductList(itemList); 
                 }
                 catch (err){
