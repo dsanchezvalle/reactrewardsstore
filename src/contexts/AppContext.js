@@ -2,11 +2,13 @@
 import { createContext, useState } from 'react'
 //Hooks
 import usePagination from '../hooks/usePagination';
+//Constants
+import { itemsPerPage } from '../utils/constants'
 
 //Context creation
 export const AppContext = createContext();
 
-//AppProvider definition
+//AppProvider
 export default function AppProvider({children}){
     //States
     const [filteredProducts, setFilteredProducts] = useState([])
@@ -16,27 +18,32 @@ export default function AppProvider({children}){
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [updateUserInfo, setUpdateUserInfo] = useState(false);
-    const [productsPerPage, /*  setProductsPerPage */] = useState(16);
-    const [redeemedPerPage, /* setRedeemedPerPage */] = useState(16);
+    
+    //Constants
+    const productsPerPage = itemsPerPage;
+    const redeemedPerPage = itemsPerPage;
+    
+    //Pagination Custom Hooks
     const [
         nextProductsPage, 
         prevProductsPage, 
-        /* jumpProductsPage */, 
+        jumpProductsPage, 
         getCurrentPageProducts, 
         currentProductsPage, 
         maxProductsPage,
         setProductsCurrentPage
-    ] = usePagination(filteredProducts,16);
+    ] = usePagination(filteredProducts,itemsPerPage);
     const [
         nextRedeemedPage, 
         prevRedeemedPage, 
-        /* jumpRedeemedPage */, 
+        jumpRedeemedPage, 
         getCurrentPageRedeemed, 
         currentRedeemedPage, 
         maxRedeemedPage,
         setRedeemedCurrentPage
-    ] = usePagination(redeemHistory,16);
+    ] = usePagination(redeemHistory, itemsPerPage);
     
+    //Total amount of available and redeemed products
     let totalProducts = filteredProducts.length;
     let totalRedeemed = redeemHistory.length;
 
@@ -66,6 +73,8 @@ export default function AppProvider({children}){
             maxRedeemedPage,
             productsPerPage,
             redeemedPerPage,
+            jumpProductsPage,
+            jumpRedeemedPage,
             totalProducts,
             totalRedeemed,
             setProductsCurrentPage,
@@ -78,4 +87,3 @@ export default function AppProvider({children}){
 
     );
 }
-
