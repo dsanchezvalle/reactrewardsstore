@@ -9,6 +9,14 @@
     transition: height .5s ease;
 }
 
+.Header__LogoAndLangWrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  gap:4%;
+}
+
 .Header__Logo{
     width: 1.25rem;
     transition: width .5s ease;
