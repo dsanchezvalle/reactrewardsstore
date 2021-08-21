@@ -12,7 +12,11 @@ import { AppContext } from '../../../../contexts/AppContext'
 
 const ProductCard = ({productId, name, category, imagePath, cost, redeemed, createDate }) => {
     //Get userInfo from AppContext
-    const { userInfo, setUpdateUserInfo } = useContext(AppContext);
+    const { userInfo, setUpdateUserInfo, languageCollection, currentLanguage } = useContext(AppContext);
+    
+    //Language Collection destructuring
+    const { redeemLabel, redeemedOnLabel } = languageCollection;
+    
     //Define available points
     let userPoints = userInfo.points;
     
@@ -102,7 +106,7 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
     function getRedemptionDate(dateString){
         let options = { year: 'numeric', month: 'short', day: 'numeric' };
         let date = new Date(dateString);
-        return date.toLocaleDateString('en-US', options);
+        return date.toLocaleDateString(currentLanguage === 'en' ? 'en-US': 'es-CO', options);
     }
 
     return(
@@ -123,12 +127,12 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
                             <p>{cost}</p>
                             <Coin className="ProductCard__RedeemCoin"/>
                         </div>
-                        <button className="ProductCard__RedeemBtn" onClick={()=> handleRedeemProductClick(productId, name)}>Redeem Now</button>    
+                        <button className="ProductCard__RedeemBtn" onClick={()=> handleRedeemProductClick(productId, name)}>{redeemLabel}</button>    
                     </section> 
                 </section>
                 {redeemed&&
                 <section className="ProductCard__RedeemedProductInfo">
-                  <div className="ProductCard__RedeemedDateWrapper"><p className="ProductCard__RedeemedOn">Redeemed on:</p> <p className="ProductCard__RedeemedDate">{getRedemptionDate(createDate)||''}</p></div>
+                  <div className="ProductCard__RedeemedDateWrapper"><p className="ProductCard__RedeemedOn">{redeemedOnLabel}</p> <p className="ProductCard__RedeemedDate">{getRedemptionDate(createDate)||''}</p></div>
                   <div className="ProductCard__RedeemedPrice">{cost}<Coin className="ProductCard__Coin" /></div>
                 </section>
                 }  

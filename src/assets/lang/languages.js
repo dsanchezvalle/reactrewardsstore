@@ -8,7 +8,9 @@ export const languages = {
         },
         storeLabel: 'Store',
         historyLabel: 'Redeem History',
-        sortLabel:'Sort by:'  
+        sortLabel:'Sort by:',
+        redeemLabel: 'Redeem Now',
+        redeemedOnLabel: 'Redeemed on:'
     },
     es:{
         title:'Electrónica',
@@ -19,6 +21,8 @@ export const languages = {
         },
         storeLabel: 'Tienda',
         historyLabel: 'Historial de redimidos',
-        sortLabel: 'Filtros:'       
+        sortLabel: 'Filtros:',
+        redeemLabel: 'Redime ahora',
+        redeemedOnLabel: 'Redimido el:'       
     }
 }
