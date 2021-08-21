@@ -19,7 +19,7 @@ const UserInfo = () => {
     //Custom Hook to fetch userInfo
     useFetchUserInfo();
     //Language Collection destructuring
-    const {pointsSuccessTitle, pointsSuccessMsg, morePointsMsg, errorTitle, errorGetPointsMsg, errorNotEnoughPointsMsg} = languageCollection;
+    const {pointsSuccessTitle, pointsSuccessMsg, morePointsMsg, errorTitle, errorGetPointsMsg, errorNotValidPointsMsg} = languageCollection;
     
     //Handle click on the user menu to get more points
     function handlePointsWrapperClick() {
@@ -77,7 +77,7 @@ const UserInfo = () => {
         else{
             Swal.fire({
                 title: errorTitle,
-                text: errorNotEnoughPointsMsg,
+                text: errorNotValidPointsMsg,
                 icon: 'error',                            
                 customClass: {
                     confirmButton: 'PopUpBtn'
