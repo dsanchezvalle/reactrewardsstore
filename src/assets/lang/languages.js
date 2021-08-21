@@ -37,6 +37,7 @@ export const languages = {
         errorGetPointsMsg:'We got an error requesting your points. Please, try again.',
         errorNotEnoughPointsMsg: 'You can not request that amount of points. Please, try again.',
         errorGetProductsMsg: 'Whoops! We got an error while bringing your products. Please, try again.',
+        errorGetHistoryMsg: 'Whoops! We got an error requesting your redeem history. Please, try again.'
     },
     es:{
         title:'Electrónica',
@@ -76,6 +77,7 @@ export const languages = {
         errorGetPointsMsg:'Tuvimos un error solicitando tus puntos. Por favor, intenta nuevamente.',
         errorNotEnoughPointsMsg: 'No puedes solicitar esa cantidad de puntos. Por favor, intenta nuevamente.',
         errorGetProductsMsg: '¡Ups! Tuvimos un error solicitando tus productos. Por favor, intenta nuevamente',
+        errorGetHistoryMsg: '¡Ups! Tuvimos un error solicitando tu historial de redimidos. Por favor, intenta nuevamente.'
     }
 }
 
@@ -114,7 +116,7 @@ export const langEsCategoryOptions = [{
 }, {
     value: 8,
     text: "Phone Accessories",
-    displayText: "Accesorios paara telf."
+    displayText: "Accesorios para tel."
 }, {
     value: 9,
     text: "Smart Home",
