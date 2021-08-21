@@ -17,8 +17,11 @@ const ProductsPerPage = () => {
         maxRedeemedPage,
         totalProducts,
         totalRedeemed,
-        currentLanguage
+        languageCollection
     } = useContext(AppContext);
+
+    //Language Collection destructuring
+    const { productsPerPageString } = languageCollection;
 
     /* If showFilters is true then the Store is active (showing available products), 
     if not the Redeem History is active. */
@@ -53,12 +56,7 @@ const ProductsPerPage = () => {
     return (
         <>
             <p className="ProductsPerPage">
-                {`${startItemInBatch} - ${endItemInBatch} `}
-                {currentLanguage === 'en' ?
-                    `of ${totalItems} products`
-                    :
-                    `de ${totalItems} productos` 
-                }
+                {productsPerPageString?.(startItemInBatch, endItemInBatch, totalItems)}                
             </p>
         </>
     );
