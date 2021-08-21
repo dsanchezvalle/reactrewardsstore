@@ -6,9 +6,9 @@ import { AppContext } from '../../../../contexts/AppContext';
 import './Navigation.css'
 
 const Navigation = () => {
-    const {setRedeemHistory, setErrorMessage, setShowFilters, setIsLoading, languageCollection} = useContext(AppContext);
+    const {setRedeemHistory, setErrorHistoryMessage, setShowFilters, setIsLoading, languageCollection } = useContext(AppContext);
     //Language Collection destructuring
-    const { storeLabel, historyLabel} = languageCollection;
+    const { storeLabel, historyLabel, errorGetHistoryMsg} = languageCollection;
 
     //Handle the redeem history request
     function handleGetRedeemHistoryClick(){
@@ -34,7 +34,8 @@ const Navigation = () => {
                 setRedeemHistory(reversedResponse);
             }
             catch(err){
-                setErrorMessage('Whoops! We got an error requesting your redeem history. Please, try again.');
+                setIsLoading(false);
+                setErrorHistoryMessage(errorGetHistoryMsg);
             }
         }
         getRedeemHistory();
