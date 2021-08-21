@@ -6,6 +6,9 @@ export const languages = {
         pointsSuccessMsg: function (redeemedPoints, newBalance){
             return `You have redeemed ${redeemedPoints} points successfully. Now you have ${newBalance} points.`
         },
+        productsPerPageString: function(startItem, endItem, totalItems){
+            return `${startItem} - ${endItem} of ${totalItems} products`
+        },
         storeLabel: 'Store',
         historyLabel: 'Redeem History',
         sortLabel:'Sort by:',
@@ -24,7 +27,11 @@ export const languages = {
                 value: 2,
                 text: 'Highest $ first'
             }
-        ]
+        ],
+        redeemSuccessTitle: `It's yours!`,
+        redeemSuccessMsg: function (itemName){
+            return `You have redeemed ${itemName} sucessfully.`
+        }
     },
     es:{
         title:'Electrónica',
@@ -32,6 +39,9 @@ export const languages = {
         pointsSuccessTitle:'¡Disfruta tus puntos!',
         pointsSuccessMsg: function (redeemedPoints, newBalance){
             return `Has redimido ${redeemedPoints} puntos exitosamente. Ahora tienes ${newBalance} puntos.`
+        },
+        productsPerPageString: function (startItem, endItem, totalItems){
+            return `${startItem} - ${endItem} de ${totalItems} productos`
         },
         storeLabel: 'Tienda',
         historyLabel: 'Historial de redimidos',
@@ -51,6 +61,10 @@ export const languages = {
                 value: 2,
                 text: 'Mayor precio'
             }
-        ]       
+        ],
+        redeemSuccessTitle: `¡Lo tienes!`,
+        redeemSuccessMsg: function (itemName){
+            return `Has redimido ${itemName} exitosamente. Disfrútalo`
+        }       
     }
 }
