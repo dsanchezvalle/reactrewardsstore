@@ -67,6 +67,60 @@ export const languages = {
         redeemSuccessTitle: `¡Lo tienes!`,
         redeemSuccessMsg: function (itemName){
             return `Has redimido ${itemName} exitosamente. Disfrútalo`
-        }       
+        }
     }
 }
+
+export const langEsCategoryOptions = [{
+    value: 0,
+    text: "All categories",
+    displayText: "Categorías"
+}, {
+    value: 1,
+    text: "Phones",
+    displayText: "Celulares"
+}, {
+    value: 2,
+    text: "Gaming",
+    displayText: "Juegos"
+}, {
+    value: 3,
+    text: "Laptops",
+    displayText: "Portátiles"
+}, {
+    value: 4,
+    text: "Cameras",
+    displayText: "Cámaras"
+}, {
+    value: 5,
+    text: "Audio",
+    displayText: "Audio"
+}, {
+    value: 6,
+    text: "Monitors & TV",
+    displayText: "Monitores & TV"
+}, {
+    value: 7,
+    text: "Drones",
+    displayText: "Drones"
+}, {
+    value: 8,
+    text: "Phone Accessories",
+    displayText: "Accesorios paara telf."
+}, {
+    value: 9,
+    text: "Smart Home",
+    displayText: "Hogares inteligentes"
+}, {
+    value: 10,
+    text: "PC Accessories",
+    displayText: "Accesorios de PC"
+}, {
+    value: 11,
+    text: "Tablets & E-readers",
+    displayText: "Tablets y E-readers"
+}, {
+    value: 12,
+    text: "PC Accesories",
+    displayText: "Accesorios de PC"
+}];
