@@ -10,7 +10,21 @@ export const languages = {
         historyLabel: 'Redeem History',
         sortLabel:'Sort by:',
         redeemLabel: 'Redeem Now',
-        redeemedOnLabel: 'Redeemed on:'
+        redeemedOnLabel: 'Redeemed on:',
+        filterPriceOptions: [
+            {
+                value: 0, 
+                text: 'Default $'
+            },
+            {
+                value: 1,
+                text: 'Lowest $ first'
+            },
+            {
+                value: 2,
+                text: 'Highest $ first'
+            }
+        ]
     },
     es:{
         title:'Electrónica',
@@ -23,6 +37,20 @@ export const languages = {
         historyLabel: 'Historial de redimidos',
         sortLabel: 'Filtros:',
         redeemLabel: 'Redime ahora',
-        redeemedOnLabel: 'Redimido el:'       
+        redeemedOnLabel: 'Redimido el:',
+        filterPriceOptions: [
+            {
+                value: 0, 
+                text: '$ Automático'
+            },
+            {
+                value: 1,
+                text: 'Menor precio'
+            },
+            {
+                value: 2,
+                text: 'Mayor precio'
+            }
+        ]       
     }
 }

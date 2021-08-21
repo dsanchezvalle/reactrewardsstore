@@ -5,7 +5,7 @@ import { AppContext } from '../../../../contexts/AppContext';
 //Styles 
 import './Filters.css'
 //Constants
-import { initialFilters, filterPriceOptions } from '../../../../utils/constants';
+import { initialFilters } from '../../../../utils/constants';
 
 const Filters = () => {
     //States and Context
@@ -15,7 +15,7 @@ const Filters = () => {
     const [filterCategoryOptions, setFilterCategoryOptions] = useState([]);
 
     //Language Collection destructuring
-    const { sortLabel } = languageCollection;
+    const { sortLabel, filterPriceOptions } = languageCollection;
     
     //1. Fetch productList from API and set it.
     useEffect(()=>{
