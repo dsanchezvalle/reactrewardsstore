@@ -14,6 +14,7 @@ export const languages = {
         sortLabel:'Sort by:',
         redeemLabel: 'Redeem Now',
         redeemedOnLabel: 'Redeemed on:',
+        pointsNeededLabel: 'You need', 
         filterPriceOptions: [
             {
                 value: 0, 
@@ -48,6 +49,7 @@ export const languages = {
         sortLabel: 'Filtros:',
         redeemLabel: 'Redime ahora',
         redeemedOnLabel: 'Redimido el:',
+        pointsNeededLabel: 'Necesitas',
         filterPriceOptions: [
             {
                 value: 0, 

@@ -15,7 +15,7 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
     const { userInfo, setUpdateUserInfo, languageCollection, currentLanguage } = useContext(AppContext);
     
     //Language Collection destructuring
-    const { redeemLabel, redeemedOnLabel, redeemSuccessTitle, redeemSuccessMsg } = languageCollection;
+    const { redeemLabel, redeemedOnLabel, redeemSuccessTitle, redeemSuccessMsg, pointsNeededLabel } = languageCollection;
     
     //Define available points
     let userPoints = userInfo.points;
@@ -115,7 +115,7 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
                 {userCanRedeem(userPoints,cost)?(
                     <BuyIcon className="ProductCard__Icon"/>
                 ):(
-                    <div className="ProductCard__PointsNeeded">{`You need ${pointsNeeded(userPoints,cost)}`}<Coin className="ProductCard__Coin" /></div>
+                    <div className="ProductCard__PointsNeeded">{`${pointsNeededLabel} ${pointsNeeded(userPoints,cost)}`}<Coin className="ProductCard__Coin" /></div>
                 )}
                 <img className="ProductCard__Image" src={imagePath} alt={name} />
                 <section className="ProductCard__Info">
