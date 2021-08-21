@@ -16,9 +16,10 @@ const ProductsPerPage = () => {
         maxProductsPage,
         maxRedeemedPage,
         totalProducts,
-        totalRedeemed  
+        totalRedeemed,
+        currentLanguage
     } = useContext(AppContext);
-    
+
     /* If showFilters is true then the Store is active (showing available products), 
     if not the Redeem History is active. */
     let storeIsActive = showFilters;
@@ -46,12 +47,19 @@ const ProductsPerPage = () => {
         getEndItemInBatch(currentRedeemedPage, redeemedPerPage, maxRedeemedPage, totalRedeemed)
     );
     
-    //Defining the total number of products according the section: Store or Redeem
+    //Define the total number of products according the section: Store or Redeem
     let totalItems = storeIsActive ? (totalProducts):(totalRedeemed);
-
+    
     return (
         <>
-            <p className="ProductsPerPage">{startItemInBatch} - {endItemInBatch} of {totalItems} prod<span>uct</span>s</p>
+            <p className="ProductsPerPage">
+                {`${startItemInBatch} - ${endItemInBatch} `}
+                {currentLanguage === 'en' ?
+                    `of ${totalItems} products`
+                    :
+                    `de ${totalItems} productos` 
+                }
+            </p>
         </>
     );
 }

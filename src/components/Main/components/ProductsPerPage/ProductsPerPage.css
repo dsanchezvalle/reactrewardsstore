@@ -9,10 +9,7 @@
     padding-right: .1rem;    
 }
 
-.ProductsPerPage span{
-  display: none;
-}
-
+/* Media queries */
 @media screen and (max-width: 399px){
   .ProductsPerPage{
     position: fixed;
@@ -26,10 +23,9 @@
   }
 }
 
-/* Media queries */
-@media screen and (min-width: 410px){
-  .ProductsPerPage span{
-    display: inline;
+@media screen and (min-width: 400px) and (max-width: 440px){
+  .ProductsPerPage{
+    font-size: .625rem;
   }
 }
 
