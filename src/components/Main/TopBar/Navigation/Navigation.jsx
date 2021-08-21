@@ -6,7 +6,10 @@ import { AppContext } from '../../../../contexts/AppContext';
 import './Navigation.css'
 
 const Navigation = () => {
-    const {setRedeemHistory, setErrorMessage, setShowFilters, setIsLoading} = useContext(AppContext);
+    const {setRedeemHistory, setErrorMessage, setShowFilters, setIsLoading, languageCollection} = useContext(AppContext);
+    //Language Collection destructuring
+    const { storeLabel, historyLabel} = languageCollection;
+
     //Handle the redeem history request
     function handleGetRedeemHistoryClick(){
         //Fetch Redeem History from API
@@ -41,8 +44,8 @@ const Navigation = () => {
         <>
         <nav className="Navigation">
             <ul className="Navigation__List">
-                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/" onClick={()=>setShowFilters(true)}>Store</NavLink>
-                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/history" onClick={handleGetRedeemHistoryClick}>Redeem History</NavLink>
+                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/" onClick={()=>setShowFilters(true)}>{storeLabel}</NavLink>
+                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/history" onClick={handleGetRedeemHistoryClick}>{historyLabel}</NavLink>
             </ul>
         </nav>
         </>
