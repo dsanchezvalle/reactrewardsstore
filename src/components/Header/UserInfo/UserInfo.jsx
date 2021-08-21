@@ -19,8 +19,8 @@ const UserInfo = () => {
     //Custom Hook to fetch userInfo
     useFetchUserInfo();
     //Language Collection destructuring
-    const {pointsSuccessTitle, pointsSuccessMsg, morePointsMsg} = languageCollection;
-
+    const {pointsSuccessTitle, pointsSuccessMsg, morePointsMsg, errorTitle, errorGetPointsMsg, errorNotEnoughPointsMsg} = languageCollection;
+    
     //Handle click on the user menu to get more points
     function handlePointsWrapperClick() {
         let menu = document.getElementById('UserInfo__CollapsibleCheck');
@@ -61,8 +61,8 @@ const UserInfo = () => {
                 }
                     catch(err){
                     Swal.fire({
-                        title: `Whoops!`,
-                        text: "We got an error requesting your points. Please, try again.",
+                        title: errorTitle,
+                        text: errorGetPointsMsg,
                         icon: 'error',                            
                         customClass: {
                             confirmButton: 'PopUpBtn'
@@ -76,8 +76,8 @@ const UserInfo = () => {
         }
         else{
             Swal.fire({
-                title: `Whoops!`,
-                text: "You can not request that amount of points. Please, try again.",
+                title: errorTitle,
+                text: errorNotEnoughPointsMsg,
                 icon: 'error',                            
                 customClass: {
                     confirmButton: 'PopUpBtn'

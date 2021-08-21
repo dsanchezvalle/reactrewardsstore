@@ -4,7 +4,7 @@ export const languages = {
         morePointsMsg:'Get more points...',
         pointsSuccessTitle:'Enjoy your points!',
         pointsSuccessMsg: function (redeemedPoints, newBalance){
-            return `You have redeemed ${redeemedPoints} points successfully. Now you have ${newBalance} points.`
+            return `You got ${redeemedPoints} new points. Now you have ${newBalance} points.`
         },
         productsPerPageString: function(startItem, endItem, totalItems){
             return `${startItem} - ${endItem} of ${totalItems} products`
@@ -32,14 +32,17 @@ export const languages = {
         redeemSuccessTitle: `It's yours!`,
         redeemSuccessMsg: function (itemName){
             return `You have redeemed ${itemName} sucessfully.`
-        }
+        },
+        errorTitle: 'Whoops!',
+        errorGetPointsMsg:'We got an error requesting your points. Please, try again.',
+        errorNotEnoughPointsMsg: 'You can not request that amount of points. Please, try again.'
     },
     es:{
         title:'Electrónica',
         morePointsMsg:'Pide más puntos...',
         pointsSuccessTitle:'¡Disfruta tus puntos!',
         pointsSuccessMsg: function (redeemedPoints, newBalance){
-            return `Has redimido ${redeemedPoints} puntos exitosamente. Ahora tienes ${newBalance} puntos.`
+            return `Sumaste ${redeemedPoints} nuevos puntos. Ahora tienes ${newBalance} puntos.`
         },
         productsPerPageString: function (startItem, endItem, totalItems){
             return `${startItem} - ${endItem} de ${totalItems} productos`
@@ -67,7 +70,10 @@ export const languages = {
         redeemSuccessTitle: `¡Lo tienes!`,
         redeemSuccessMsg: function (itemName){
             return `Has redimido ${itemName} exitosamente. Disfrútalo`
-        }
+        },
+        errorTitle: '¡Ups!',
+        errorGetPointsMsg:'Tuvimos un error solicitando tus puntos. Por favor, intenta nuevamente.',
+        errorNotEnoughPointsMsg: 'No puedes solicitar esa cantidad de puntos. Por favor, intenta nuevamente.'
     }
 }
 
