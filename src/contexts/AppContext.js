@@ -13,6 +13,7 @@ export default function AppProvider({children}){
     //States
     const [filteredProducts, setFilteredProducts] = useState([])
     const [errorMessage, setErrorMessage] = useState('');
+    const [errorHistoryMessage, setErrorHistoryMessage] = useState('');
     const [userInfo, setUserInfo] = useState({});
     const [redeemHistory, setRedeemHistory] = useState([]);
     const [showFilters, setShowFilters] = useState(true);
@@ -55,6 +56,8 @@ export default function AppProvider({children}){
             setFilteredProducts,
             errorMessage,
             setErrorMessage,
+            errorHistoryMessage, 
+            setErrorHistoryMessage,
             userInfo,
             setUserInfo,
             redeemHistory,
