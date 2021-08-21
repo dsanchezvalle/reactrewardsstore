@@ -16,7 +16,7 @@ const Filters = () => {
     const [filterCategoryOptions, setFilterCategoryOptions] = useState([]);
 
     //Language Collection destructuring
-    const { sortLabel, filterPriceOptions } = languageCollection;
+    const { sortLabel, filterPriceOptions, errorGetProductsMsg } = languageCollection;
     
     //1. Fetch productList from API and set it.
     useEffect(()=>{
@@ -39,7 +39,8 @@ const Filters = () => {
                     setProductList(itemList); 
                 }
                 catch (err){
-                    setErrorMessage('Whoops! We got an error while bringing your products. Please, try again.');
+                    setErrorMessage(errorGetProductsMsg);
+                    setIsLoading(false);
                 }
             }
             getProducts();
@@ -88,7 +89,7 @@ const Filters = () => {
         //3. Set filteredList
         setFilteredProducts(newFilteredProducts);        
     }    
-    ,[productList, setErrorMessage, setFilteredProducts, setFilterCategoryOptions, setIsLoading, filterList, currentLanguage]);
+    ,[productList, setErrorMessage, setFilteredProducts, setFilterCategoryOptions, setIsLoading, filterList, currentLanguage, errorGetProductsMsg]);
     
     //Filter products according to filters
     function filterProducts (products, filters, getCategoryOptions){
