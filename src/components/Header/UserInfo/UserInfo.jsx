@@ -50,7 +50,7 @@ const UserInfo = () => {
                     if(response.message === 'Points Updated'){
                         Swal.fire({
                             title: pointsSuccessTitle,
-                            text: pointsSuccessMsg(pointsToRedeem, response['New Points']),
+                            text: pointsSuccessMsg?.(pointsToRedeem, response['New Points']),
                             icon: 'success',                            
                             customClass: {
                                 confirmButton: 'PopUpBtn'
