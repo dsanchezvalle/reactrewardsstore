@@ -4,6 +4,8 @@ import React, { useContext, useEffect } from "react";
 import './Header.css'
 //Constants and Icons
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
+import { ReactComponent as USFlag } from "../../assets/images/us.svg";
+import { ReactComponent as COFlag } from "../../assets/images/co.svg";
 //Components
 import UserInfo from "./UserInfo/UserInfo";
 //Hooks
@@ -36,8 +38,15 @@ const Header = () => {
         <>
         <header className="Header">
             <div className="Header__LogoAndLangWrapper">
-            <Logo />
-            <button onClick={handleLanguageChange}>{currentLanguage === 'en'?'ESP':'ENG'}</button>
+                <Logo />
+                <button className="Header__LanguageWrapper" onClick={handleLanguageChange}>
+                    <span className="Header__LanguageLabel">{currentLanguage === 'en'?'ESP':'ENG'}</span>
+                    {currentLanguage === 'en'?(
+                    <COFlag className="Header__LanguageFlag"/>
+                    ):(
+                    <USFlag className="Header__LanguageFlag"/>
+                    )}
+                </button>
             </div>
             <UserInfo />
         </header>
