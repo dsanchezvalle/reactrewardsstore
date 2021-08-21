@@ -15,7 +15,7 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
     const { userInfo, setUpdateUserInfo, languageCollection, currentLanguage } = useContext(AppContext);
     
     //Language Collection destructuring
-    const { redeemLabel, redeemedOnLabel } = languageCollection;
+    const { redeemLabel, redeemedOnLabel, redeemSuccessTitle, redeemSuccessMsg } = languageCollection;
     
     //Define available points
     let userPoints = userInfo.points;
@@ -67,8 +67,8 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
                     const response = await fetchedData.json();
                     if(response.message === "You've redeem the product successfully"){
                         Swal.fire({
-                            title: `It's yours!`,
-                            text: `You have redeemed ${name} sucessfully`,
+                            title: redeemSuccessTitle,
+                            text: redeemSuccessMsg?.(name),
                             icon: 'success',                            
                             customClass: {
                                 confirmButton: 'PopUpBtn'
