@@ -7,7 +7,8 @@ export const languages = {
             return `You have redeemed ${redeemedPoints} points successfully. Now you have ${newBalance} points.`
         },
         storeLabel: 'Store',
-        historyLabel: 'Redeem History'  
+        historyLabel: 'Redeem History',
+        sortLabel:'Sort by:'  
     },
     es:{
         title:'Electrónica',
@@ -17,6 +18,7 @@ export const languages = {
             return `Has redimido ${redeemedPoints} puntos exitosamente. Ahora tienes ${newBalance} puntos.`
         },
         storeLabel: 'Tienda',
-        historyLabel: 'Historial de redimidos'       
+        historyLabel: 'Historial de redimidos',
+        sortLabel: 'Filtros:'       
     }
 }
