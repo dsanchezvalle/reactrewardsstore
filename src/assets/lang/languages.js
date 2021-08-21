@@ -35,7 +35,8 @@ export const languages = {
         },
         errorTitle: 'Whoops!',
         errorGetPointsMsg:'We got an error requesting your points. Please, try again.',
-        errorNotEnoughPointsMsg: 'You can not request that amount of points. Please, try again.'
+        errorNotEnoughPointsMsg: 'You can not request that amount of points. Please, try again.',
+        errorGetProductsMsg: 'Whoops! We got an error while bringing your products. Please, try again.',
     },
     es:{
         title:'Electrónica',
@@ -73,7 +74,8 @@ export const languages = {
         },
         errorTitle: '¡Ups!',
         errorGetPointsMsg:'Tuvimos un error solicitando tus puntos. Por favor, intenta nuevamente.',
-        errorNotEnoughPointsMsg: 'No puedes solicitar esa cantidad de puntos. Por favor, intenta nuevamente.'
+        errorNotEnoughPointsMsg: 'No puedes solicitar esa cantidad de puntos. Por favor, intenta nuevamente.',
+        errorGetProductsMsg: '¡Ups! Tuvimos un error solicitando tus productos. Por favor, intenta nuevamente',
     }
 }
 
