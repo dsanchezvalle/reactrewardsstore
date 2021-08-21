@@ -15,9 +15,11 @@ import useFetchUserInfo from '../../../hooks/useFecthUserInfo';
 
 const UserInfo = () => {
     //Context
-    const { userInfo, setUpdateUserInfo } = useContext(AppContext);
+    const { userInfo, setUpdateUserInfo, languageCollection } = useContext(AppContext);
     //Custom Hook to fetch userInfo
     useFetchUserInfo();
+    //Language Collection destructuring
+    const {pointsSuccessTitle, pointsSuccessMsg, morePointsMsg} = languageCollection;
 
     //Handle click on the user menu to get more points
     function handlePointsWrapperClick() {
@@ -47,8 +49,8 @@ const UserInfo = () => {
                     //Modal to confirm points have been updated or not
                     if(response.message === 'Points Updated'){
                         Swal.fire({
-                            title: `Enjoy your points!`,
-                            text: `You have redeemed ${pointsToRedeem} points sucessfully. Now you have ${response['New Points']} points`,
+                            title: pointsSuccessTitle,
+                            text: pointsSuccessMsg(pointsToRedeem, response['New Points']),
                             icon: 'success',                            
                             customClass: {
                                 confirmButton: 'PopUpBtn'
@@ -98,7 +100,7 @@ const UserInfo = () => {
                     </label>
                     <ul className="UserInfo__DropdownWrapper">
                         <li className="UserInfo__DropdownOption" id="MorePoints">
-                            <p>Get more points...</p>
+                            <p>{morePointsMsg}</p>
                             <ul className="MorePoints__OptionWrapper">
                                 {getPointsOptions.map((optionItem)=>
                                     <li 
