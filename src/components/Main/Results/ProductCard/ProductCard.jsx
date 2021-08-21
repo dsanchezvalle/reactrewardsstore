@@ -9,6 +9,8 @@ import { ReactComponent as BuyIconHover } from "../../../../assets/images/buy-wh
 import { ReactComponent as Coin } from "../../../../assets/images/coin.svg";
 //Context
 import { AppContext } from '../../../../contexts/AppContext'
+//Languages
+import { langEsCategoryOptions } from '../../../../assets/lang/languages';
 
 const ProductCard = ({productId, name, category, imagePath, cost, redeemed, createDate }) => {
     //Get userInfo from AppContext
@@ -109,6 +111,15 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
         return date.toLocaleDateString(currentLanguage === 'en' ? 'en-US': 'es-CO', options);
     }
 
+    //Get category to display according to current language
+    function getCategoryToDisplay(itemCategory){
+        return currentLanguage === 'en' ? (
+            itemCategory
+        ):(
+            langEsCategoryOptions.find(cat => cat.text === itemCategory).displayText
+        )
+    }
+
     return(
         <>
             <article className={productCardClass}>
@@ -119,7 +130,7 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
                 )}
                 <img className="ProductCard__Image" src={imagePath} alt={name} />
                 <section className="ProductCard__Info">
-                    <p className="ProductCard__Category">{category}</p>
+                    <p className="ProductCard__Category">{getCategoryToDisplay(category)}</p>
                     <h3 className="ProductCard__Name">{name}</h3>
                     <section className="ProductCard__RedeemInfo">
                         <BuyIconHover className="ProductCard__IconHover"/>
