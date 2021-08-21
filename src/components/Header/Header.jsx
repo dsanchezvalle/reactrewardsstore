@@ -29,7 +29,7 @@ const Header = () => {
         setLanguageCollection(languages[currentLanguage]);
     },[currentLanguage, languageCollection, setLanguageCollection])
 
-    //Language Collection
+    //Language Collection destructuring
     const { title } = languageCollection;
 
     return(
