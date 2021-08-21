@@ -35,9 +35,11 @@ export const languages = {
         },
         errorTitle: 'Whoops!',
         errorGetPointsMsg:'We got an error requesting your points. Please, try again.',
-        errorNotEnoughPointsMsg: 'You can not request that amount of points. Please, try again.',
+        errorNotValidPointsMsg: 'You can not request that amount of points. Please, try again.',
         errorGetProductsMsg: 'Whoops! We got an error while bringing your products. Please, try again.',
-        errorGetHistoryMsg: 'Whoops! We got an error requesting your redeem history. Please, try again.'
+        errorGetHistoryMsg: 'Whoops! We got an error requesting your redeem history. Please, try again.',
+        errorRedeemProductMsg: 'We got an error while redeeming the product. Please, try again.',
+        errorNotEnoughPointsMsg: 'Sorry, you do not have enough points to redeem this product. Try requesting more points.'
     },
     es:{
         title:'Electrónica',
@@ -75,9 +77,11 @@ export const languages = {
         },
         errorTitle: '¡Ups!',
         errorGetPointsMsg:'Tuvimos un error solicitando tus puntos. Por favor, intenta nuevamente.',
-        errorNotEnoughPointsMsg: 'No puedes solicitar esa cantidad de puntos. Por favor, intenta nuevamente.',
+        errorNotValidPointsMsg: 'No puedes solicitar esa cantidad de puntos. Por favor, intenta nuevamente.',
         errorGetProductsMsg: '¡Ups! Tuvimos un error solicitando tus productos. Por favor, intenta nuevamente',
-        errorGetHistoryMsg: '¡Ups! Tuvimos un error solicitando tu historial de redimidos. Por favor, intenta nuevamente.'
+        errorGetHistoryMsg: '¡Ups! Tuvimos un error solicitando tu historial de redimidos. Por favor, intenta nuevamente.',
+        errorRedeemProductMsg: 'Tuvimos un error redimiendo el producto. Por favor, intenta nuevamente.',
+        errorNotEnoughPointsMsg: 'Lo sentimos, no tienes suficientes puntos para redimir este producto. Prueba solicitando más puntos.'
     }
 }
 
