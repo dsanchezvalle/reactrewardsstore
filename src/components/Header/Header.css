@@ -26,9 +26,9 @@
   display: flex;
   align-items: center;
   gap: .16rem;
-  border:none;
+  border: none;
   border-radius: 2rem;
-  padding: .7% 1.5%;
+  padding: 1.5% 2.5%;
   cursor: pointer;
   background-color: var(--secondary-bkgd-color);
 }
@@ -88,6 +88,7 @@
 
     .Header__LanguageWrapper{
       gap: .21rem;
+      padding: .7% 1.5%;
     }
 
     .Header__LanguageLabel{
