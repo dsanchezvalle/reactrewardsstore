@@ -73,9 +73,9 @@ select::-ms-expand {
     .FilterCategory, .FilterPrice{
         padding: 1% 2%;
     }
-  }
+}
   
-  @media screen and (min-width: 800px){
+@media screen and (min-width: 800px){
     .FiltersContainer{
         padding-left: .94rem;;
         gap: .94rem;
@@ -88,9 +88,9 @@ select::-ms-expand {
     .FilterCategory, .FilterPrice{
         padding: .8% 2%;
     }
-  }
-  
-  @media screen and (min-width: 1000px){
+}
+
+@media screen and (min-width: 1000px){
     .FiltersContainer{
         padding-left: 1.22rem;;
         gap:1.22rem;
@@ -104,14 +104,14 @@ select::-ms-expand {
     .FilterCategory, .FilterPrice{
         padding: .2% 2%;
     }
-  }
-  
-  @media screen and (min-width: 1200px){
+}
+
+@media screen and (min-width: 1200px){
     .FiltersContainer{
         padding-left: 1.5rem;;
         gap: 1.5rem;
     }
-    
+
     .FilterPrice{
         width: 10.5rem;
     }
@@ -119,4 +119,10 @@ select::-ms-expand {
     .FilterCategory, .FilterPrice{
         padding: 0 2%;
     }
-  }
+}
+
+@media screen and (min-width: 1200px){
+    .FilterPrice{
+        padding: 0 1%;
+    }
+}
