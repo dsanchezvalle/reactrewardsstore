@@ -15,7 +15,7 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
     const { userInfo, setUpdateUserInfo, languageCollection, currentLanguage } = useContext(AppContext);
     
     //Language Collection destructuring
-    const { redeemLabel, redeemedOnLabel, redeemSuccessTitle, redeemSuccessMsg, pointsNeededLabel } = languageCollection;
+    const { redeemLabel, redeemedOnLabel, redeemSuccessTitle, redeemSuccessMsg, pointsNeededLabel, errorTitle, errorRedeemProductMsg, errorNotEnoughPointsMsg } = languageCollection;
     
     //Define available points
     let userPoints = userInfo.points;
@@ -78,8 +78,8 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
                 }
                 catch(err){
                     Swal.fire({
-                        title: `Whoops!`,
-                        text: "We got an error while redeeming the product. Please, try again.",
+                        title: errorTitle,
+                        text: errorRedeemProductMsg,
                         icon: 'error',                            
                         customClass: {
                             confirmButton: 'PopUpBtn'
@@ -91,8 +91,8 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
         }
         else{
             Swal.fire({
-                title: `Whoops!`,
-                text: "You don't have enough points to redeem this product. Try requesting more points.",
+                title: errorTitle,
+                text: errorNotEnoughPointsMsg,
                 icon: 'error',                            
                 customClass: {
                     confirmButton: 'PopUpBtn'
