@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactrewardsstore/static/css/main.75e8f8f1.chunk.css",
-    "main.js": "/reactrewardsstore/static/js/main.4f83c39d.chunk.js",
-    "main.js.map": "/reactrewardsstore/static/js/main.4f83c39d.chunk.js.map",
+    "main.js": "/reactrewardsstore/static/js/main.82fe2d94.chunk.js",
+    "main.js.map": "/reactrewardsstore/static/js/main.82fe2d94.chunk.js.map",
     "runtime-main.js": "/reactrewardsstore/static/js/runtime-main.aba1a279.js",
     "runtime-main.js.map": "/reactrewardsstore/static/js/runtime-main.aba1a279.js.map",
     "static/js/2.80d4c885.chunk.js": "/reactrewardsstore/static/js/2.80d4c885.chunk.js",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.aba1a279.js",
     "static/js/2.80d4c885.chunk.js",
     "static/css/main.75e8f8f1.chunk.css",
-    "static/js/main.4f83c39d.chunk.js"
+    "static/js/main.82fe2d94.chunk.js"
   ]
 }
