@@ -45,7 +45,7 @@ const Navigation = () => {
         <>
         <nav className="Navigation">
             <ul className="Navigation__List">
-                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/" onClick={()=>setShowFilters(true)}>{storeLabel}</NavLink>
+                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/reactrewardsstore" onClick={()=>setShowFilters(true)}>{storeLabel}</NavLink>
                 <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/history" onClick={handleGetRedeemHistoryClick}>{historyLabel}</NavLink>
             </ul>
         </nav>
