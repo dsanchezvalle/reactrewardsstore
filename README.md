@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# React Rewards Store - Products Redeem App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+(EN) - Rewards Store is a ReactJS App available in English and Spanish, with a responsive web design that allows you to discover and filter available products, redeem them with loyalty points, request more points, and see the redeem history, all this through direct requests to an API. This project is part of the fourth sprint in ACAMICA's Front End Web Development course and inspired in [Aerolab's Coding Challenge API](https://aerolabchallenge.docs.apiary.io/).
 
-## Available Scripts
+(ES) - Rewards Store es una App de ReactJS disponible en inglés y español, con un diseño web responsive que te permite descubrir y filtrar productos disponibles, canjearlos con puntos de fidelidad, solicitar más puntos y ver el historial de productos redimidos, todo esto a través de solicitudes directas a un API. Este proyecto es parte del cuarto sprint del curso de Desarrollo Web Front End de ACAMICA e inspirado en el [Coding Challenge API de Aerolab](https://aerolabchallenge.docs.apiary.io/).
 
-In the project directory, you can run:
+## Live Demo
 
-### `npm start`
+(EN) - The live demo of the project is hosted in Github Pages at: [Access to the Live Demo](https://dsanchezvalle.github.io/reactrewardsstore/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+(ES) - La demo en vivo del proyecto está alojada con Github Pages en: [Accede a la Live Demo](https://dsanchezvalle.github.io/reactrewardsstore/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Figma Design - Diseño Figma
 
-### `npm test`
+(EN) - ACAMICA provided the initial Figma Desktop mocks and the developer design and create the corresponding Mobile versions of them to make it fully responsive. Check the Figma Design of the project at: [Rewards Store - Figma](https://www.figma.com/file/gzENBzwH21ylVyaehVxqMb/Rewards-Store-Mock)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(ES) - ACAMICA proporcionó los mocks de Figma iniciales en versión para escritorio y el desarrollador diseñó y creó las correspondientes versiones móviles para hacerlo completamente responsive. Puedes ver el diseño de Figma del proyecto en: [Rewards Store - Figma](https://www.figma.com/file/gzENBzwH21ylVyaehVxqMb/Rewards-Store-Mock)
 
-### `npm run build`
+## React Rewards Store - Mini Demo
+https://user-images.githubusercontent.com/67490820/130341982-7c6244df-0452-4da0-8420-5f2d9a9a0dd0.mp4
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Author - Autor
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+David Sánchez Valle - dsanva2004@gmail.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![LinkedIn badge](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://www.linkedin.com/in/dsanchezvalle/)
