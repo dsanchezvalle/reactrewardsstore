@@ -2,41 +2,51 @@
 import { createContext, useState } from 'react'
 //Hooks
 import usePagination from '../hooks/usePagination';
+//Constants
+import { itemsPerPage } from '../utils/constants'
 
 //Context creation
 export const AppContext = createContext();
 
-//AppProvider definition
+//AppProvider
 export default function AppProvider({children}){
     //States
     const [filteredProducts, setFilteredProducts] = useState([])
     const [errorMessage, setErrorMessage] = useState('');
+    const [errorHistoryMessage, setErrorHistoryMessage] = useState('');
     const [userInfo, setUserInfo] = useState({});
     const [redeemHistory, setRedeemHistory] = useState([]);
     const [showFilters, setShowFilters] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [updateUserInfo, setUpdateUserInfo] = useState(false);
-    const [productsPerPage, /*  setProductsPerPage */] = useState(16);
-    const [redeemedPerPage, /* setRedeemedPerPage */] = useState(16);
+    const [currentLanguage, setCurrentLanguage] = useState('en');
+    const [languageCollection, setLanguageCollection] = useState({});
+
+    //Constants
+    const productsPerPage = itemsPerPage;
+    const redeemedPerPage = itemsPerPage;
+    
+    //Pagination Custom Hooks
     const [
         nextProductsPage, 
         prevProductsPage, 
-        /* jumpProductsPage */, 
+        jumpProductsPage, 
         getCurrentPageProducts, 
         currentProductsPage, 
         maxProductsPage,
         setProductsCurrentPage
-    ] = usePagination(filteredProducts,16);
+    ] = usePagination(filteredProducts,itemsPerPage);
     const [
         nextRedeemedPage, 
         prevRedeemedPage, 
-        /* jumpRedeemedPage */, 
+        jumpRedeemedPage, 
         getCurrentPageRedeemed, 
         currentRedeemedPage, 
         maxRedeemedPage,
         setRedeemedCurrentPage
-    ] = usePagination(redeemHistory,16);
+    ] = usePagination(redeemHistory, itemsPerPage);
     
+    //Total amount of available and redeemed products
     let totalProducts = filteredProducts.length;
     let totalRedeemed = redeemHistory.length;
 
@@ -46,6 +56,8 @@ export default function AppProvider({children}){
             setFilteredProducts,
             errorMessage,
             setErrorMessage,
+            errorHistoryMessage, 
+            setErrorHistoryMessage,
             userInfo,
             setUserInfo,
             redeemHistory,
@@ -66,16 +78,21 @@ export default function AppProvider({children}){
             maxRedeemedPage,
             productsPerPage,
             redeemedPerPage,
+            jumpProductsPage,
+            jumpRedeemedPage,
             totalProducts,
             totalRedeemed,
             setProductsCurrentPage,
             setRedeemedCurrentPage,
             updateUserInfo, 
-            setUpdateUserInfo            
+            setUpdateUserInfo, 
+            currentLanguage,
+            setCurrentLanguage,
+            languageCollection, 
+            setLanguageCollection            
         }}>
             {children}
         </AppContext.Provider>    
 
     );
 }
-

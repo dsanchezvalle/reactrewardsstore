@@ -8,7 +8,7 @@ import ProductCard from '../ProductCard/ProductCard';
 const ResultsGrid = ({ productList, redeemed }) => {
     return(
         <>
-            <section className={`ResultsGrid ${redeemed&&'RedeemHistory'}`}>
+            <section className={`ResultsGrid ${redeemed && 'RedeemHistory'}`}>
                 {productList.map(
                     (product, index) => 
                     <ProductCard

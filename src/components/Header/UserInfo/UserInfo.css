@@ -77,7 +77,7 @@
 
 .UserInfo__ArrowWrapper{
     transform: translateY(15%) translateX(10%);
-    transition: all 0.25s;
+    transition: all .25s;
     cursor: pointer;
 }
 
@@ -90,7 +90,7 @@
     flex-direction: column;
     list-style: none;
     width: 85%;
-    transition: all 0.3s ease-in;
+    transition: all .3s ease-in;
     background-color: white;
     gap: .75rem;
     padding: 5% 0;
@@ -110,6 +110,7 @@
     cursor: pointer;
 }
 
+/* Media queries */
 @media screen and (min-width: 600px){
     .UserInfo{
         font-size: .94rem;

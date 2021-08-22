@@ -10,9 +10,9 @@ import ResultsGrid from "./ResultsGrid/ResultsGrid";
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
 
 const Results = () => {
-    //Get filteredProducts and errorMessage from AppContext
-    const {errorMessage, redeemHistory, isLoading, getCurrentPageProducts, getCurrentPageRedeemed} = useContext(AppContext);
-
+    //Context
+    const {errorMessage, errorHistoryMessage, redeemHistory, isLoading, getCurrentPageProducts, getCurrentPageRedeemed, productList} = useContext(AppContext);
+    //Get product batches according to current page and active section (Store/Redeem History)
     let currentPageProducts = getCurrentPageProducts();
     let currentPageRedeemed = getCurrentPageRedeemed();
 
@@ -22,12 +22,12 @@ const Results = () => {
             <Route path="/history">
                 <>
                 {isLoading && <LoadingSpinner />}
-                {(redeemHistory.length !== 0 && errorMessage.length === 0 && !isLoading) ? 
+                {(redeemHistory?.length !== 0 && errorHistoryMessage?.length === 0 && !isLoading) ? 
                     (
                         <ResultsGrid productList={currentPageRedeemed} redeemed={true} />                                
                     ):(
                         <section className='ResultsError'>
-                            <p>{errorMessage}</p>
+                            <p>{errorHistoryMessage}</p>
                         </section>
                     )
                 }
@@ -35,7 +35,9 @@ const Results = () => {
             </Route>
 
             <Route path="/">
-                { errorMessage.length === 0 ?(
+                <>
+                {isLoading && <LoadingSpinner />}
+                { (productList?.length !== 0 && errorMessage?.length === 0) ?(
                     <ResultsGrid productList={currentPageProducts} redeemed={false}/> 
                 ):(
                     <section className='ResultsError'>
@@ -43,6 +45,7 @@ const Results = () => {
                     </ section>
                 )
                 }
+                </>
             </Route>
         </Switch> 
         </>

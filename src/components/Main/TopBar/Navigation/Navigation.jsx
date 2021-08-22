@@ -6,10 +6,13 @@ import { AppContext } from '../../../../contexts/AppContext';
 import './Navigation.css'
 
 const Navigation = () => {
-    const {setRedeemHistory, setErrorMessage, setShowFilters, setIsLoading} = useContext(AppContext);
-    //It handles the redeem history request
+    const {setRedeemHistory, setErrorHistoryMessage, setShowFilters, setIsLoading, languageCollection } = useContext(AppContext);
+    //Language Collection destructuring
+    const { storeLabel, historyLabel, errorGetHistoryMsg} = languageCollection;
+
+    //Handle the redeem history request
     function handleGetRedeemHistoryClick(){
-        
+        //Fetch Redeem History from API
         async function getRedeemHistory(){
             setShowFilters(false);
             try{
@@ -25,11 +28,14 @@ const Navigation = () => {
                     }
                     );
                 const response = await fetchedData.json();
+                //Reverse the response given to display last redeemed products first
+                const reversedResponse = response.reverse();
                 setIsLoading(false);
-                setRedeemHistory(response);
+                setRedeemHistory(reversedResponse);
             }
             catch(err){
-                setErrorMessage('Whoops! We got an error requesting your redeem history. Please, try again.');
+                setIsLoading(false);
+                setErrorHistoryMessage(errorGetHistoryMsg);
             }
         }
         getRedeemHistory();
@@ -39,8 +45,8 @@ const Navigation = () => {
         <>
         <nav className="Navigation">
             <ul className="Navigation__List">
-                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/" onClick={()=>setShowFilters(true)}>Store</NavLink>
-                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/history" onClick={handleGetRedeemHistoryClick}>Redeem History</NavLink>
+                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/" onClick={()=>setShowFilters(true)}>{storeLabel}</NavLink>
+                <NavLink exact className="Navigation__Item" activeClassName="Navigation__Item-Selected" to="/history" onClick={handleGetRedeemHistoryClick}>{historyLabel}</NavLink>
             </ul>
         </nav>
         </>

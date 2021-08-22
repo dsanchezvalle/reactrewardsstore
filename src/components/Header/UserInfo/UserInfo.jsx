@@ -14,18 +14,20 @@ import { getPointsOptions } from '../../../utils/constants';
 import useFetchUserInfo from '../../../hooks/useFecthUserInfo';
 
 const UserInfo = () => {
-    
-    const { userInfo, setUpdateUserInfo } = useContext(AppContext);
-
+    //Context
+    const { userInfo, setUpdateUserInfo, languageCollection } = useContext(AppContext);
+    //Custom Hook to fetch userInfo
     useFetchUserInfo();
-
-    //It handles click on the Points Wrapper
+    //Language Collection destructuring
+    const {pointsSuccessTitle, pointsSuccessMsg, morePointsMsg, errorTitle, errorGetPointsMsg, errorNotValidPointsMsg} = languageCollection;
+    
+    //Handle click on the user menu to get more points
     function handlePointsWrapperClick() {
         let menu = document.getElementById('UserInfo__CollapsibleCheck');
         menu.checked = !menu.checked;
     }
 
-    //It handles the points request validating value exists in the three given options
+    //Handle the points request validating value exists in the three given options
     function handleGetPointsClick(pointsToRedeem) {
         let requestedPoints = pointsToRedeem;
         let menu = document.getElementById('UserInfo__CollapsibleCheck');
@@ -34,37 +36,39 @@ const UserInfo = () => {
             async function getPoints(){
                 let newBody = {amount: requestedPoints}
                 try{
-                const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/points',{
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTExNDkwNGQ5ZmMzODAwMjFmNjM4NDMiLCJpYXQiOjE2Mjg1MjI3NTZ9.9RRbOr2MKD1bfRKrqBzfeTf6NqH153GOgb0Wu0pDNQk'
-                    },
-                    method: 'POST',
-                    body: JSON.stringify(newBody)
-                });
-                const response = await fetchedData.json();
-                if(response.message === 'Points Updated'){
-                    Swal.fire({
-                        title: `Enjoy your points!`,
-                        text: `You have redeemed ${pointsToRedeem} points sucessfully. Now you have ${response['New Points']} points`,
-                        icon: 'success',                            
-                        customClass: {
-                            confirmButton: 'PopUpBtn'
-                        }
+                    const fetchedData = await fetch('https://coding-challenge-api.aerolab.co/user/points',{
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTExNDkwNGQ5ZmMzODAwMjFmNjM4NDMiLCJpYXQiOjE2Mjg1MjI3NTZ9.9RRbOr2MKD1bfRKrqBzfeTf6NqH153GOgb0Wu0pDNQk'
+                        },
+                        method: 'POST',
+                        body: JSON.stringify(newBody)
                     });
-                    menu.checked = false;
-                }
+                    const response = await fetchedData.json();
+                    //Modal to confirm points have been updated or not
+                    if(response.message === 'Points Updated'){
+                        Swal.fire({
+                            title: pointsSuccessTitle,
+                            text: pointsSuccessMsg?.(pointsToRedeem, response['New Points']),
+                            icon: 'success',                            
+                            customClass: {
+                                confirmButton: 'PopUpBtn'
+                            }
+                        });
+                        menu.checked = false;
+                    }
                 }
                     catch(err){
                     Swal.fire({
-                        title: `Whoops!`,
-                        text: "We got an error requesting your points. Please, try again.",
+                        title: errorTitle,
+                        text: errorGetPointsMsg,
                         icon: 'error',                            
                         customClass: {
                             confirmButton: 'PopUpBtn'
                         }
                     });
+                    //Hide dropdown menu
                     menu.checked = false;
                 }
             }
@@ -72,8 +76,8 @@ const UserInfo = () => {
         }
         else{
             Swal.fire({
-                title: `Whoops!`,
-                text: "You can not request that amount of points. Please, try again.",
+                title: errorTitle,
+                text: errorNotValidPointsMsg,
                 icon: 'error',                            
                 customClass: {
                     confirmButton: 'PopUpBtn'
@@ -96,7 +100,7 @@ const UserInfo = () => {
                     </label>
                     <ul className="UserInfo__DropdownWrapper">
                         <li className="UserInfo__DropdownOption" id="MorePoints">
-                            <p>Get more points...</p>
+                            <p>{morePointsMsg}</p>
                             <ul className="MorePoints__OptionWrapper">
                                 {getPointsOptions.map((optionItem)=>
                                     <li 

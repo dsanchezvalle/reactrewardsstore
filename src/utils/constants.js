@@ -1,12 +1,14 @@
+//App URLs
 export const URLS = {
     publicPath: process.env.PUBLIC_URL
 };
 
+//Options to request points to the API
 export const getPointsOptions = [1000, 5000, 7500]; 
 
 /* Filters initial state 
 FilterPrice 0: has default sorting from API
-FilterCategory 0: includes all categories
+FilterCategory 0: includes all products categories
 */
 export const initialFilters = [
     {
@@ -23,7 +25,7 @@ export const initialFilters = [
 export const filterPriceOptions = [
     {
         value: 0, 
-        text: 'Default'
+        text: 'Default $'
     },
     {
         value: 1,
@@ -35,4 +37,5 @@ export const filterPriceOptions = [
     }
 ];
 
-
+//Products per page
+export const itemsPerPage = 16;
