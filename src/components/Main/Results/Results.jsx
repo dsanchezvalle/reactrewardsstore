@@ -34,7 +34,7 @@ const Results = () => {
                 </>
             </Route>
 
-            <Route path="/">
+            <Route path="/reactrewardsstore">
                 <>
                 {isLoading && <LoadingSpinner />}
                 { (productList?.length !== 0 && errorMessage?.length === 0) ?(
