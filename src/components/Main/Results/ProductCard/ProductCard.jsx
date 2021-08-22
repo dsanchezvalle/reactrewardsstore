@@ -106,7 +106,7 @@ const ProductCard = ({productId, name, category, imagePath, cost, redeemed, crea
 
     //Format the redemption date to show it in Redeem History Section
     function getRedemptionDate(dateString){
-        let options = { year: 'numeric', month: 'short', day: 'numeric' };
+        let options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
         let date = new Date(dateString);
         return date.toLocaleDateString(currentLanguage === 'en' ? 'en-US': 'es-CO', options);
     }
