@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/reactrewardsstore/static/css/main.75e8f8f1.chunk.css",
+    "main.js": "/reactrewardsstore/static/js/main.4f83c39d.chunk.js",
+    "main.js.map": "/reactrewardsstore/static/js/main.4f83c39d.chunk.js.map",
+    "runtime-main.js": "/reactrewardsstore/static/js/runtime-main.aba1a279.js",
+    "runtime-main.js.map": "/reactrewardsstore/static/js/runtime-main.aba1a279.js.map",
+    "static/js/2.80d4c885.chunk.js": "/reactrewardsstore/static/js/2.80d4c885.chunk.js",
+    "static/js/2.80d4c885.chunk.js.map": "/reactrewardsstore/static/js/2.80d4c885.chunk.js.map",
+    "static/js/3.725abae6.chunk.js": "/reactrewardsstore/static/js/3.725abae6.chunk.js",
+    "static/js/3.725abae6.chunk.js.map": "/reactrewardsstore/static/js/3.725abae6.chunk.js.map",
+    "index.html": "/reactrewardsstore/index.html",
+    "static/css/main.75e8f8f1.chunk.css.map": "/reactrewardsstore/static/css/main.75e8f8f1.chunk.css.map",
+    "static/js/2.80d4c885.chunk.js.LICENSE.txt": "/reactrewardsstore/static/js/2.80d4c885.chunk.js.LICENSE.txt",
+    "static/media/arrow-down-lg.0dd32306.svg": "/reactrewardsstore/static/media/arrow-down-lg.0dd32306.svg",
+    "static/media/Filters.css": "/reactrewardsstore/static/media/arrow-down-sm.a09297b1.svg",
+    "static/media/arrow-left-active.9384538d.svg": "/reactrewardsstore/static/media/arrow-left-active.9384538d.svg",
+    "static/media/arrow-left-inactive.1a77dd6d.svg": "/reactrewardsstore/static/media/arrow-left-inactive.1a77dd6d.svg",
+    "static/media/arrow-right-active.c0bcf04c.svg": "/reactrewardsstore/static/media/arrow-right-active.c0bcf04c.svg",
+    "static/media/arrow-right-inactive.be86e60b.svg": "/reactrewardsstore/static/media/arrow-right-inactive.be86e60b.svg",
+    "static/media/buy-white.334de73e.svg": "/reactrewardsstore/static/media/buy-white.334de73e.svg",
+    "static/media/buy.f915838d.svg": "/reactrewardsstore/static/media/buy.f915838d.svg",
+    "static/media/co.ada4f986.svg": "/reactrewardsstore/static/media/co.ada4f986.svg",
+    "static/media/coin.fb2254cd.svg": "/reactrewardsstore/static/media/coin.fb2254cd.svg",
+    "static/media/Header.css": "/reactrewardsstore/static/media/header-banner.b6f067c6.png",
+    "static/media/logo.b9f32251.svg": "/reactrewardsstore/static/media/logo.b9f32251.svg",
+    "static/media/us.e4188ea9.svg": "/reactrewardsstore/static/media/us.e4188ea9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aba1a279.js",
+    "static/js/2.80d4c885.chunk.js",
+    "static/css/main.75e8f8f1.chunk.css",
+    "static/js/main.4f83c39d.chunk.js"
+  ]
+}
