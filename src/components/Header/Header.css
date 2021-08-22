@@ -28,9 +28,10 @@
   gap: .16rem;
   border: none;
   border-radius: 2rem;
-  padding: 1.5% 2.5%;
+  padding: 2% 2.5%;
   cursor: pointer;
   background-color: var(--secondary-bkgd-color);
+  transition: all .5s ease;
 }
 
 .Header__LanguageWrapper:active, .Header__LanguageWrapper:active > *{
@@ -38,7 +39,7 @@
 }
 
 .Header__LanguageLabel{
-  font-size: .75rem;
+  font-size: .63rem;
   font-family: inherit;
   color: var(--dark-font-color);
 }
@@ -92,7 +93,7 @@
     }
 
     .Header__LanguageLabel{
-      font-size: .94rem;
+      font-size: .84rem;
     }
 
     .Header__LanguageFlag{
@@ -121,7 +122,7 @@
   }
 
   .Header__LanguageLabel{
-    font-size: 1.13rem;
+    font-size: 1.06rem;
   }
 
   .Header__LanguageFlag{
@@ -151,7 +152,7 @@
   }
 
   .Header__LanguageLabel{
-    font-size: 1.31rem;
+    font-size: 1.28rem;
   }
 
   .Header__LanguageFlag{

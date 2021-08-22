@@ -40,7 +40,7 @@ const Header = () => {
             <div className="Header__LogoAndLangWrapper">
                 <Logo />
                 <button className="Header__LanguageWrapper" onClick={handleLanguageChange}>
-                    <span className="Header__LanguageLabel">{currentLanguage === 'en'?'ESP':'ENG'}</span>
+                    <span className="Header__LanguageLabel">{currentLanguage === 'en'?'Ver en ESP':'View in ENG'}</span>
                     {currentLanguage === 'en'?(
                     <COFlag className="Header__LanguageFlag"/>
                     ):(
