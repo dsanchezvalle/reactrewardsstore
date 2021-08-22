@@ -1,0 +1,34 @@
+.ResultsError{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.1rem 0 1.48rem;
+    color: var(--dark-font-color);
+    font-size: .75rem;
+    text-align: center;
+}
+
+/* Media Queries */
+@media screen and (min-width: 600px){
+    .ResultsError{
+        font-size: .94rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .ResultsError{
+        font-size: 1.13rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .ResultsError{
+        font-size: 1.32rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .ResultsError{
+        font-size: 1.5rem;
+    }
+}

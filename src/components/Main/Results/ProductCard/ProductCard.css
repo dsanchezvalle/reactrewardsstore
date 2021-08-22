@@ -1,0 +1,539 @@
+.ProductCard{
+    position: relative;
+    background-color: rgb(255,255,255);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0.375rem;
+    box-shadow: .8px .9px 3px grey;
+    transition:  box-shadow .3s ease-out;
+}
+
+.ProductCard__Icon, .ProductCard__PointsNeeded{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.ProductCard__Icon, .ProductCard__IconHover{
+    width: 1.31rem;
+    height: auto;
+}
+
+.ProductCard__Coin{
+    width: 0.69rem;
+    height: auto;
+}
+
+.ProductCard__PointsNeeded, .ProductCard__RedeemedPrice{
+    background: rgb(97, 97, 97, .8);
+    mix-blend-mode: normal;
+    border-radius: 100px;
+    color: var(--light-font-color);
+    padding: .25rem .38rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.375rem;
+    font-size: 0.62rem;
+}
+
+.ProductCard:hover{
+    box-shadow: 1px 8px 20px grey;
+    transition:  box-shadow .3s ease-in;
+}
+
+.ProductCard.RedeemableProduct:hover .ProductCard__IconHover{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: block;
+    z-index: 2;
+} 
+
+.ProductCard__RedeemInfo{
+    display: none;
+}
+
+/* Style for a Redeemable Product Card */
+.ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.31rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(10, 212, 250, 0.86) 0%, rgba(37, 187, 241, 0.86) 100%);
+    z-index: 2;
+}
+
+.ProductCard__RedeemCost{
+    display: flex;
+    gap: 0.38rem;
+    color: var(--light-font-color);
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.ProductCard__RedeemBtn{
+    border: none;
+    color: var(--dark-font-color);
+    background-color: var(--light-font-color);
+    width: 82.61%; 
+    border-radius: 2.63rem;
+    font-size: 0.75rem;
+    padding: 0.19rem 0;   
+}
+
+.ProductCard__RedeemBtn:active{
+    transform: scale(0.97);
+}
+
+.ProductCard__RedeemCoin{
+    width: 0.75rem;
+    height: auto;
+}
+
+.ProductCard__Image{    
+    width: 100%;
+    border-radius: 3px;
+    height: auto;
+}
+
+.ProductCard__Info{
+    border-top: 1px solid rgba(217, 217, 217, .4);
+    margin: 0 8.7% 0 8.7%;
+    padding: 0.375rem;
+}
+
+.ProductCard__Name{
+    color: var(--dark-font-color);
+    font-size: 0.75rem;
+    font-weight: 400;
+    transition: all .5s ease-out;
+}
+
+.ProductCard__Category{
+    color: var(--medium-font-color);
+    font-size: 0.625rem;
+    transition: all .5s ease-out;
+}
+
+/* Modal styles */
+.PopUpBtn{
+    background-color: #0AD4FA !important;
+    color: var(--light-font-color) !important;
+    border-radius: 1.5rem !important;
+    font-weight: 600 !important;
+}
+
+/* Style for a Products in Redeem History */
+.ProductCard.RedeemedProduct{
+    flex-direction: row;
+    padding: .75rem .75rem .75rem .25rem;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Image{    
+    width: 30%;
+    border-radius: 3px;
+    height: 25%;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Info{
+    border-top: none;
+    margin-left: .5%;
+    margin-right: 0;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Icon, 
+.ProductCard.RedeemedProduct .ProductCard__IconHover,
+.ProductCard.RedeemedProduct .ProductCard__PointsNeeded
+{
+    display: none;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+    display: flex;
+    position: relative;
+    margin-top: 15%;
+    transition: all .5s ease-out;
+}
+
+.ProductCard__RedeemedProductInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-end;
+    flex-grow: 2;
+    width: 35%;
+}
+
+.ProductCard__RedeemedOn, .ProductCard__RedeemedDate{
+    text-align: right;
+    transition: all .5s ease-out;
+}
+
+.ProductCard__RedeemedOn{
+    color: var(--dark-font-color);
+}
+
+.ProductCard__RedeemedDate{
+    color: var(--medium-font-color);
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Category{
+    font-size: .63rem;
+    transition: all .5s ease-out;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__Name{
+    font-size: .75rem;
+    transition: all .5s ease-out;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+    font-size: .63rem;
+    transition: all .5s ease-out;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+    font-size: .5rem;
+    transition: all .5s ease-out;
+}
+
+.ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+    font-size: .75rem;
+    transition: all .5s ease-out;
+}
+
+
+/* Media Queries */
+@media screen and (min-width: 480px){
+    .ProductCard{
+        padding: 0.45rem;    
+    } 
+
+    .ProductCard__Icon, .ProductCard__IconHover{
+        width: 1.58rem;
+    }
+
+    .ProductCard__PointsNeeded{
+        font-size: 0.67rem;
+        padding: .35rem .5rem;
+    }
+
+    .ProductCard__Coin{
+        width: 0.8rem;
+    }
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 0.825rem;
+    }
+    
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
+        font-size: 0.7rem;
+    }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.4rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 1.45rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 0.83rem;
+        padding: 0.30rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 0.93rem;
+    }
+
+    .ProductCard.RedeemedProduct{
+        padding: 1.31rem 2.25rem 1.31rem 1.44rem;
+    }
+
+    .ProductCard.RedeemedProduct .ProductCard__Category{
+        font-size: .91rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__Name{
+        font-size: 1.13rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+        font-size: .84rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+        font-size: .72rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+        font-size: 1.06rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .35rem .5rem;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .ProductCard{
+        padding: 0.53rem;    
+    }
+    
+    .ProductCard__Icon, .ProductCard__IconHover{
+        width: 1.84rem;
+    }
+
+    .ProductCard__PointsNeeded{
+        font-size: 0.72rem;
+        padding: .45rem .62rem;
+    }
+
+    .ProductCard__Coin{
+        width: 0.91rem;
+    }
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 0.9rem;
+    }
+    
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
+        font-size: 0.775rem;
+    }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.49rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 1.65rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 0.90rem;
+        padding: 0.41rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.1rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .45rem .62rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .ProductCard{
+        padding: 0.61rem;    
+    }
+    
+    .ProductCard__Icon, .ProductCard__IconHover{
+        width: 2.10rem;
+    }
+
+    .ProductCard__PointsNeeded{
+        font-size: 0.77rem;
+        padding: .55rem .74rem;
+    }
+
+    .ProductCard__Coin{
+        width: 1.02rem;
+    }
+
+    .ProductCard__Info{
+        border-top: 1px solid rgba(217, 217, 217, .5);
+    }
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 0.975rem;
+    }
+    
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
+        font-size: 0.85rem;
+    }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.58rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 1.85rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 0.98rem;
+        padding: 0.53rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.28rem;
+    }
+
+    .ProductCard.RedeemedProduct .ProductCard__Category{
+        font-size: 1.47rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__Name{
+        font-size: 1.88rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+        font-size: 1.28rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+        font-size: 1.16rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+        font-size: 1.69rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .55rem .74rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .ProductCard{
+        padding: 0.69rem;    
+    } 
+
+    .ProductCard__Icon, .ProductCard__IconHover{
+        width: 2.36rem;
+    }
+
+    .ProductCard__PointsNeeded{
+        font-size: 0.82rem;
+        padding: .65rem .86rem;
+    }
+
+    .ProductCard__Coin{
+        width: 1.13rem;
+    }
+
+    .ProductCard__Info{
+        border-top: 1px solid rgba(217, 217, 217, 1);
+    }
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 1.05rem;
+    }
+    
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
+        font-size: 0.93rem;
+    }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.66rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 2.05rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 1.05rem;
+        padding: 0.64rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.45rem;
+    }
+
+    .ProductCard.RedeemedProduct{
+        padding: 2.5rem 5rem 2.5rem 2.5rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .65rem .86rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .ProductCard{
+        padding: 0.75rem;    
+    } 
+
+    .ProductCard__Icon, .ProductCard__IconHover{
+        width: 2.63rem;
+    }
+
+    .ProductCard__PointsNeeded{
+        font-size: 0.87rem;
+        padding: .75rem 1rem;
+    }
+
+    .ProductCard__Coin{
+        width: 1.25rem;
+    }
+
+    .ProductCard__Name{
+        color: var(--dark-font-color);
+        font-size: 1.12rem;
+    }
+    
+    .ProductCard__Category, .ProductCard__RedeemedProductInfo{
+        font-size: 1rem;
+    }
+
+    .ProductCard.RedeemableProduct:hover .ProductCard__RedeemInfo{
+        gap: 0.75rem;
+    }
+
+    .ProductCard__RedeemCost{
+        font-size: 2.25rem;
+    }
+
+    .ProductCard__RedeemBtn{
+        font-size: 1.13rem;
+        padding: 0.75rem 0;
+    }
+
+    .ProductCard__RedeemCoin{
+        width: 1.63rem;
+    }
+
+    .ProductCard__RedeemedPrice{
+        padding: .75rem 1rem;
+    }
+
+    .ProductCard.RedeemedProduct .ProductCard__Category{
+        font-size: 1.75rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__Name{
+        font-size: 2.25rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedOn{
+        font-size: 1.5rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedDate{
+        font-size: 1.38rem;
+    }
+    
+    .ProductCard.RedeemedProduct .ProductCard__RedeemedPrice{
+        font-size: 2rem;
+    }
+} 

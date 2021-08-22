@@ -1,0 +1,93 @@
+.PaginationArrowsContainer{
+    margin-left: auto;
+    display: flex;
+    margin-bottom: .35rem;
+    gap: .25rem;
+}
+
+.PaginationArrowsContainer svg{
+    height: 2rem;
+    width: auto;
+    transition: height .5s ease;
+    display: none;
+    cursor: pointer;
+}
+
+.PaginationArrowsContainer .ActiveArrow:active{
+    transform: scale(0.95);
+}
+
+@media screen and (max-width: 399px){
+    .PaginationArrowsContainer{
+        position: fixed;
+        left: 0;
+        margin-bottom: 0;
+        bottom: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .25rem;
+        z-index: 4;
+        background-color: rgba(255, 255, 255);
+        padding: .5rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                    0 2px 4px rgba(0,0,0,0.07), 
+                    0 4px 8px rgba(0,0,0,0.07), 
+                    0 8px 16px rgba(0,0,0,0.07),
+                    0 16px 32px rgba(0,0,0,0.07), 
+                    0 32px 64px rgba(0,0,0,0.07);
+    }
+
+    .PaginationArrowsContainer svg{
+        height: 2rem;
+        z-index: 4;
+    }
+}
+
+/* Media queries */
+@media screen and (min-width: 400px){
+    .PaginationArrowsContainer svg{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .PaginationArrowsContainer{
+        gap: .375rem;
+    }
+    
+    .PaginationArrowsContainer svg{
+        height: 2.25rem;
+    }     
+}
+  
+@media screen and (min-width: 800px){
+.PaginationArrowsContainer{
+    gap: .5rem;
+}
+
+.PaginationArrowsContainer svg{
+    height: 2.5rem;
+} 
+}
+
+@media screen and (min-width: 1000px){
+.PaginationArrowsContainer{
+    gap: .625rem;
+}
+
+.PaginationArrwsContainer svg{
+    height: 2.75rem;
+} 
+}
+
+@media screen and (min-width: 1200px){
+.PaginationArrowsContainer{
+    gap: .75rem;
+}
+
+.PaginationArrowsContainer svg{
+    height: 3rem;
+}  
+}

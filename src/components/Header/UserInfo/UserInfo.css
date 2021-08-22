@@ -1,0 +1,220 @@
+.UserInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .63rem;
+    color: var(--dark-font-color);
+    font-size: .75rem;
+    position: relative;
+}
+
+.UserInfo__PointsWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-bkgd-color);
+    padding: .31rem .41rem;
+    border-radius: 1rem;
+    gap: .16rem;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.UserInfo__Coin{
+    width: .63rem;
+    height: auto;
+}
+
+.User__InfoMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserInfo__Arrow path{
+    fill: var(--dark-font-color) !important;
+}
+
+.UserInfo__Arrow{
+    width: .94rem;
+    height: auto;
+    padding-top: 3%;    
+}
+
+#UserInfo__CollapsibleCheck{
+    opacity: 0;
+    display: none;
+}
+
+.UserInfo__DropdownWrapper{
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    top: 115%;
+    left: 110vw;
+    transform: translateX(120%);
+    margin: 0;
+    background-color: white;
+    padding-top: 3%;
+    border-radius: 0 0 3px 3px;
+    transition: transform .4s linear;
+}
+
+.UserInfo__DropdownOption{
+    width: 100%;
+    padding: 3% 10%;
+}
+
+.UserInfo__DropdownOption:last-child{
+    border-radius: 0 0 3px 3px;
+  }
+
+.UserInfo__CollapsibleCheck:checked ~ .UserInfo__DropdownWrapper{
+    transform: translateX(0);
+    top: 115%;
+    left: 0;
+}
+
+.UserInfo__ArrowWrapper{
+    transform: translateY(15%) translateX(10%);
+    transition: all .25s;
+    cursor: pointer;
+}
+
+.UserInfo__CollapsibleCheck:checked + .UserInfo__ArrowWrapper{
+    transform: rotate(-90deg) translateY(15%);
+}
+
+.MorePoints__OptionWrapper{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 85%;
+    transition: all .3s ease-in;
+    background-color: white;
+    gap: .75rem;
+    padding: 5% 0;
+}
+
+.MorePoints__Option{
+    background: rgb(97, 97, 97, .8);
+    mix-blend-mode: normal;
+    border-radius: 100px;
+    color: var(--light-font-color);
+    padding: .25rem .38rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    gap: .16rem;
+    cursor: pointer;
+}
+
+/* Media queries */
+@media screen and (min-width: 600px){
+    .UserInfo{
+        font-size: .94rem;
+        gap: .89rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .42rem .52rem;
+        border-radius: 1.13rem;
+        gap: .21rem;
+    }
+
+    .UserInfo__Coin{
+        width: .84rem;
+    }
+
+    .UserInfo__Arrow{
+        width: 1.11rem;
+    }
+
+    .MorePoints__Option{
+        font-size: .94rem;
+        padding: .45rem .62rem;
+        gap: .21rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .UserInfo{
+        font-size: 1.13rem;
+        gap: 1.16rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .53rem .63rem;
+        border-radius: 1.25rem;
+        gap: .27rem;
+    }
+    
+    .UserInfo__Coin{
+        width: 1.06rem;
+    }
+
+    .UserInfo__Arrow{
+        width: 1.28rem;
+    }
+
+    .MorePoints__Option{
+        font-size: 1.13rem;
+        padding: .55rem .74rem;
+        gap: .27rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .UserInfo{
+        font-size: 1.31rem;
+        gap: 1.42rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .64rem .74rem;
+        border-radius: 1.38rem;
+        gap: .32rem;
+    }
+
+    .UserInfo__Coin{
+        width: 1.28rem;
+    }
+
+    .UserInfo__Arrow{
+        width: 1.45rem;
+    }
+
+    .MorePoints__Option{
+        font-size: 1.31rem;
+        padding: .65rem .86rem;
+        gap: .32rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .UserInfo{
+        font-size: 1.5rem;
+        gap: 1.69rem;
+    }
+
+    .UserInfo__PointsWrapper{
+        padding: .75rem .85rem;
+        border-radius: 1.5rem;
+        gap: .38rem;
+    }
+
+    .UserInfo__Coin{
+        width: 1.5rem;
+    }
+
+    .UserInfo__Arrow{
+        width: 1.63rem;
+    }
+
+    .MorePoints__Option{
+        font-size: 1.5rem;
+        padding: .75rem 1rem;
+        gap: .38rem;
+    }
+}

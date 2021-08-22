@@ -1,0 +1,128 @@
+.FiltersContainer{
+    display: flex;
+    color: var(--medium-font-color);
+    font-size: inherit;
+    border-left: 1px solid var(--border-bar-color);
+    padding-left: .38rem;;
+    gap: .38rem;
+    transition: all .5s ease;
+    align-items: flex-end;
+    margin-bottom: .35rem;
+    width: 80%;
+}
+
+.FilterCategory, .FilterPrice {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    background: url('../../../../assets/images/arrow-down-sm.svg');
+    background-size: var(--filter-icon-bkgd-size-sm);
+    background-repeat: no-repeat;
+    background-color: rgb(10, 212, 250);
+    background-position-x: 101%;
+    background-position-y: center;
+    border: none;
+    border-radius: .75rem;
+    color: var(--light-font-color);
+    padding: 1.5% 2%;
+    width: 40%;
+    font-size: inherit;
+}
+  
+select::-ms-expand { 
+    display: none; /* Remove default arrow on ie10 and ie11 */
+}
+
+/* Media Queries */
+@media screen and (max-width: 399px){
+    .FiltersContainer{
+        padding: .5rem 0;
+        border-left: none;
+        width: 100%;
+    }
+
+    .FilterCategory, .FilterPrice{
+        padding: 1.5% 2%;
+        width: 41%;
+        max-width: 12rem;
+    }
+}
+
+/* Target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    .FilterCategory, .FilterPrice{
+        background:none\9;
+        padding: 5px\9;
+    } 
+}
+
+@media screen and (min-width: 600px){
+    .FiltersContainer{
+        padding-left: .66rem;
+        gap: .66rem; 
+    }     
+    
+    .FilterPrice {
+        width: 7.81rem;
+    }
+
+    .FilterCategory{
+        max-width: 13rem;
+    }
+
+    .FilterCategory, .FilterPrice{
+        padding: 1% 2%;
+    }
+}
+  
+@media screen and (min-width: 800px){
+    .FiltersContainer{
+        padding-left: .94rem;;
+        gap: .94rem;
+    } 
+
+    .FilterPrice{
+        width: 8.37rem; 
+    }
+
+    .FilterCategory, .FilterPrice{
+        padding: .8% 2%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .FiltersContainer{
+        padding-left: 1.22rem;;
+        gap:1.22rem;
+        width: 102%;
+    }  
+
+    .FilterPrice{
+        width: 10rem;
+    }
+
+    .FilterCategory, .FilterPrice{
+        padding: .2% 2%;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .FiltersContainer{
+        padding-left: 1.5rem;;
+        gap: 1.5rem;
+    }
+
+    .FilterPrice{
+        width: 10.5rem;
+    }
+
+    .FilterCategory, .FilterPrice{
+        padding: 0 2%;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .FilterPrice{
+        padding: 0 1%;
+    }
+}
