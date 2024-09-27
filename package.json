@@ -1,6 +1,6 @@
 {
   "name": "reactrewardsstore",
-  "homepage":"https://dsanchezvalle.github.io/reactrewardsstore",
+  "homepage": "https://dsanchezvalle.github.io/reactrewardsstore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,7 +10,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "sweetalert2": "^11.1.2",
     "web-vitals": "^1.1.2"
   },
@@ -41,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^6.1.1"
   }
 }
